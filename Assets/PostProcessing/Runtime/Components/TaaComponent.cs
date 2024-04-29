@@ -13,7 +13,7 @@ namespace UnityEngine.PostProcessing
             internal static int _MainTex              = Shader.PropertyToID("_MainTex");
         }
 
-        const string k_ShaderString = "Hidden/Post FX/Temporal Anti-aliasing";
+        const string k_ShaderString = "Hidden/PostProcessing/TemporalAntialiasing";
         const int k_SampleCount = 8;
 
         readonly RenderBuffer[] m_MRT = new RenderBuffer[2];

@@ -18,7 +18,7 @@ namespace UnityEngine.PostProcessing
             internal static readonly int _Scale      = Shader.PropertyToID("_Scale");
         }
 
-        const string k_ShaderString = "Hidden/Post FX/Builtin Debug Views";
+        const string k_ShaderString = "Hidden/PostProcessing/Builtin Debug Views";
 
         enum Pass
         {

@@ -397,8 +397,8 @@ namespace UnityEngine.PostProcessing
                 return;
             }
 
-            var material = context.materialFactory.Get("Hidden/Post FX/Motion Blur");
-            var blitMaterial = context.materialFactory.Get("Hidden/Post FX/Blit");
+            var material = context.materialFactory.Get("Hidden/PostProcessing/MotionBlur");
+            var blitMaterial = context.materialFactory.Get("Hidden/PostProcessing/Blit");
             var settings = model.settings;
 
             var fbFormat = context.isHdr

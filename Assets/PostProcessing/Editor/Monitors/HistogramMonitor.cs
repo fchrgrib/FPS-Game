@@ -276,7 +276,7 @@ namespace UnityEditor.PostProcessing
 
             if (m_Material == null)
             {
-                m_Material = new Material(Shader.Find("Hidden/Post FX/Monitors/Histogram Render")) { hideFlags = HideFlags.DontSave };
+                m_Material = new Material(Shader.Find("Hidden/PostProcessing/Debug/Histogram")) { hideFlags = HideFlags.DontSave };
             }
 
             var channels = Vector4.zero;

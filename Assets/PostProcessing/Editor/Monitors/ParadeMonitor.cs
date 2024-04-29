@@ -247,7 +247,7 @@ namespace UnityEditor.PostProcessing
             }
 
             if (m_Material == null)
-                m_Material = new Material(Shader.Find("Hidden/Post FX/Monitors/Parade Render")) { hideFlags = HideFlags.DontSave };
+                m_Material = new Material(Shader.Find("Hidden/PostProcessing/Monitors/Parade Render")) { hideFlags = HideFlags.DontSave };
 
             m_Material.SetBuffer("_Waveform", m_Buffer);
             m_Material.SetVector("_Size", new Vector2(m_WaveformTexture.width, m_WaveformTexture.height));

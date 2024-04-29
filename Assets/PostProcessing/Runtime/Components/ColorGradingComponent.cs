@@ -290,7 +290,7 @@ namespace UnityEngine.PostProcessing
                 };
             }
 
-            var lutMaterial = context.materialFactory.Get("Hidden/Post FX/Lut Generator");
+            var lutMaterial = context.materialFactory.Get("Hidden/PostProcessing/Lut Generator");
             lutMaterial.SetVector(Uniforms._LutParams, new Vector4(
                     k_InternalLogLutSize,
                     0.5f / (k_InternalLogLutSize * k_InternalLogLutSize),

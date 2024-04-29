@@ -39,7 +39,7 @@ namespace UnityEngine.PostProcessing
 
         public void Dispose()
         {
-            var enumerator = m_Materials.GetEnumerator();
+            using var enumerator = m_Materials.GetEnumerator();
             while (enumerator.MoveNext())
             {
                 var material = enumerator.Current.Value;

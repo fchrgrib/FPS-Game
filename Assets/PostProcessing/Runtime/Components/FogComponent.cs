@@ -14,7 +14,7 @@ namespace UnityEngine.PostProcessing
             internal static readonly int _TempRT   = Shader.PropertyToID("_TempRT");
         }
 
-        const string k_ShaderString = "Hidden/Post FX/Fog";
+        const string k_ShaderString = "Hidden/PostProcessing/Fog";
 
         public override bool active
         {

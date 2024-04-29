@@ -19,8 +19,8 @@ namespace UnityEngine.PostProcessing
             internal static readonly int _TempRT            = Shader.PropertyToID("_TempRT");
         }
 
-        const string k_BlitShaderString = "Hidden/Post FX/Blit";
-        const string k_ShaderString = "Hidden/Post FX/Ambient Occlusion";
+        const string k_BlitShaderString = "Hidden/PostProcessing/Blit";
+        const string k_ShaderString = "Hidden/PostProcessing/Ambient Occlusion";
 
         readonly RenderTargetIdentifier[] m_MRT =
         {

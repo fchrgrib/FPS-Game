@@ -20,7 +20,7 @@ namespace UnityEngine.PostProcessing
             internal static readonly int _DepthOfFieldParams = Shader.PropertyToID("_DepthOfFieldParams");
         }
 
-        const string k_ShaderString = "Hidden/Post FX/Depth Of Field";
+        const string k_ShaderString = "Hidden/PostProcessing/Depth Of Field";
 
         public override bool active
         {

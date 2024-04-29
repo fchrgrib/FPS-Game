@@ -21,7 +21,7 @@ namespace UnityEngine.PostProcessing
         public void Render(RenderTexture source, RenderTexture destination)
         {
             var settings = model.settings.fxaaSettings;
-            var material = context.materialFactory.Get("Hidden/Post FX/FXAA");
+            var material = context.materialFactory.Get("Hidden/PostProcessing/FXAA");
             var qualitySettings = AntialiasingModel.FxaaQualitySettings.presets[(int)settings.preset];
             var consoleSettings = AntialiasingModel.FxaaConsoleSettings.presets[(int)settings.preset];
 

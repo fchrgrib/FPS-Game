@@ -65,7 +65,7 @@ namespace UnityEngine.PostProcessing
                 m_GrainLookupRT.Create();
             }
 
-            var grainMaterial = context.materialFactory.Get("Hidden/Post FX/Grain Generator");
+            var grainMaterial = context.materialFactory.Get("Hidden/PostProcessing/Grain Generator");
             grainMaterial.SetFloat(Uniforms._Phase, time / 20f);
 
             Graphics.Blit((Texture)null, m_GrainLookupRT, grainMaterial, settings.colored ? 1 : 0);

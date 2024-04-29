@@ -83,7 +83,7 @@ namespace UnityEngine.PostProcessing
             if (m_EyeCompute == null)
                 m_EyeCompute = Resources.Load<ComputeShader>("Shaders/EyeHistogram");
 
-            var material = context.materialFactory.Get("Hidden/Post FX/Eye Adaptation");
+            var material = context.materialFactory.Get("Hidden/PostProcessing/Eye Adaptation");
             material.shaderKeywords = null;
 
             if (m_HistogramBuffer == null)

@@ -31,7 +31,7 @@ namespace UnityEditor.PostProcessing
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             if (s_Material == null)
-                s_Material = new Material(Shader.Find("Hidden/Post FX/UI/Trackball")) { hideFlags = HideFlags.HideAndDontSave };
+                s_Material = new Material(Shader.Find("Hidden/PostProcessing/Editor/Trackball")) { hideFlags = HideFlags.HideAndDontSave };
 
             position = new Rect(position.x, position.y, position.width / 3f, position.height);
             int size = m_Size;

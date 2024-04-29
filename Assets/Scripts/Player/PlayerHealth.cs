@@ -58,7 +58,9 @@ namespace Nightmare
             else
             {
                 // ... transition the colour back to clear.
-                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                if (damageImage) {
+                    damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+                }
             }
 
             // Reset the damaged flag.

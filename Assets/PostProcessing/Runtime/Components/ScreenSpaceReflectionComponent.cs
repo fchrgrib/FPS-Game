@@ -119,7 +119,7 @@ namespace UnityEngine.PostProcessing
             float sx = sWidth / 2f;
             float sy = sHeight / 2f;
 
-            var material = context.materialFactory.Get("Hidden/Post FX/Screen Space Reflection");
+            var material = context.materialFactory.Get("Hidden/PostProcessing/ScreenSpaceReflections");
 
             material.SetInt(Uniforms._RayStepSize, settings.reflection.stepSize);
             material.SetInt(Uniforms._AdditiveReflection, settings.reflection.blendType == SSRReflectionBlendType.Additive ? 1 : 0);
