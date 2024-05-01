@@ -43,6 +43,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
         playerVelocity.y = Mathf.Sqrt(jumpHeight);
-        playerState = PlayerState.OnJump;
     }
 }
