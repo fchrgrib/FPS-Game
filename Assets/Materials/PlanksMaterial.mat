@@ -2,25 +2,35 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PlanksMaterial
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
-    _NORMALMAP _SPECGLOSSMAP _UVSEC_UV1
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _EMISSION
+  - _NORMALMAP
+  - _SPECGLOSSMAP
+  m_InvalidKeywords:
+  - _LIGHTMAPPING_DYNAMIC_LIGHTMAPS
+  - _LIGHTMAPPING_REALTIME
+  - _UVSEC_UV1
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 777d258aba35c41459675e40cf92c808, type: 3}
+        m_Texture: {fileID: 2800000, guid: e195a48b7304e10499b4e02e42b13bfc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -59,6 +69,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 41a4fe639750e1f46a3f96eef43eac7e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaTestRef: 0.5
     - _BumpScale: 0.85
@@ -86,3 +97,4 @@ Material:
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
+  m_BuildTextureStacks: []
