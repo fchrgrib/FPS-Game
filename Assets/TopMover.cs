@@ -17,14 +17,14 @@ public class TopMover : MonoBehaviour
 
     void Update ()
     {
-		if (Input.GetKey(KeyCode.U))
-        {
-            trans.position += force * Vector3.up * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            rigid.position += force * Vector3.up * Time.deltaTime;
-        }
+		// if (Input.GetKey(KeyCode.U))
+  //       {
+  //           trans.position += force * Vector3.up * Time.deltaTime;
+  //       }
+  //
+  //       if (Input.GetKey(KeyCode.R))
+  //       {
+  //           rigid.position += force * Vector3.up * Time.deltaTime;
+  //       }
 	}
 }

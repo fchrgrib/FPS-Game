@@ -7,25 +7,29 @@ namespace UnitySampleAssets.CrossPlatformInput.PlatformSpecific
     {
         public override float GetAxis(string name, bool raw)
         {
-            return raw ? Input.GetAxisRaw(name) : Input.GetAxis(name);
+            // return raw ? Input.GetAxisRaw(name) : Input.GetAxis(name);
+            return 0;
         }
 
 
         public override bool GetButton(string name)
         {
-            return Input.GetButton(name);
+            // return Input.GetButton(name);
+            return false;
         }
 
 
         public override bool GetButtonDown(string name)
         {
-            return Input.GetButtonDown(name);
+            // return Input.GetButtonDown(name);
+            return false;
         }
 
 
         public override bool GetButtonUp(string name)
         {
-            return Input.GetButtonUp(name);
+            // return Input.GetButtonUp(name);
+            return false;
         }
 
 
@@ -73,7 +77,7 @@ namespace UnitySampleAssets.CrossPlatformInput.PlatformSpecific
 
         public override Vector3 MousePosition()
         {
-            return Input.mousePosition;
+            return Vector3.zero;
         }
     }
 }

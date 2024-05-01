@@ -20,11 +20,11 @@ public class PauseManager : MonoBehaviour {
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			canvas.enabled = !canvas.enabled;
-			Pause();
-		}
+		// if (Input.GetKeyDown(KeyCode.Escape))
+		// {
+		// 	canvas.enabled = !canvas.enabled;
+		// 	Pause();
+		// }
 	}
 	
 	public void Pause()

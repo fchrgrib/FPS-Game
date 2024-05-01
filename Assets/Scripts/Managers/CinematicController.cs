@@ -39,10 +39,10 @@ namespace Nightmare
         {
             if (currentCinematic >= 0)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    SkipCinematic();
-                }
+                // if (Input.GetKeyDown(KeyCode.Space))
+                // {
+                //     SkipCinematic();
+                // }
 
                 if (currentCinematic == 0 && cinematicTimeline.state != PlayState.Playing)
                 {

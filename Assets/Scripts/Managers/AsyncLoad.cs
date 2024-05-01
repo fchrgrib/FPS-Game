@@ -9,10 +9,10 @@ public class AsyncLoad : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine("ASyncLoad");
-        }
+        // if (Input.GetKeyDown(KeyCode.A))
+        // {
+        //     StartCoroutine("ASyncLoad");
+        // }
     }
 
     private IEnumerator ASyncLoad()
