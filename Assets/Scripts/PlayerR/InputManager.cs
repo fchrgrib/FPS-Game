@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Input : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
 
     public PlayerInput PlayerInput;
@@ -22,7 +22,6 @@ public class Input : MonoBehaviour
         onGroundActions.Jump.performed += ctx => playerMovement.JumpPlayer();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         playerMovement.MovePlayer(onGroundActions.Move.ReadValue<Vector2>());

@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer(Vector2 input)
     {
         playerVelocity.y += gravity * Time.deltaTime;
+        if (playerVelocity.y <= 0f)
+        {
+            playerVelocity.y = gravity * 0.1f;
+        }
         
         var dir = Vector3.zero;
         dir.x = input.x;

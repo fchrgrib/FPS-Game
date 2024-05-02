@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""f71d376f-508b-46cc-988c-667e294daef5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +141,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MoveDirection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""988245e9-5c12-424b-b725-b47ddeeb293f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +163,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnGround_Move = m_OnGround.FindAction("Move", throwIfNotFound: true);
         m_OnGround_Jump = m_OnGround.FindAction("Jump", throwIfNotFound: true);
         m_OnGround_MoveDirection = m_OnGround.FindAction("MoveDirection", throwIfNotFound: true);
+        m_OnGround_Interact = m_OnGround.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnGround_Move;
     private readonly InputAction m_OnGround_Jump;
     private readonly InputAction m_OnGround_MoveDirection;
+    private readonly InputAction m_OnGround_Interact;
     public struct OnGroundActions
     {
         private @PlayerInput m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_OnGround_Move;
         public InputAction @Jump => m_Wrapper.m_OnGround_Jump;
         public InputAction @MoveDirection => m_Wrapper.m_OnGround_MoveDirection;
+        public InputAction @Interact => m_Wrapper.m_OnGround_Interact;
         public InputActionMap Get() { return m_Wrapper.m_OnGround; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +255,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveDirection.started += instance.OnMoveDirection;
             @MoveDirection.performed += instance.OnMoveDirection;
             @MoveDirection.canceled += instance.OnMoveDirection;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IOnGroundActions instance)
@@ -245,6 +271,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MoveDirection.started -= instance.OnMoveDirection;
             @MoveDirection.performed -= instance.OnMoveDirection;
             @MoveDirection.canceled -= instance.OnMoveDirection;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IOnGroundActions instance)
@@ -267,5 +296,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMoveDirection(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
