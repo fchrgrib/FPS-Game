@@ -1,0 +1,7 @@
+Prefabs using the modelLitBlue and modelLitRed materials are setup to take advantage of using Bloom to give a fully lit effect.
+
+When editing the vox files to take advantage of this use the bottom right colour of the colour pallet for Emissions.
+
+Magicavoxel is availible at https://ephtracy.github.io/
+
+If you have any requests or find any issues please email support@airdinghy.com
