@@ -1,0 +1,1501 @@
+fileFormatVersion: 2
+guid: 9eb4d689eea78e54da10689d7d578cef
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: 70s record player
+  - first:
+      1: 100002
+    second: Blue Hardcover Book Texture
+  - first:
+      1: 100004
+    second: Blue Hardcover Book Texture.1
+  - first:
+      1: 100006
+    second: Blue Hardcover Book Texture.2
+  - first:
+      1: 100008
+    second: Blue Hardcover Book Texture.2.2
+  - first:
+      1: 100010
+    second: Blue Hardcover Book Texture.2.3
+  - first:
+      1: 100012
+    second: Blue Hardcover Book Texture.3
+  - first:
+      1: 100014
+    second: Blue Hardcover Book Texture.4
+  - first:
+      1: 100016
+    second: Book Set Texture
+  - first:
+      1: 100018
+    second: Book Set Texture.2
+  - first:
+      1: 100020
+    second: book showcase
+  - first:
+      1: 100022
+    second: Bookshelf
+  - first:
+      1: 100024
+    second: //RootNode
+  - first:
+      1: 100026
+    second: Bookshelf.2
+  - first:
+      1: 100028
+    second: box
+  - first:
+      1: 100030
+    second: cardboard box
+  - first:
+      1: 100032
+    second: cardboard box.2
+  - first:
+      1: 100034
+    second: cupboard.1
+  - first:
+      1: 100036
+    second: cupboard.1.2
+  - first:
+      1: 100038
+    second: Encyclopedia
+  - first:
+      1: 100040
+    second: Encyclopedia.1
+  - first:
+      1: 100042
+    second: Encyclopedia.1.2
+  - first:
+      1: 100044
+    second: Encyclopedia.1.3
+  - first:
+      1: 100046
+    second: Encyclopedia.1.4
+  - first:
+      1: 100048
+    second: Encyclopedia.2
+  - first:
+      1: 100050
+    second: Encyclopedia.2.2
+  - first:
+      1: 100052
+    second: Encyclopedia.2.3
+  - first:
+      1: 100054
+    second: Encyclopedia.3
+  - first:
+      1: 100056
+    second: Encyclopedia.3.2
+  - first:
+      1: 100058
+    second: Encyclopedia.4
+  - first:
+      1: 100060
+    second: Encyclopedia.4.2
+  - first:
+      1: 100062
+    second: Encyclopedia.5
+  - first:
+      1: 100064
+    second: Encyclopedia.5.2
+  - first:
+      1: 100066
+    second: Encyclopedia.6
+  - first:
+      1: 100068
+    second: Encyclopedia.6.2
+  - first:
+      1: 100070
+    second: Encyclopedia.7
+  - first:
+      1: 100072
+    second: Encyclopedia.7.2
+  - first:
+      1: 100074
+    second: Film Reel 2
+  - first:
+      1: 100076
+    second: Film Reel 2.2
+  - first:
+      1: 100078
+    second: Gardening
+  - first:
+      1: 100080
+    second: Gardening.1
+  - first:
+      1: 100082
+    second: Gardening.1.2
+  - first:
+      1: 100084
+    second: Gardening.2
+  - first:
+      1: 100086
+    second: Gardening.2.2
+  - first:
+      1: 100088
+    second: History Of The World.1
+  - first:
+      1: 100090
+    second: History Of The World.1.2
+  - first:
+      1: 100092
+    second: History Of The World.2
+  - first:
+      1: 100094
+    second: History Of The World.3
+  - first:
+      1: 100096
+    second: History Of The World.3.2
+  - first:
+      1: 100098
+    second: History Of The World.4
+  - first:
+      1: 100100
+    second: Lower Poly Bookcase
+  - first:
+      1: 100102
+    second: Mid Thick Hardcover Book
+  - first:
+      1: 100104
+    second: Mid Thick Hardcover Book.1
+  - first:
+      1: 100106
+    second: Mid Thick Hardcover Book.1.2
+  - first:
+      1: 100108
+    second: Mid Thick Hardcover Book.1.3
+  - first:
+      1: 100110
+    second: Mid Thick Hardcover Book.1.4
+  - first:
+      1: 100112
+    second: Mid Thick Hardcover Book.1.5
+  - first:
+      1: 100114
+    second: Mid Thick Hardcover Book.1.6
+  - first:
+      1: 100116
+    second: Mid Thick Hardcover Book.2
+  - first:
+      1: 100118
+    second: Mid Thick Hardcover Book.2.2
+  - first:
+      1: 100120
+    second: Mid Thick Hardcover Book.2.3
+  - first:
+      1: 100122
+    second: Musical Box
+  - first:
+      1: 100124
+    second: Normal Bookcase
+  - first:
+      1: 100126
+    second: Old Record Player
+  - first:
+      1: 100128
+    second: Paperbox
+  - first:
+      1: 100130
+    second: Paperbox.1
+  - first:
+      1: 100132
+    second: Paperbox.1.2
+  - first:
+      1: 100134
+    second: Paperbox.2
+  - first:
+      1: 100136
+    second: Thck Hardcover Book Texture
+  - first:
+      1: 100138
+    second: Thck Hardcover Book Texture.1
+  - first:
+      1: 100140
+    second: Thin Hardcover
+  - first:
+      1: 100142
+    second: Thin Hardcover.1
+  - first:
+      1: 100144
+    second: Thin Hardcover.1.2
+  - first:
+      1: 100146
+    second: Thin Hardcover.2
+  - first:
+      1: 100148
+    second: Thin Hardcover.2.2
+  - first:
+      1: 100150
+    second: Thin Hardcover.2.3
+  - first:
+      1: 100152
+    second: Thin Hardcover.3
+  - first:
+      1: 100154
+    second: Thin Hardcover.3.2
+  - first:
+      1: 100156
+    second: Thin Hardcover.3.3
+  - first:
+      1: 100158
+    second: Thin Hardcover.4
+  - first:
+      1: 100160
+    second: Thin Hardcover.4.2
+  - first:
+      1: 100162
+    second: Thin Hardcover.4.3
+  - first:
+      1: 100164
+    second: Thin Paperback
+  - first:
+      1: 100166
+    second: Thin Paperback.1
+  - first:
+      1: 100168
+    second: Thin Paperback.1.2
+  - first:
+      1: 100170
+    second: Thin Paperback.1.3
+  - first:
+      1: 100172
+    second: Thin Paperback.1.4
+  - first:
+      1: 100174
+    second: Thin Paperback.14
+  - first:
+      1: 100176
+    second: Thin Paperback.2
+  - first:
+      1: 100178
+    second: Thin Paperback.2.2
+  - first:
+      1: 100180
+    second: Thin Paperback.3
+  - first:
+      1: 100182
+    second: Thin Paperback.3.2
+  - first:
+      1: 100184
+    second: Thin Paperback.4
+  - first:
+      1: 100186
+    second: Thin Paperback.4.2
+  - first:
+      1: 100188
+    second: Thin Paperback.5
+  - first:
+      1: 100190
+    second: Thin Paperback.5.2
+  - first:
+      1: 100192
+    second: Thin Paperback.6
+  - first:
+      1: 100194
+    second: Thin Paperback.6.2
+  - first:
+      4: 400000
+    second: 70s record player
+  - first:
+      4: 400002
+    second: Blue Hardcover Book Texture
+  - first:
+      4: 400004
+    second: Blue Hardcover Book Texture.1
+  - first:
+      4: 400006
+    second: Blue Hardcover Book Texture.2
+  - first:
+      4: 400008
+    second: Blue Hardcover Book Texture.2.2
+  - first:
+      4: 400010
+    second: Blue Hardcover Book Texture.2.3
+  - first:
+      4: 400012
+    second: Blue Hardcover Book Texture.3
+  - first:
+      4: 400014
+    second: Blue Hardcover Book Texture.4
+  - first:
+      4: 400016
+    second: Book Set Texture
+  - first:
+      4: 400018
+    second: Book Set Texture.2
+  - first:
+      4: 400020
+    second: book showcase
+  - first:
+      4: 400022
+    second: Bookshelf
+  - first:
+      4: 400024
+    second: //RootNode
+  - first:
+      4: 400026
+    second: Bookshelf.2
+  - first:
+      4: 400028
+    second: box
+  - first:
+      4: 400030
+    second: cardboard box
+  - first:
+      4: 400032
+    second: cardboard box.2
+  - first:
+      4: 400034
+    second: cupboard.1
+  - first:
+      4: 400036
+    second: cupboard.1.2
+  - first:
+      4: 400038
+    second: Encyclopedia
+  - first:
+      4: 400040
+    second: Encyclopedia.1
+  - first:
+      4: 400042
+    second: Encyclopedia.1.2
+  - first:
+      4: 400044
+    second: Encyclopedia.1.3
+  - first:
+      4: 400046
+    second: Encyclopedia.1.4
+  - first:
+      4: 400048
+    second: Encyclopedia.2
+  - first:
+      4: 400050
+    second: Encyclopedia.2.2
+  - first:
+      4: 400052
+    second: Encyclopedia.2.3
+  - first:
+      4: 400054
+    second: Encyclopedia.3
+  - first:
+      4: 400056
+    second: Encyclopedia.3.2
+  - first:
+      4: 400058
+    second: Encyclopedia.4
+  - first:
+      4: 400060
+    second: Encyclopedia.4.2
+  - first:
+      4: 400062
+    second: Encyclopedia.5
+  - first:
+      4: 400064
+    second: Encyclopedia.5.2
+  - first:
+      4: 400066
+    second: Encyclopedia.6
+  - first:
+      4: 400068
+    second: Encyclopedia.6.2
+  - first:
+      4: 400070
+    second: Encyclopedia.7
+  - first:
+      4: 400072
+    second: Encyclopedia.7.2
+  - first:
+      4: 400074
+    second: Film Reel 2
+  - first:
+      4: 400076
+    second: Film Reel 2.2
+  - first:
+      4: 400078
+    second: Gardening
+  - first:
+      4: 400080
+    second: Gardening.1
+  - first:
+      4: 400082
+    second: Gardening.1.2
+  - first:
+      4: 400084
+    second: Gardening.2
+  - first:
+      4: 400086
+    second: Gardening.2.2
+  - first:
+      4: 400088
+    second: History Of The World.1
+  - first:
+      4: 400090
+    second: History Of The World.1.2
+  - first:
+      4: 400092
+    second: History Of The World.2
+  - first:
+      4: 400094
+    second: History Of The World.3
+  - first:
+      4: 400096
+    second: History Of The World.3.2
+  - first:
+      4: 400098
+    second: History Of The World.4
+  - first:
+      4: 400100
+    second: Lower Poly Bookcase
+  - first:
+      4: 400102
+    second: Mid Thick Hardcover Book
+  - first:
+      4: 400104
+    second: Mid Thick Hardcover Book.1
+  - first:
+      4: 400106
+    second: Mid Thick Hardcover Book.1.2
+  - first:
+      4: 400108
+    second: Mid Thick Hardcover Book.1.3
+  - first:
+      4: 400110
+    second: Mid Thick Hardcover Book.1.4
+  - first:
+      4: 400112
+    second: Mid Thick Hardcover Book.1.5
+  - first:
+      4: 400114
+    second: Mid Thick Hardcover Book.1.6
+  - first:
+      4: 400116
+    second: Mid Thick Hardcover Book.2
+  - first:
+      4: 400118
+    second: Mid Thick Hardcover Book.2.2
+  - first:
+      4: 400120
+    second: Mid Thick Hardcover Book.2.3
+  - first:
+      4: 400122
+    second: Musical Box
+  - first:
+      4: 400124
+    second: Normal Bookcase
+  - first:
+      4: 400126
+    second: Old Record Player
+  - first:
+      4: 400128
+    second: Paperbox
+  - first:
+      4: 400130
+    second: Paperbox.1
+  - first:
+      4: 400132
+    second: Paperbox.1.2
+  - first:
+      4: 400134
+    second: Paperbox.2
+  - first:
+      4: 400136
+    second: Thck Hardcover Book Texture
+  - first:
+      4: 400138
+    second: Thck Hardcover Book Texture.1
+  - first:
+      4: 400140
+    second: Thin Hardcover
+  - first:
+      4: 400142
+    second: Thin Hardcover.1
+  - first:
+      4: 400144
+    second: Thin Hardcover.1.2
+  - first:
+      4: 400146
+    second: Thin Hardcover.2
+  - first:
+      4: 400148
+    second: Thin Hardcover.2.2
+  - first:
+      4: 400150
+    second: Thin Hardcover.2.3
+  - first:
+      4: 400152
+    second: Thin Hardcover.3
+  - first:
+      4: 400154
+    second: Thin Hardcover.3.2
+  - first:
+      4: 400156
+    second: Thin Hardcover.3.3
+  - first:
+      4: 400158
+    second: Thin Hardcover.4
+  - first:
+      4: 400160
+    second: Thin Hardcover.4.2
+  - first:
+      4: 400162
+    second: Thin Hardcover.4.3
+  - first:
+      4: 400164
+    second: Thin Paperback
+  - first:
+      4: 400166
+    second: Thin Paperback.1
+  - first:
+      4: 400168
+    second: Thin Paperback.1.2
+  - first:
+      4: 400170
+    second: Thin Paperback.1.3
+  - first:
+      4: 400172
+    second: Thin Paperback.1.4
+  - first:
+      4: 400174
+    second: Thin Paperback.14
+  - first:
+      4: 400176
+    second: Thin Paperback.2
+  - first:
+      4: 400178
+    second: Thin Paperback.2.2
+  - first:
+      4: 400180
+    second: Thin Paperback.3
+  - first:
+      4: 400182
+    second: Thin Paperback.3.2
+  - first:
+      4: 400184
+    second: Thin Paperback.4
+  - first:
+      4: 400186
+    second: Thin Paperback.4.2
+  - first:
+      4: 400188
+    second: Thin Paperback.5
+  - first:
+      4: 400190
+    second: Thin Paperback.5.2
+  - first:
+      4: 400192
+    second: Thin Paperback.6
+  - first:
+      4: 400194
+    second: Thin Paperback.6.2
+  - first:
+      23: 2300000
+    second: 70s record player
+  - first:
+      23: 2300002
+    second: Blue Hardcover Book Texture
+  - first:
+      23: 2300004
+    second: Blue Hardcover Book Texture.1
+  - first:
+      23: 2300006
+    second: Blue Hardcover Book Texture.2
+  - first:
+      23: 2300008
+    second: Blue Hardcover Book Texture.2.2
+  - first:
+      23: 2300010
+    second: Blue Hardcover Book Texture.2.3
+  - first:
+      23: 2300012
+    second: Blue Hardcover Book Texture.3
+  - first:
+      23: 2300014
+    second: Blue Hardcover Book Texture.4
+  - first:
+      23: 2300016
+    second: Bookshelf
+  - first:
+      23: 2300018
+    second: Bookshelf.2
+  - first:
+      23: 2300020
+    second: cupboard.1
+  - first:
+      23: 2300022
+    second: cupboard.1.2
+  - first:
+      23: 2300024
+    second: Encyclopedia
+  - first:
+      23: 2300026
+    second: Encyclopedia.1
+  - first:
+      23: 2300028
+    second: Encyclopedia.1.2
+  - first:
+      23: 2300030
+    second: Encyclopedia.1.3
+  - first:
+      23: 2300032
+    second: Encyclopedia.1.4
+  - first:
+      23: 2300034
+    second: Encyclopedia.2
+  - first:
+      23: 2300036
+    second: Encyclopedia.2.2
+  - first:
+      23: 2300038
+    second: Encyclopedia.2.3
+  - first:
+      23: 2300040
+    second: Encyclopedia.3
+  - first:
+      23: 2300042
+    second: Encyclopedia.3.2
+  - first:
+      23: 2300044
+    second: Encyclopedia.4
+  - first:
+      23: 2300046
+    second: Encyclopedia.4.2
+  - first:
+      23: 2300048
+    second: Encyclopedia.5
+  - first:
+      23: 2300050
+    second: Encyclopedia.5.2
+  - first:
+      23: 2300052
+    second: Encyclopedia.6
+  - first:
+      23: 2300054
+    second: Encyclopedia.6.2
+  - first:
+      23: 2300056
+    second: Encyclopedia.7
+  - first:
+      23: 2300058
+    second: Encyclopedia.7.2
+  - first:
+      23: 2300060
+    second: Film Reel 2
+  - first:
+      23: 2300062
+    second: Film Reel 2.2
+  - first:
+      23: 2300064
+    second: Gardening
+  - first:
+      23: 2300066
+    second: Gardening.1
+  - first:
+      23: 2300068
+    second: Gardening.1.2
+  - first:
+      23: 2300070
+    second: Gardening.2
+  - first:
+      23: 2300072
+    second: Gardening.2.2
+  - first:
+      23: 2300074
+    second: History Of The World.1
+  - first:
+      23: 2300076
+    second: History Of The World.1.2
+  - first:
+      23: 2300078
+    second: History Of The World.2
+  - first:
+      23: 2300080
+    second: History Of The World.3
+  - first:
+      23: 2300082
+    second: History Of The World.3.2
+  - first:
+      23: 2300084
+    second: History Of The World.4
+  - first:
+      23: 2300086
+    second: Mid Thick Hardcover Book
+  - first:
+      23: 2300088
+    second: Mid Thick Hardcover Book.1
+  - first:
+      23: 2300090
+    second: Mid Thick Hardcover Book.1.2
+  - first:
+      23: 2300092
+    second: Mid Thick Hardcover Book.1.3
+  - first:
+      23: 2300094
+    second: Mid Thick Hardcover Book.1.4
+  - first:
+      23: 2300096
+    second: Mid Thick Hardcover Book.1.5
+  - first:
+      23: 2300098
+    second: Mid Thick Hardcover Book.1.6
+  - first:
+      23: 2300100
+    second: Mid Thick Hardcover Book.2
+  - first:
+      23: 2300102
+    second: Mid Thick Hardcover Book.2.2
+  - first:
+      23: 2300104
+    second: Mid Thick Hardcover Book.2.3
+  - first:
+      23: 2300106
+    second: Musical Box
+  - first:
+      23: 2300108
+    second: Old Record Player
+  - first:
+      23: 2300110
+    second: Paperbox
+  - first:
+      23: 2300112
+    second: Paperbox.1
+  - first:
+      23: 2300114
+    second: Paperbox.1.2
+  - first:
+      23: 2300116
+    second: Paperbox.2
+  - first:
+      23: 2300118
+    second: Thck Hardcover Book Texture
+  - first:
+      23: 2300120
+    second: Thck Hardcover Book Texture.1
+  - first:
+      23: 2300122
+    second: Thin Hardcover
+  - first:
+      23: 2300124
+    second: Thin Hardcover.1
+  - first:
+      23: 2300126
+    second: Thin Hardcover.1.2
+  - first:
+      23: 2300128
+    second: Thin Hardcover.2
+  - first:
+      23: 2300130
+    second: Thin Hardcover.2.2
+  - first:
+      23: 2300132
+    second: Thin Hardcover.2.3
+  - first:
+      23: 2300134
+    second: Thin Hardcover.3
+  - first:
+      23: 2300136
+    second: Thin Hardcover.3.2
+  - first:
+      23: 2300138
+    second: Thin Hardcover.3.3
+  - first:
+      23: 2300140
+    second: Thin Hardcover.4
+  - first:
+      23: 2300142
+    second: Thin Hardcover.4.2
+  - first:
+      23: 2300144
+    second: Thin Hardcover.4.3
+  - first:
+      23: 2300146
+    second: Thin Paperback
+  - first:
+      23: 2300148
+    second: Thin Paperback.1
+  - first:
+      23: 2300150
+    second: Thin Paperback.1.2
+  - first:
+      23: 2300152
+    second: Thin Paperback.1.3
+  - first:
+      23: 2300154
+    second: Thin Paperback.1.4
+  - first:
+      23: 2300156
+    second: Thin Paperback.14
+  - first:
+      23: 2300158
+    second: Thin Paperback.2
+  - first:
+      23: 2300160
+    second: Thin Paperback.2.2
+  - first:
+      23: 2300162
+    second: Thin Paperback.3
+  - first:
+      23: 2300164
+    second: Thin Paperback.3.2
+  - first:
+      23: 2300166
+    second: Thin Paperback.4
+  - first:
+      23: 2300168
+    second: Thin Paperback.4.2
+  - first:
+      23: 2300170
+    second: Thin Paperback.5
+  - first:
+      23: 2300172
+    second: Thin Paperback.5.2
+  - first:
+      23: 2300174
+    second: Thin Paperback.6
+  - first:
+      23: 2300176
+    second: Thin Paperback.6.2
+  - first:
+      33: 3300000
+    second: 70s record player
+  - first:
+      33: 3300002
+    second: Blue Hardcover Book Texture
+  - first:
+      33: 3300004
+    second: Blue Hardcover Book Texture.1
+  - first:
+      33: 3300006
+    second: Blue Hardcover Book Texture.2
+  - first:
+      33: 3300008
+    second: Blue Hardcover Book Texture.2.2
+  - first:
+      33: 3300010
+    second: Blue Hardcover Book Texture.2.3
+  - first:
+      33: 3300012
+    second: Blue Hardcover Book Texture.3
+  - first:
+      33: 3300014
+    second: Blue Hardcover Book Texture.4
+  - first:
+      33: 3300016
+    second: Bookshelf
+  - first:
+      33: 3300018
+    second: Bookshelf.2
+  - first:
+      33: 3300020
+    second: cupboard.1
+  - first:
+      33: 3300022
+    second: cupboard.1.2
+  - first:
+      33: 3300024
+    second: Encyclopedia
+  - first:
+      33: 3300026
+    second: Encyclopedia.1
+  - first:
+      33: 3300028
+    second: Encyclopedia.1.2
+  - first:
+      33: 3300030
+    second: Encyclopedia.1.3
+  - first:
+      33: 3300032
+    second: Encyclopedia.1.4
+  - first:
+      33: 3300034
+    second: Encyclopedia.2
+  - first:
+      33: 3300036
+    second: Encyclopedia.2.2
+  - first:
+      33: 3300038
+    second: Encyclopedia.2.3
+  - first:
+      33: 3300040
+    second: Encyclopedia.3
+  - first:
+      33: 3300042
+    second: Encyclopedia.3.2
+  - first:
+      33: 3300044
+    second: Encyclopedia.4
+  - first:
+      33: 3300046
+    second: Encyclopedia.4.2
+  - first:
+      33: 3300048
+    second: Encyclopedia.5
+  - first:
+      33: 3300050
+    second: Encyclopedia.5.2
+  - first:
+      33: 3300052
+    second: Encyclopedia.6
+  - first:
+      33: 3300054
+    second: Encyclopedia.6.2
+  - first:
+      33: 3300056
+    second: Encyclopedia.7
+  - first:
+      33: 3300058
+    second: Encyclopedia.7.2
+  - first:
+      33: 3300060
+    second: Film Reel 2
+  - first:
+      33: 3300062
+    second: Film Reel 2.2
+  - first:
+      33: 3300064
+    second: Gardening
+  - first:
+      33: 3300066
+    second: Gardening.1
+  - first:
+      33: 3300068
+    second: Gardening.1.2
+  - first:
+      33: 3300070
+    second: Gardening.2
+  - first:
+      33: 3300072
+    second: Gardening.2.2
+  - first:
+      33: 3300074
+    second: History Of The World.1
+  - first:
+      33: 3300076
+    second: History Of The World.1.2
+  - first:
+      33: 3300078
+    second: History Of The World.2
+  - first:
+      33: 3300080
+    second: History Of The World.3
+  - first:
+      33: 3300082
+    second: History Of The World.3.2
+  - first:
+      33: 3300084
+    second: History Of The World.4
+  - first:
+      33: 3300086
+    second: Mid Thick Hardcover Book
+  - first:
+      33: 3300088
+    second: Mid Thick Hardcover Book.1
+  - first:
+      33: 3300090
+    second: Mid Thick Hardcover Book.1.2
+  - first:
+      33: 3300092
+    second: Mid Thick Hardcover Book.1.3
+  - first:
+      33: 3300094
+    second: Mid Thick Hardcover Book.1.4
+  - first:
+      33: 3300096
+    second: Mid Thick Hardcover Book.1.5
+  - first:
+      33: 3300098
+    second: Mid Thick Hardcover Book.1.6
+  - first:
+      33: 3300100
+    second: Mid Thick Hardcover Book.2
+  - first:
+      33: 3300102
+    second: Mid Thick Hardcover Book.2.2
+  - first:
+      33: 3300104
+    second: Mid Thick Hardcover Book.2.3
+  - first:
+      33: 3300106
+    second: Musical Box
+  - first:
+      33: 3300108
+    second: Old Record Player
+  - first:
+      33: 3300110
+    second: Paperbox
+  - first:
+      33: 3300112
+    second: Paperbox.1
+  - first:
+      33: 3300114
+    second: Paperbox.1.2
+  - first:
+      33: 3300116
+    second: Paperbox.2
+  - first:
+      33: 3300118
+    second: Thck Hardcover Book Texture
+  - first:
+      33: 3300120
+    second: Thck Hardcover Book Texture.1
+  - first:
+      33: 3300122
+    second: Thin Hardcover
+  - first:
+      33: 3300124
+    second: Thin Hardcover.1
+  - first:
+      33: 3300126
+    second: Thin Hardcover.1.2
+  - first:
+      33: 3300128
+    second: Thin Hardcover.2
+  - first:
+      33: 3300130
+    second: Thin Hardcover.2.2
+  - first:
+      33: 3300132
+    second: Thin Hardcover.2.3
+  - first:
+      33: 3300134
+    second: Thin Hardcover.3
+  - first:
+      33: 3300136
+    second: Thin Hardcover.3.2
+  - first:
+      33: 3300138
+    second: Thin Hardcover.3.3
+  - first:
+      33: 3300140
+    second: Thin Hardcover.4
+  - first:
+      33: 3300142
+    second: Thin Hardcover.4.2
+  - first:
+      33: 3300144
+    second: Thin Hardcover.4.3
+  - first:
+      33: 3300146
+    second: Thin Paperback
+  - first:
+      33: 3300148
+    second: Thin Paperback.1
+  - first:
+      33: 3300150
+    second: Thin Paperback.1.2
+  - first:
+      33: 3300152
+    second: Thin Paperback.1.3
+  - first:
+      33: 3300154
+    second: Thin Paperback.1.4
+  - first:
+      33: 3300156
+    second: Thin Paperback.14
+  - first:
+      33: 3300158
+    second: Thin Paperback.2
+  - first:
+      33: 3300160
+    second: Thin Paperback.2.2
+  - first:
+      33: 3300162
+    second: Thin Paperback.3
+  - first:
+      33: 3300164
+    second: Thin Paperback.3.2
+  - first:
+      33: 3300166
+    second: Thin Paperback.4
+  - first:
+      33: 3300168
+    second: Thin Paperback.4.2
+  - first:
+      33: 3300170
+    second: Thin Paperback.5
+  - first:
+      33: 3300172
+    second: Thin Paperback.5.2
+  - first:
+      33: 3300174
+    second: Thin Paperback.6
+  - first:
+      33: 3300176
+    second: Thin Paperback.6.2
+  - first:
+      43: 4300000
+    second: Bookshelf.2
+  - first:
+      43: 4300002
+    second: cupboard.1.2
+  - first:
+      43: 4300004
+    second: Paperbox.1
+  - first:
+      43: 4300006
+    second: Thin Hardcover.2.3
+  - first:
+      43: 4300008
+    second: Thin Hardcover.3.2
+  - first:
+      43: 4300010
+    second: Encyclopedia.7.2
+  - first:
+      43: 4300012
+    second: Mid Thick Hardcover Book.2.2
+  - first:
+      43: 4300014
+    second: Thin Paperback.6.2
+  - first:
+      43: 4300016
+    second: Blue Hardcover Book Texture.2.2
+  - first:
+      43: 4300018
+    second: Paperbox.1.2
+  - first:
+      43: 4300020
+    second: Encyclopedia.5.2
+  - first:
+      43: 4300022
+    second: Encyclopedia.6.2
+  - first:
+      43: 4300024
+    second: Thin Paperback.4.2
+  - first:
+      43: 4300026
+    second: Thin Paperback.5.2
+  - first:
+      43: 4300028
+    second: Thin Hardcover.3.3
+  - first:
+      43: 4300030
+    second: Thin Hardcover.1.2
+  - first:
+      43: 4300032
+    second: Encyclopedia.4.2
+  - first:
+      43: 4300034
+    second: Encyclopedia.1.3
+  - first:
+      43: 4300036
+    second: Encyclopedia
+  - first:
+      43: 4300038
+    second: Encyclopedia.2.2
+  - first:
+      43: 4300040
+    second: Encyclopedia.3.2
+  - first:
+      43: 4300042
+    second: Mid Thick Hardcover Book.1.4
+  - first:
+      43: 4300044
+    second: Mid Thick Hardcover Book
+  - first:
+      43: 4300046
+    second: Thin Paperback.1.3
+  - first:
+      43: 4300048
+    second: Thin Paperback.2.2
+  - first:
+      43: 4300050
+    second: Thin Paperback.3.2
+  - first:
+      43: 4300052
+    second: Encyclopedia.1.4
+  - first:
+      43: 4300054
+    second: Gardening.2.2
+  - first:
+      43: 4300056
+    second: Thin Hardcover.4
+  - first:
+      43: 4300058
+    second: Thin Hardcover.4.2
+  - first:
+      43: 4300060
+    second: Mid Thick Hardcover Book.1.5
+  - first:
+      43: 4300062
+    second: History Of The World.1.2
+  - first:
+      43: 4300064
+    second: History Of The World.3.2
+  - first:
+      43: 4300066
+    second: Blue Hardcover Book Texture.2.3
+  - first:
+      43: 4300068
+    second: Blue Hardcover Book Texture.1
+  - first:
+      43: 4300070
+    second: Blue Hardcover Book Texture.3
+  - first:
+      43: 4300072
+    second: Blue Hardcover Book Texture.4
+  - first:
+      43: 4300074
+    second: Mid Thick Hardcover Book.1.6
+  - first:
+      43: 4300076
+    second: Thin Paperback.1.4
+  - first:
+      43: 4300078
+    second: Gardening.1.2
+  - first:
+      43: 4300080
+    second: 70s record player
+  - first:
+      43: 4300082
+    second: Bookshelf
+  - first:
+      43: 4300084
+    second: cupboard.1
+  - first:
+      43: 4300086
+    second: Musical Box
+  - first:
+      43: 4300088
+    second: Old Record Player
+  - first:
+      43: 4300090
+    second: Paperbox
+  - first:
+      43: 4300092
+    second: Encyclopedia.5
+  - first:
+      43: 4300094
+    second: Encyclopedia.6
+  - first:
+      43: 4300096
+    second: Thin Paperback.4
+  - first:
+      43: 4300098
+    second: Thin Paperback.5
+  - first:
+      43: 4300100
+    second: Paperbox.2
+  - first:
+      43: 4300102
+    second: Film Reel 2.2
+  - first:
+      43: 4300104
+    second: Film Reel 2
+  - first:
+      43: 4300106
+    second: Thin Hardcover.2
+  - first:
+      43: 4300108
+    second: Thin Hardcover.3
+  - first:
+      43: 4300110
+    second: Thin Hardcover
+  - first:
+      43: 4300112
+    second: Thin Hardcover.1
+  - first:
+      43: 4300114
+    second: Encyclopedia.7
+  - first:
+      43: 4300116
+    second: Encyclopedia.4
+  - first:
+      43: 4300118
+    second: Encyclopedia.1
+  - first:
+      43: 4300120
+    second: Encyclopedia.2
+  - first:
+      43: 4300122
+    second: Encyclopedia.3
+  - first:
+      43: 4300124
+    second: Mid Thick Hardcover Book.1
+  - first:
+      43: 4300126
+    second: Mid Thick Hardcover Book.2
+  - first:
+      43: 4300128
+    second: Thin Paperback.1
+  - first:
+      43: 4300130
+    second: Thin Paperback.2
+  - first:
+      43: 4300132
+    second: Thin Paperback.3
+  - first:
+      43: 4300134
+    second: Thin Paperback.6
+  - first:
+      43: 4300136
+    second: Encyclopedia.1.2
+  - first:
+      43: 4300138
+    second: Gardening.2
+  - first:
+      43: 4300140
+    second: Thin Hardcover.2.2
+  - first:
+      43: 4300142
+    second: Mid Thick Hardcover Book.1.2
+  - first:
+      43: 4300144
+    second: History Of The World.4
+  - first:
+      43: 4300146
+    second: History Of The World.1
+  - first:
+      43: 4300148
+    second: History Of The World.2
+  - first:
+      43: 4300150
+    second: History Of The World.3
+  - first:
+      43: 4300152
+    second: Blue Hardcover Book Texture.2
+  - first:
+      43: 4300154
+    second: Blue Hardcover Book Texture
+  - first:
+      43: 4300156
+    second: Mid Thick Hardcover Book.1.3
+  - first:
+      43: 4300158
+    second: Thin Paperback.1.2
+  - first:
+      43: 4300160
+    second: Gardening.1
+  - first:
+      43: 4300162
+    second: Thin Hardcover.4.3
+  - first:
+      43: 4300164
+    second: Encyclopedia.2.3
+  - first:
+      43: 4300166
+    second: Mid Thick Hardcover Book.2.3
+  - first:
+      43: 4300168
+    second: Thin Paperback.14
+  - first:
+      43: 4300170
+    second: Thin Paperback
+  - first:
+      43: 4300172
+    second: Gardening
+  - first:
+      43: 4300174
+    second: Thck Hardcover Book Texture
+  - first:
+      43: 4300176
+    second: Thck Hardcover Book Texture.1
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
