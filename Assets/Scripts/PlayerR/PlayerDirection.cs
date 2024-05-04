@@ -20,7 +20,6 @@ public class PlayerDirection : MonoBehaviour
         vRotation = Mathf.Clamp(vRotation, -80f, 80f);
         Camera.transform.localRotation = Quaternion.Euler(vRotation, 0, 0);
         transform.Rotate(mouseX * Time.deltaTime * hSensitivity * Vector3.up);
-        pet?.transform.Rotate(mouseX * Time.deltaTime * hSensitivity * Vector3.up);
-
+        // pet?.transform.Rotate(mouseX * Time.deltaTime * hSensitivity * Vector3.up);
     }
 }

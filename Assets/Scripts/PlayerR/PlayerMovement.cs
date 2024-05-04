@@ -11,11 +11,8 @@ public class PlayerMovement : MonoBehaviour
         OnGround,
         OnJump
     }
-
-    public GameObject pet;
     
     private CharacterController characterController;
-    private CharacterController petController;
     private Vector3 playerVelocity;
     private PlayerState playerState = PlayerState.OnGround;
     
@@ -26,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        petController = pet?.GetComponent<CharacterController>();
     }
 
     public void MovePlayer(Vector2 input)
@@ -42,8 +38,6 @@ public class PlayerMovement : MonoBehaviour
         dir.z = input.y;
         var movement = speed * Time.deltaTime * transform.TransformDirection(dir) + playerVelocity;
         characterController.Move(movement);
-        petController?.Move(movement);
-        Debug.Log(movement);
     }
 
     public void JumpPlayer()
