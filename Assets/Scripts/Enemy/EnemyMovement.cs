@@ -150,8 +150,7 @@ namespace Nightmare
         {
             Vector3 randomPoint = UnityEngine.Random.insideUnitSphere * distance + this.transform.position;;
 
-            NavMeshHit navHit;
-            NavMesh.SamplePosition(randomPoint, out navHit, distance, layermask);
+            NavMesh.SamplePosition(randomPoint, out var navHit, distance, layermask);
 
             return navHit.position;
         }
@@ -163,8 +162,7 @@ namespace Nightmare
 
         private int GetCurrentNavArea()
         {
-            NavMeshHit navHit;
-            nav.SamplePathPosition(-1, 0.0f, out navHit);
+            nav.SamplePathPosition(-1, 0.0f, out var navHit);
 
             return navHit.mask;
         }

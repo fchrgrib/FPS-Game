@@ -41,7 +41,7 @@ namespace Nightmare
         {
             if (IsDead())
             {
-                transform.Translate (-Vector3.up * sinkSpeed * Time.deltaTime);
+                transform.Translate (-Vector3.up * (sinkSpeed * Time.deltaTime));
                 if (transform.position.y < -10f)
                 {
                     Destroy(this.gameObject);
