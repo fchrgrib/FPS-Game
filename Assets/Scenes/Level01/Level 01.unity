@@ -6460,6 +6460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aa93f5ba0fb1d4c99d06c31311abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demage: 10
+  range: 100
+  timeBetweenShoot: 0.15
+  cam: {fileID: 1885112182}
 --- !u!1 &722267399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7e41545246e099d4da103b6631f9489b, type: 3}
@@ -6757,6 +6761,10 @@ PrefabInstance:
     - target: {fileID: 3528797143268262310, guid: bbe37b25a2946af438186467560df22c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415226864284291450, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5260623595148368245, guid: bbe37b25a2946af438186467560df22c, type: 3}
       propertyPath: m_Name
@@ -8534,6 +8542,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1412710488757128869, guid: bbe37b25a2946af438186467560df22c, type: 3}
   m_PrefabInstance: {fileID: 917855806}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1885112182 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5288095484747083144, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 917855806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1914803402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8817,7 +8830,7 @@ GameObject:
   - component: {fileID: 2054920239}
   - component: {fileID: 2054920238}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Weapon
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
