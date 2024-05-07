@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microlight.MicroBar;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, CheatListener
 {
 
     [SerializeField] private GameObject attackerPet;
@@ -36,6 +36,21 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerHp -= 1;
+        // TakeDamage(1f);
+    }
+
+    private void TakeDamage(float damage)
+    {
+        this.HandleTakingDamage(
+            () =>
+            {
+                PlayerHp -= damage;
+                // change this if necessary
+                if (PlayerHp <= 0)
+                {
+                    // game over
+                }
+            }
+        );
     }
 }

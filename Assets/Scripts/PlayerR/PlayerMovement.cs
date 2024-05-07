@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, CheatListener
 {
 
     private enum PlayerState
@@ -48,5 +48,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         playerVelocity.y = Mathf.Sqrt(jumpHeight);
+    }
+    
+    public void ChangeSpeed()
+    {
+        this.HandleSpeed(ref speed);
     }
 }

@@ -4,30 +4,23 @@ using UnityEngine.Serialization;
 
 public class Cheats : MonoBehaviour
 {
-    public UnityEvent cheatEvent;
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            cheatEvent.Invoke();
-        }
-    }
+    public bool noDamage;
+    public bool oneHitKill;
+    public bool doubleSpeed;
     
     void OnEnable()
     {
         print("Cheats Enabled");
-        cheatEvent.AddListener(OnCheat);
+        PlayerCheats.noDamage = noDamage;
+        PlayerCheats.oneHitKill = oneHitKill;
+        PlayerCheats.doubleSpeed = doubleSpeed;
     }
     
     void OnDisable()
     {
         print("Cheats Disabled");
-        cheatEvent.RemoveListener(OnCheat);
-    }
-    
-    void OnCheat()
-    {
-        print("onCheat print");
+        PlayerCheats.noDamage = false;
+        PlayerCheats.oneHitKill = false;
+        PlayerCheats.doubleSpeed = false;
     }
 }
