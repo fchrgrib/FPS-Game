@@ -6,7 +6,7 @@ public abstract class OrbBehaviour : MonoBehaviour
     public float detectionRadius = 5f;
     [SerializeField] private LayerMask playerLayerMask;
 
-    private bool used;
+    private bool _used;
 
     public void Start()
     {
@@ -15,7 +15,7 @@ public abstract class OrbBehaviour : MonoBehaviour
 
     public void RemoveOrb()
     {
-        if (used)
+        if (_used)
         {
             return;
         }
@@ -40,7 +40,7 @@ public abstract class OrbBehaviour : MonoBehaviour
         PlayerManager playerManager = hitColliders[0].GetComponentInParent<PlayerManager>();
         PlayerMovement playerMovement = hitColliders[0].GetComponentInParent<PlayerMovement>();
         ExecuteOrbPerk(playerManager, playerMovement);
-        used = true;
+        _used = true;
         RemoveOrb();
     }
 
