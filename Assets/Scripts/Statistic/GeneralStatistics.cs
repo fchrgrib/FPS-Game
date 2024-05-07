@@ -19,13 +19,27 @@ public class GeneralStatistics : MonoBehaviour
         get => elapsedTime;
         set
         {
-            
+            elapsedTime = value;
         }
     }
-    
-    public float TravelDistance { get; set; }
-    
-    public float Accuracy { get; set; }
+
+    public float TravelDistance
+    {
+        get => travelDistance;
+        set
+        {
+            travelDistance = value;
+        }
+    }
+
+    public float Accuracy
+    {
+        get => accuracy;
+        set
+        {
+            accuracy = value;
+        }
+    }
     
     public void UpdateAccuracy(int hitCount, int bulletCount)
     {
@@ -35,20 +49,41 @@ public class GeneralStatistics : MonoBehaviour
 
 
     }
-    
-    public float Death { get; set; }
+
+    public int Death
+    {
+        get => totalDeathCount;
+        set
+        {
+            totalDeathCount = value;
+        }
+    }
     public void DeathCount(int deathCount)
     {
         totalDeathCount += deathCount;
     }
-    
-    public float Kill { get; set; }
+
+    public int Kill
+    {
+        get => totalKillCount;
+        set
+        {
+            totalKillCount = value;
+        }
+    }
     public void KillCount(int killCount)
     {
         totalKillCount += killCount;
     }
-    
-    public float KillDeath { get; set; }
+
+    public float KillDeath
+    {
+        get => killdeath;
+        set 
+        {
+            killdeath = value;
+        } 
+    }
     public void KillDeathRatio(int killCount)
     {
         killdeath = totalKillCount / totalDeathCount;
