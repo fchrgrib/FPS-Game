@@ -36,7 +36,6 @@ public class DefaultPetMovement : MonoBehaviour
             movement += -playerDistance * Time.deltaTime;
         }
         
-        Debug.Log(movement.x);
         if (Math.Abs(movement.x) > 0f)
         {
             var movementNormalized = new Vector3(movement.x, 0, movement.z);

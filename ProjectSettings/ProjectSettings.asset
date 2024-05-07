@@ -737,21 +737,23 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2
-    PS4: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    PS5: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    QNX: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    Stadia: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    Standalone: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    VisionOS: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    WebGL: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    Windows Store Apps: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    XboxOne: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
-    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    tvOS: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    GameCoreScarlett: DOTWEEN
+    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    LinuxHeadlessSimulation: DOTWEEN
+    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;DOTWEEN
+    PS4: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    PS5: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    QNX: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    Stadia: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    Standalone: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    VisionOS: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    WebGL: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    Windows Store Apps: CROSS_PLATFORM_INPUT;MOBILE_INPUT;DOTWEEN
+    XboxOne: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT;DOTWEEN
+    tvOS: UNITY_POST_PROCESSING_STACK_V2;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_62;DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
