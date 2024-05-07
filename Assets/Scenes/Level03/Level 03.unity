@@ -2869,6 +2869,88 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1572383400}
   m_SourcePrefab: {fileID: 100100000, guid: e03ae68b9fdf406439d6f7e50456dc75, type: 3}
+--- !u!1001 &574536091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1943598022}
+    m_Modifications:
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.2777843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.2777843
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.9730015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 104.36367
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891532435591174532, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891532435591174532, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891532435591174532, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.963
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236359416903694273, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+      propertyPath: m_Name
+      value: FinalBox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+--- !u!4 &574536092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
+  m_PrefabInstance: {fileID: 574536091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585986195
 GameObject:
   m_ObjectHideFlags: 0
@@ -13003,6 +13085,7 @@ Transform:
   - {fileID: 1888708295}
   - {fileID: 248927018}
   - {fileID: 551476664}
+  - {fileID: 574536092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957285701
