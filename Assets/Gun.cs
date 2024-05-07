@@ -8,7 +8,6 @@ public class Gun : MonoBehaviour
     public float demage = 10f;
     public float range = 100f;
     public float timeBetweenShoot = 0.15f;
-    public GameObject gun;
 
     float effectsDisplayTime = 0.2f;
     float timer;
