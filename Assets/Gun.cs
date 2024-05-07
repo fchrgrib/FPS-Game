@@ -1,6 +1,8 @@
+using Nightmare;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class Gun : MonoBehaviour
 
     float effectsDisplayTime = 0.2f;
     float timer;
+    int shootableMask;
+    Ray ray = new Ray();
     ParticleSystem particleSystem;
     AudioSource audioSource;
     Light light;
@@ -25,6 +29,7 @@ public class Gun : MonoBehaviour
         particleSystem = GetComponent<ParticleSystem>();
         light = GetComponent<Light>();
         lineRenderer = GetComponent<LineRenderer>();
+        shootableMask = LayerMask.GetMask("Enemy");
     }
 
     // Update is called once per frame
@@ -72,19 +77,34 @@ public class Gun : MonoBehaviour
         lineRenderer.SetPosition(0, transform.position);
 
 
+        ray.origin = transform.position;
+        ray.direction = transform.forward;
 
 
-        
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+
+
+
+        if (Physics.Raycast(ray, out hit, range, shootableMask))
         {
             /*Debug.Log(hit.transform.name);*/
+
+            BoxHealth enemyHealth = hit.collider.GetComponent<BoxHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(10);
+            }
 
             lineRenderer.SetPosition(1, hit.point);
 
             // TODO: hit damage to object
 
         
+        }
+        else
+        {
+            // ... set the second position of the line renderer to the fullest extent of the gun's range.
+            lineRenderer.SetPosition(1, ray.origin + ray.direction * range);
         }
     }
 }
