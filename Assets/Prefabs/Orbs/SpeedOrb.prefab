@@ -4882,7 +4882,7 @@ GameObject:
   - component: {fileID: 7629372367187024658}
   - component: {fileID: 1446165208190610277}
   m_Layer: 0
-  m_Name: increase-speed
+  m_Name: SpeedOrb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

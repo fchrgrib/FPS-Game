@@ -1,17 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class HealthOrbBehavior : OrbsBehaviourScript
+public class HealthOrbBehavior : OrbBehaviour
 {
-    
-    protected override void PlayerEnter(PlayerManager playerManager)
+    protected override void ExecuteOrbPerk(PlayerManager playerManager, PlayerMovement playerMovement)
     {
         if (playerManager.PlayerHp >= 85)
         {
             playerManager.PlayerHp = 100;
             return;
         }
+
         playerManager.PlayerHp += 20;
     }
 }

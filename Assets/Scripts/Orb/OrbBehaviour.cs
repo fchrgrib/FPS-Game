@@ -1,43 +1,48 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class OrbsBehaviourScript : MonoBehaviour
+public abstract class OrbBehaviour : MonoBehaviour
 {
     public float countdownDuration = 5f;
     public float detectionRadius = 5f;
     [SerializeField] private LayerMask playerLayerMask;
 
-    private bool used;
+    private bool _used;
 
-    private void Start()
+    public void Start()
     {
         Invoke(nameof(RemoveOrb), countdownDuration);
     }
 
-    protected void RemoveOrb()
+    public void RemoveOrb()
     {
-        if (used)
+        if (_used)
         {
             return;
         }
+
         Destroy(gameObject);
     }
 
     private void Update()
     {
+        // If the player is not colliding with the orb...
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayerMask);
         if (hitColliders.Length != 1)
         {
+            // Return the method
             return;
         }
 
+        // If the player is colliding:
+        // 1. Execute the orb perk
+        // 2. Mark it as used
+        // 3. Remove it
         PlayerManager playerManager = hitColliders[0].GetComponentInParent<PlayerManager>();
-        PlayerEnter(playerManager);
-        used = true;
+        PlayerMovement playerMovement = hitColliders[0].GetComponentInParent<PlayerMovement>();
+        ExecuteOrbPerk(playerManager, playerMovement);
+        _used = true;
         RemoveOrb();
     }
 
-    protected abstract void PlayerEnter(PlayerManager playerManager);
+    protected abstract void ExecuteOrbPerk(PlayerManager playerManager, PlayerMovement playerMovement);
 }
