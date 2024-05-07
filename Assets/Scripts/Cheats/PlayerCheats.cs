@@ -2,7 +2,6 @@ using System;
 
 public interface CheatListener
 {
-    
 }
 
 [Serializable]
@@ -17,35 +16,35 @@ public static class PlayerCheats
     #region Toggleable Cheats
 
     public static void HandleTakingDamage(this CheatListener listener, Action normalAction)
+    {
+        if (noDamage)
         {
-            if (noDamage)
-            {
-                return;
-            }
-            
-            normalAction();
+            return;
         }
-    
-        public static bool HandleDealingDamage(this CheatListener listener, Action normalAction)
+
+        normalAction();
+    }
+
+    public static bool HandleDealingDamage(this CheatListener listener, Action normalAction)
+    {
+        // set playerDamageMultiplier to max value?
+        throw new NotImplementedException();
+    }
+
+    public static void HandleSpeed(this CheatListener listener, PlayerMovement playerMovement)
+    {
+        switch (doubleSpeed)
         {
-            // set playerDamageMultiplier to max value?
-            throw new NotImplementedException();
+            case true when !_doubleSpeedApplied:
+                playerMovement.Speed *= 2;
+                _doubleSpeedApplied = true;
+                break;
+            case false when _doubleSpeedApplied:
+                playerMovement.Speed /= 2;
+                _doubleSpeedApplied = false;
+                break;
         }
-        
-        public static void HandleSpeed(this CheatListener listener, ref float speed)
-        {
-            switch (doubleSpeed)
-            {
-                case true when !_doubleSpeedApplied:
-                    speed *= 2;
-                    _doubleSpeedApplied = true;
-                    break;
-                case false when _doubleSpeedApplied:
-                    speed /= 2;
-                    _doubleSpeedApplied = false;
-                    break;
-            }
-        }
+    }
 
     #endregion
 
@@ -55,22 +54,22 @@ public static class PlayerCheats
     {
         throw new NotImplementedException();
     }
-    
+
     public static void PetImmune(this CheatListener listener)
     {
         throw new NotImplementedException();
     }
-    
+
     public static void KillPet(this CheatListener listener)
     {
         throw new NotImplementedException();
     }
-    
+
     public static void GetOrb(this CheatListener listener)
     {
         throw new NotImplementedException();
     }
-    
+
     public static void Skip(this CheatListener listener)
     {
         throw new NotImplementedException();
