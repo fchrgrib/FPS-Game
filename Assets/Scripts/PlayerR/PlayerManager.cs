@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Microlight.MicroBar;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
 
+    public const string ATTACKER_PET = "ATTACKER_PET";
+    public const string HEALER_PET = "HEALER_PET";
+    public const string NO_PET = "NO_PET";
+    
+    [SerializeField] private GameObject petHolder;
     [SerializeField] private GameObject attackerPet;
     [SerializeField] private GameObject healerPet;
     [SerializeField] private MicroBar playerHealthBar;
 
+    private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
+    private string currentPet = NO_PET;
+    
+    public static string CurrentPet { get; set; }
 
     public float PlayerHp
     {
@@ -27,15 +37,42 @@ public class PlayerManager : MonoBehaviour
 
     public float PlayerDamageMultiplier { get; set; }
     
-    // Start is called before the first frame update
     void Start()
     {
         playerHealthBar.Initialize(MaxHp);
+        
+        if (string.IsNullOrEmpty(SceneParams.PlayerPet))
+        {
+            currentPet = NO_PET;
+        }
+        else
+        {
+            currentPet = SceneParams.PlayerPet;
+        }
+        Destroy(scenePet);
+
+        switch (currentPet)
+        {
+            case ATTACKER_PET:
+                scenePet = Instantiate(attackerPet);
+                break;
+            case HEALER_PET:
+                scenePet = Instantiate(healerPet);
+                break;
+        }
+
+        if (currentPet != NO_PET)
+        {
+            scenePet.transform.parent = petHolder.transform;
+            scenePet.transform.position = petHolder.transform.position;
+        }
+
+        CurrentPet = currentPet;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        PlayerHp -= 1;
+        PlayerHp -= 0.1f;
     }
+    
 }

@@ -35,8 +35,8 @@ public abstract class OrbsBehaviourScript : MonoBehaviour
 
         PlayerManager playerManager = hitColliders[0].GetComponentInParent<PlayerManager>();
         PlayerEnter(playerManager);
-        used = true;
         RemoveOrb();
+        used = true;
     }
 
     protected abstract void PlayerEnter(PlayerManager playerManager);

@@ -13,8 +13,6 @@ public class InputManager : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private PlayerDirection playerDirection;
-
-    private DefaultPetMovement petMovement;
     
     void Awake()
     {
@@ -23,17 +21,11 @@ public class InputManager : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerDirection = GetComponent<PlayerDirection>();
         onGroundActions.Jump.performed += ctx => playerMovement.JumpPlayer();
-
-        petMovement = pet.transform.GetChild(0)?.GetComponent<DefaultPetMovement>();
     }
 
     void FixedUpdate()
     {
-        var prevPosition = transform.position;
         playerMovement.MovePlayer(onGroundActions.Move.ReadValue<Vector2>());
-        var movement = transform.position - prevPosition;
-        movement.y = 0;
-        petMovement?.MovePet(movement, transform.position);
     }
 
     private void LateUpdate()

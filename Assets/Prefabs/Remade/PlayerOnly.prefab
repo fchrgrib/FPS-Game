@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 6789490923025519971}
   - component: {fileID: 7713728530822513248}
   - component: {fileID: 3016964149163704366}
+  - component: {fileID: 8220678057462411611}
   m_Layer: 0
   m_Name: PlayerOnly
   m_TagString: Untagged
@@ -252,6 +253,23 @@ MonoBehaviour:
   speed: 15
   gravity: -9.8
   jumpHeight: 3
+--- !u!114 &8220678057462411611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485291430551970356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36cb433c409aca640977d0104a8e9c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  shopLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  uiInteractText: {fileID: 9032440141398077137}
 --- !u!1 &654831133468963024
 GameObject:
   m_ObjectHideFlags: 0

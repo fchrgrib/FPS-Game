@@ -6,33 +6,29 @@ public class AttackerPet : DefaultPetMovement
 {
     
     public float detectionRadius = 5f;
-    public float attackingDistance = 1.5f;
     public LayerMask enemyLayerMask;
 
     private Collider currentCollider;
-    
-    public override void MovePet(Vector3 movement, Vector3 playerPosition)
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(playerPosition, detectionRadius, enemyLayerMask);
 
+    public override Vector3 DoActionAndGetDestination(PlayerManager playerManager, GameObject player)
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, detectionRadius,
+            enemyLayerMask);
+        
         if (hitColliders.Length == 0)
         {
-            base.MovePet(movement, playerPosition);
-            return;
+            return base.DoActionAndGetDestination(playerManager, player);
         }
         
-        // TODO: check if enemy has hied, if so change the enemy
-        if (currentCollider is null)
-        {
-            currentCollider = hitColliders[0];
-        }
+        // TODO: make sure the destination is sorted by nearest
+        var destination = hitColliders[0].transform.position;
+        var movementNormalized = destination - transform.position;
+        movementNormalized.y = 0;   
+        Quaternion targetRotation = Quaternion.LookRotation(movementNormalized, Vector3.up),
+            smoothedRotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+        transform.rotation = smoothedRotation;
         
-        base.MovePet((currentCollider.transform.position - transform.position) * Time.deltaTime,
-            currentCollider.transform.position);
-
-        if ((currentCollider.transform.position - transform.position).magnitude < attackingDistance)
-        {
-            animator.SetBool("Walking", false);
-        }
+        return destination;
     }
+    
 }

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level01/Level 01.unity
     guid: 4d256ff0b1a2d1d42b99f9d218516459
+  - enabled: 1
+    path: Assets/Scenes/Remade/ShopScene.unity
+    guid: ca0351b0476ea9e4cbe66885579f17de
+  - enabled: 1
+    path: Assets/Scenes/Remade/Main.unity
+    guid: 2080e8ab1f6608a40af4e02b7f53dddc
   m_configObjects: {}
