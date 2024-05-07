@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     public float demage = 10f;
     public float range = 100f;
     public float timeBetweenShoot = 0.15f;
+    public GameObject gun;
 
     float effectsDisplayTime = 0.2f;
     float timer;
@@ -32,7 +33,7 @@ public class Gun : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        Debug.Log(timeBetweenShoot);
+        /*Debug.Log(timeBetweenShoot);*/
 
         if (timer >= timeBetweenShoot && Time.timeScale != 0)
         {
@@ -46,6 +47,11 @@ public class Gun : MonoBehaviour
         {
             DisableEffects();
         }
+
+/*        if (Input.GetButton("Fire2"))
+        {
+            gun.SetActive(false);
+        }*/
     }
 
     void DisableEffects()
@@ -73,7 +79,7 @@ public class Gun : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            /*Debug.Log(hit.transform.name);*/
 
             lineRenderer.SetPosition(1, hit.point);
 
