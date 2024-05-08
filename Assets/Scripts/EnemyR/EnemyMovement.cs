@@ -10,22 +10,25 @@ public class EnemyMovement : MonoBehaviour
     
     private UnityAction<bool> pauseListener;
     private float currentVision;
-    private Transform playerTransform;
-    private PlayerManager playerManager;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private PlayerManager playerManager;
     private EnemyManager enemyManager;
     private NavMeshAgent navMeshAgent;
-
+    private Animator animator;
+    
     private float timer;
     private bool isPaused;
-    private const float WanderDistance = 10f;
+    private const float WanderDistance = 15f;
 
     void Awake()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
-        playerTransform = player.transform;
+        var playerOnly = GameObject.Find("PlayerOnly");
+        playerTransform = playerOnly.transform;
         playerManager = player.GetComponent<PlayerManager>();
         enemyManager = GetComponent<EnemyManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         
         pauseListener = Pause;
         EventManager.StartListening("Pause", Pause);
@@ -43,14 +46,13 @@ public class EnemyMovement : MonoBehaviour
         EventManager.StopListening("Pause", Pause);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isPaused) return;
+        // if (isPaused) return;
         
         if (enemyManager.health > 0 && playerManager.PlayerHp > 0)
         {
             LookForPlayer();
-            Idle();
         }
         else
         {
@@ -66,14 +68,22 @@ public class EnemyMovement : MonoBehaviour
     private void Pause(bool state)
     {
         isPaused = state;
+        if (navMeshAgent.hasPath)
+            navMeshAgent.isStopped = isPaused;
     }
 
     private void LookForPlayer()
     {
         if (Vector3.Distance(transform.position, playerTransform.position) <= visionRadius)
         {
-            SetDestination(playerTransform.position);
+            GoToPlayer();
         }
+        else
+        {
+            Idle();
+        }
+        
+        animator.SetBool("IsWalking", navMeshAgent.velocity.magnitude != 0f);
     }
     
     public void GoToPlayer()
@@ -97,19 +107,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void Idle()
     {
-        if (navMeshAgent.hasPath) return;
-
         if (timer <= 0f)
         {
             // Wander around
             var randomPosition = Random.insideUnitSphere * WanderDistance + transform.position;
             NavMesh.SamplePosition(randomPosition, out var hit, WanderDistance, NavMesh.AllAreas);
             GoToDestination(hit.position);
-
-            if (navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid)
-            {
-                ResetPath();
-            }
             
             timer = Random.Range(idleTimeRange.x, idleTimeRange.y);
         }
