@@ -37,6 +37,8 @@ public class EnemyPetBehavior : MonoBehaviour
     public void MeDead()
     {
         _animator.SetBool("Die", true);
+        _navMeshAgent.ResetPath();
+        _navMeshAgent.enabled = false;
     }
     
 }

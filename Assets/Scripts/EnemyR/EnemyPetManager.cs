@@ -30,6 +30,7 @@ public class EnemyPetManager : MonoBehaviour
         var randomPet = pets[Random.Range(0, pets.Count)];
         randomPet.GetComponentInChildren<EnemyPetBehavior>().MeDead();
         enemyAttack.attackDamageMultiplier -= 0.2f;
+        pets.Remove(randomPet);
 
         StartCoroutine(KillPet(randomPet));
     }
