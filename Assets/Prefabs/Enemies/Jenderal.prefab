@@ -201,7 +201,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionRadius: 10
-  idleTimeRange: {x: 0, y: 0}
+  minIdleTime: 2
+  maxIdleTime: 5
+  playerTransform: {fileID: 0}
+  playerManager: {fileID: 0}
+  timer: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -322,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755d1ab8f0094ef9bbea12900a89c442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 10
+  distanceThreshold: 5
   damagePerSecond: 3
 --- !u!114 &5529623152610704061
 MonoBehaviour:
