@@ -9978,9 +9978,9 @@ GameObject:
   - component: {fileID: 19546556}
   - component: {fileID: 13536644}
   - component: {fileID: 13644992}
-  - component: {fileID: 11487314}
-  - component: {fileID: 11402556}
-  - component: {fileID: 11415352}
+  - component: {fileID: 869274779491744054}
+  - component: {fileID: 7992084099673091900}
+  - component: {fileID: 2186361052152172350}
   - component: {fileID: 2404025337128399007}
   m_Layer: 9
   m_Name: Raja
@@ -10218,7 +10218,7 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.2, z: 0}
---- !u!114 &11487314
+--- !u!114 &869274779491744054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10227,45 +10227,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 153412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea9a6ed18654d14db02bf0076cfe488, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b36a037cdd45b6a4895788d1b42693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRange: 6
-  hearingRange: 32
-  wanderDistance: 20
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+--- !u!114 &7992084099673091900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b9cc61c4d445b1b1845a7b20786322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathAudio: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+--- !u!114 &2186361052152172350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecd79da45b941a3927b11f9df06d4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visionRadius: 10
   idleTimeRange: {x: 2, y: 6}
-  psychicLevels: 0.05
-  timer: 0
---- !u!114 &11402556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 300
-  sinkSpeed: 2.5
-  scoreValue: 77
-  deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
---- !u!114 &11415352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc28e8f7dbbe7494a8d67b6f5f3636bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.75
-  attackDamage: 30
 --- !u!114 &2404025337128399007
 MonoBehaviour:
   m_ObjectHideFlags: 0

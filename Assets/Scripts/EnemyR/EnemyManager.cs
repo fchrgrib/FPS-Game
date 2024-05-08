@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     private Animator animator;
     private AudioSource audioSource;
     private new ParticleSystem particleSystem;
-    private BoxCollider boxCollider;
+    private CapsuleCollider capsuleCollider;
     private EnemyMovement enemyMovement;
     
     void Awake()
@@ -17,7 +17,7 @@ public class EnemyManager : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
-        boxCollider = GetComponent<BoxCollider>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         enemyMovement = GetComponent<EnemyMovement>();
     }
 
@@ -49,8 +49,8 @@ public class EnemyManager : MonoBehaviour
     
     private void SetKinematics(bool isKinematic)
     {
-        boxCollider.isTrigger = isKinematic;
-        boxCollider.attachedRigidbody.isKinematic = isKinematic;
+        capsuleCollider.isTrigger = isKinematic;
+        capsuleCollider.attachedRigidbody.isKinematic = isKinematic;
     }
 
     private void Update()

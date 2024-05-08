@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 13500000}
   - component: {fileID: 19500000}
-  - component: {fileID: 11400004}
-  - component: {fileID: 11400002}
-  - component: {fileID: 11400000}
+  - component: {fileID: 6079358850938931202}
+  - component: {fileID: 2034144891367652081}
+  - component: {fileID: 8257917020146078222}
   - component: {fileID: 8200000}
   - component: {fileID: 11400006}
   - component: {fileID: -3964569268941635689}
@@ -160,7 +160,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 29
   m_ObstacleAvoidanceType: 1
---- !u!114 &11400004
+--- !u!114 &6079358850938931202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,12 +169,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc28e8f7dbbe7494a8d67b6f5f3636bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b36a037cdd45b6a4895788d1b42693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 10
---- !u!114 &11400002
+--- !u!114 &2034144891367652081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,14 +183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b9cc61c4d445b1b1845a7b20786322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 60
-  sinkSpeed: 2.5
-  scoreValue: 7
-  deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
---- !u!114 &11400000
+  health: 100
+  deathAudio: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
+--- !u!114 &8257917020146078222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,15 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea9a6ed18654d14db02bf0076cfe488, type: 3}
+  m_Script: {fileID: 11500000, guid: fecd79da45b941a3927b11f9df06d4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRange: 8
-  hearingRange: 20
-  wanderDistance: 40
-  idleTimeRange: {x: 0.5, y: 2}
-  psychicLevels: 0.65
-  timer: 0
+  visionRadius: 10
+  idleTimeRange: {x: 0, y: 0}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
