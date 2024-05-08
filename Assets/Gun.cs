@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
     public float demage = 10f;
     public float range = 100f;
     public float timeBetweenShoot = 0.15f;
+    public Camera cam;
 
     float effectsDisplayTime = 0.2f;
     float timer;
@@ -18,9 +19,10 @@ public class Gun : MonoBehaviour
     ParticleSystem particleSystem;
     AudioSource audioSource;
     Light light;
-    LineRenderer lineRenderer;
+    
+    private LineRenderer lineRenderer;
+    private InputManager inputManager;
 
-    public Camera cam;
     // Start is called before the first frame update
 
     private void Awake()
@@ -30,6 +32,7 @@ public class Gun : MonoBehaviour
         light = GetComponent<Light>();
         lineRenderer = GetComponent<LineRenderer>();
         shootableMask = LayerMask.GetMask("Enemy");
+        inputManager = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
@@ -37,11 +40,10 @@ public class Gun : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        /*Debug.Log(timeBetweenShoot);*/
 
         if (timer >= timeBetweenShoot && Time.timeScale != 0)
         {
-            if (Input.GetButton("Fire1"))
+            if (inputManager.PlayerInput.OnGround.Attack.IsPressed())
             {
                 Shoot();
             }

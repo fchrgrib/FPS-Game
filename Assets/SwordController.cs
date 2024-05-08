@@ -8,21 +8,24 @@ public class SwordController : MonoBehaviour
     GameObject sword;
     Animator anim;
 
+    private InputManager inputManager;
+
     private void Awake()
     {
         sword = GetComponent<GameObject>();
         anim = GetComponent<Animator>();
+        inputManager = GetComponent<InputManager>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (inputManager.PlayerInput.OnGround.Attack.IsPressed())
         {
             anim.SetBool("attacking", true);
         }
-        else if(Input.GetButtonUp("Fire1"))
+        else if(!inputManager.PlayerInput.OnGround.Attack.IsPressed())
         {
             anim.SetBool("attacking", false);
         }

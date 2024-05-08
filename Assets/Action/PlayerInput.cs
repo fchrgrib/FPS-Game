@@ -71,6 +71,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1a34de7-6f5c-4f26-bcd1-ef69f67fc664"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""OpenShop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1e54374-26d3-40af-ade2-76427c127d43"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnGround_MoveDirection = m_OnGround.FindAction("MoveDirection", throwIfNotFound: true);
         m_OnGround_Interact = m_OnGround.FindAction("Interact", throwIfNotFound: true);
         m_OnGround_OpenShop = m_OnGround.FindAction("OpenShop", throwIfNotFound: true);
+        m_OnGround_Attack = m_OnGround.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnGround_MoveDirection;
     private readonly InputAction m_OnGround_Interact;
     private readonly InputAction m_OnGround_OpenShop;
+    private readonly InputAction m_OnGround_Attack;
     public struct OnGroundActions
     {
         private @PlayerInput m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MoveDirection => m_Wrapper.m_OnGround_MoveDirection;
         public InputAction @Interact => m_Wrapper.m_OnGround_Interact;
         public InputAction @OpenShop => m_Wrapper.m_OnGround_OpenShop;
+        public InputAction @Attack => m_Wrapper.m_OnGround_Attack;
         public InputActionMap Get() { return m_Wrapper.m_OnGround; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +307,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @OpenShop.started += instance.OnOpenShop;
             @OpenShop.performed += instance.OnOpenShop;
             @OpenShop.canceled += instance.OnOpenShop;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
         }
 
         private void UnregisterCallbacks(IOnGroundActions instance)
@@ -303,6 +329,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @OpenShop.started -= instance.OnOpenShop;
             @OpenShop.performed -= instance.OnOpenShop;
             @OpenShop.canceled -= instance.OnOpenShop;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
         }
 
         public void RemoveCallbacks(IOnGroundActions instance)
@@ -327,5 +356,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMoveDirection(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnOpenShop(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

@@ -17,6 +17,7 @@ public class ShotgunController : MonoBehaviour
     LineRenderer lineComponent;
     AudioSource audioSource;
     ParticleSystem particleSystem;
+    InputManager inputManager;
 
     float rand;
 
@@ -27,6 +28,7 @@ public class ShotgunController : MonoBehaviour
         light = GetComponent<Light>();
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
+        inputManager = GetComponent<InputManager>();
         for(int i = 0; i < 10; i++)
         {
             LineRenderer line = new GameObject().AddComponent<LineRenderer>();
@@ -52,7 +54,7 @@ public class ShotgunController : MonoBehaviour
 
         if (timer >= timeBetweenShoot && Time.timeScale != 0)
         {
-            if (Input.GetButton("Fire1"))
+            if (inputManager.PlayerInput.OnGround.Attack.triggered)
             {
                 Shoot();
             }

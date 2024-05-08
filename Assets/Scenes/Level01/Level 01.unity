@@ -627,6 +627,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73d8dba5bded7224ea92283a8c9a4c24, type: 3}
       insertIndex: -1
       addedObject: {fileID: 254741183}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73d8dba5bded7224ea92283a8c9a4c24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 254741184}
   m_SourcePrefab: {fileID: 100100000, guid: 73d8dba5bded7224ea92283a8c9a4c24, type: 3}
 --- !u!4 &254741179 stripped
 Transform:
@@ -671,6 +674,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &254741184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254741180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pet: {fileID: 0}
 --- !u!1 &309555341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1630,7 @@ GameObject:
   - component: {fileID: 673662538}
   - component: {fileID: 673662536}
   - component: {fileID: 673662542}
+  - component: {fileID: 673662543}
   m_Layer: 0
   m_Name: GunBarrelEnd
   m_TagString: Untagged
@@ -6800,6 +6817,19 @@ MonoBehaviour:
   range: 100
   timeBetweenShoot: 0.15
   cam: {fileID: 1885112182}
+--- !u!114 &673662543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673662534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pet: {fileID: 0}
 --- !u!1 &722267399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7e41545246e099d4da103b6631f9489b, type: 3}
@@ -7293,6 +7323,7 @@ GameObject:
   - component: {fileID: 930737524}
   - component: {fileID: 930737523}
   - component: {fileID: 930737528}
+  - component: {fileID: 930737529}
   m_Layer: 0
   m_Name: ShotgunBarrelEnd
   m_TagString: Untagged
@@ -12479,6 +12510,19 @@ MonoBehaviour:
   demage: 30
   timeBetweenShoot: 1
   cam: {fileID: 1885112182}
+--- !u!114 &930737529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930737521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pet: {fileID: 0}
 --- !u!1 &1021296491
 GameObject:
   m_ObjectHideFlags: 0
