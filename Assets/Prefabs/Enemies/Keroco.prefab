@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 11400000}
   - component: {fileID: 8200000}
   - component: {fileID: 11400006}
+  - component: {fileID: 7478186246785255743}
   m_Layer: 9
   m_Name: Keroco
   m_TagString: Enemy
@@ -314,6 +315,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f58c1d9ce56e1749830b8aebe8ba3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7478186246785255743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c0e93416024b6d8805007ef3461af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbPrefabs:
+  - {fileID: 3071435129641118245, guid: 8a051e348491fbe478c5767614aaded2, type: 3}
+  - {fileID: 5928907673800009345, guid: 40c989ca6c1e3004182def672726aa36, type: 3}
+  - {fileID: 2351117438306767086, guid: 9fcb582a71b002f4fa2f8a165c7df7e9, type: 3}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

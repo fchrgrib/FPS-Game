@@ -9981,6 +9981,7 @@ GameObject:
   - component: {fileID: 11487314}
   - component: {fileID: 11402556}
   - component: {fileID: 11415352}
+  - component: {fileID: 2404025337128399007}
   m_Layer: 9
   m_Name: Raja
   m_TagString: Enemy
@@ -10265,6 +10266,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.75
   attackDamage: 30
+--- !u!114 &2404025337128399007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c0e93416024b6d8805007ef3461af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbPrefabs:
+  - {fileID: 3071435129641118245, guid: 8a051e348491fbe478c5767614aaded2, type: 3}
+  - {fileID: 5928907673800009345, guid: 40c989ca6c1e3004182def672726aa36, type: 3}
+  - {fileID: 2351117438306767086, guid: 9fcb582a71b002f4fa2f8a165c7df7e9, type: 3}
 --- !u!1 &184534
 GameObject:
   m_ObjectHideFlags: 0
