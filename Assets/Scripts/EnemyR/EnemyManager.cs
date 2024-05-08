@@ -32,6 +32,7 @@ public class EnemyManager : MonoBehaviour
     
     public void TakeDamage(float amount, Vector3 hitPoint)
     {
+        Debug.Log($"enemy: {health}");
         if (!IsDead())
         {
             audioSource.Play();

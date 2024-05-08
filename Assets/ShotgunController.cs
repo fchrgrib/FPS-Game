@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotgunController : MonoBehaviour
 {
     public float range = 100f;
-    public float demage = 30f;
+    public float damage = 7f;
     public float timeBetweenShoot = 0.30f;
     public Camera cam;
 
@@ -18,17 +19,21 @@ public class ShotgunController : MonoBehaviour
     AudioSource audioSource;
     ParticleSystem particleSystem;
     InputManager inputManager;
+    private LayerMask enemyLayerMask;
+    private Ray ray;
 
     float rand;
 
 
     private void Awake()
     {
+        ray = new Ray();
         audioSource = GetComponent<AudioSource>();
         light = GetComponent<Light>();
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         inputManager = GetComponent<InputManager>();
+        enemyLayerMask = LayerMask.GetMask("Enemy");
         for(int i = 0; i < 10; i++)
         {
             LineRenderer line = new GameObject().AddComponent<LineRenderer>();
@@ -46,7 +51,7 @@ public class ShotgunController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timer += Time.deltaTime;
 
@@ -54,7 +59,7 @@ public class ShotgunController : MonoBehaviour
 
         if (timer >= timeBetweenShoot && Time.timeScale != 0)
         {
-            if (inputManager.PlayerInput.OnGround.Attack.triggered)
+            if (inputManager.PlayerInput.OnGround.Attack.IsPressed())
             {
                 Shoot();
             }
@@ -78,7 +83,6 @@ public class ShotgunController : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
         timer = 0f;
 
         particleSystem.Stop();
@@ -91,26 +95,53 @@ public class ShotgunController : MonoBehaviour
             lineRenderer[i].SetPosition(0, transform.position);
         }
         
+        // if (Physics.Raycast(cam.transform.position, cam.transform.forward, out var hit, range))
+        // {
+        //     /*Debug.Log(hit.transform.name);*/
+        //     for (int i = 0;i < lineRenderer.Count; i++)
+        //     {
+        //         float xVal = Random.Range(-5f, 5f);
+        //         float yVal = Random.Range(-5f, 5f);
+        //         float zVal = Random.Range(-5f, 5f);
+        //         Vector3 positionShoot = hit.point + new Vector3(xVal, yVal, zVal);
+        //         // hit.collider.Ge
+        //
+        //         lineRenderer[i].SetPosition(1, positionShoot);
+        //         // hit.point = positionShoot;
+        //
+        //         // hit.collider.GetComponent<EnemyManager>().TakeDamage(demage, positionShoot);
+        //     }
+        //
+        //     // TODO: hit damage to object
+        //
+        //
+        // }
 
 
-
-
-
-
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
+        foreach (var line in lineRenderer)
         {
-            /*Debug.Log(hit.transform.name);*/
-            for (int i = 0;i < lineRenderer.Count; i++)
+            ray.origin = transform.position;
+            float xVal = Random.Range(-0.5f, 0.5f);
+            float yVal = Random.Range(-0.5f, 0.5f);
+            float zVal = Random.Range(-0.5f, 0.5f);
+            ray.direction = transform.forward + new Vector3(xVal, yVal, zVal);
+
+            if (Physics.Raycast(ray, out var hit, range, enemyLayerMask))
             {
-                float xVal = Random.Range(-5f, 5f);
-                float yVal = Random.Range(-5f, 5f);
-                float zVal = Random.Range(-5f, 5f);
-                lineRenderer[i].SetPosition(1, hit.point + new Vector3(xVal, yVal, zVal));
+                EnemyManager enemyManager = hit.collider.GetComponent<EnemyManager>();
+
+                if (enemyManager != null)
+                {
+                    enemyManager.TakeDamage(damage, hit.point);
+                }
+                
+                line.SetPosition(1, hit.point);
             }
-
-            // TODO: hit damage to object
-
-
+            else
+            {
+                line.SetPosition(1, ray.origin + ray.direction * range);
+            }
         }
+   
     }
 }

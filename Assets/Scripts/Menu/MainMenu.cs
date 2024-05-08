@@ -20,4 +20,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(3);
     }
+
+    public void LoadGameMenu()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+
+    public void OptionMenu()
+    {
+        SceneManager.LoadSceneAsync(2);
+    }
 }

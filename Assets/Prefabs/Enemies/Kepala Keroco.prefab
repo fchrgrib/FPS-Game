@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400000}
-  - component: {fileID: 9500000}
   - component: {fileID: 5400000}
   - component: {fileID: 13600000}
   - component: {fileID: 13500000}
@@ -20,6 +19,7 @@ GameObject:
   - component: {fileID: 8200000}
   - component: {fileID: 11400006}
   - component: {fileID: 4235964564895244760}
+  - component: {fileID: 551785242160513844}
   m_Layer: 9
   m_Name: Kepala Keroco
   m_TagString: Enemy
@@ -45,27 +45,6 @@ Transform:
   - {fileID: 6079697718637712057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &9500000
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2cd6bf77cac24414c8e134b0c0e7aed3, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 0
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200,7 +179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionRadius: 10
-  idleTimeRange: {x: 0, y: 0}
+  minIdleTime: 2
+  maxIdleTime: 5
+  playerTransform: {fileID: 0}
+  playerManager: {fileID: 0}
+  timer: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -325,6 +308,20 @@ MonoBehaviour:
   - {fileID: 3071435129641118245, guid: 8a051e348491fbe478c5767614aaded2, type: 3}
   - {fileID: 5928907673800009345, guid: 40c989ca6c1e3004182def672726aa36, type: 3}
   - {fileID: 2351117438306767086, guid: 9fcb582a71b002f4fa2f8a165c7df7e9, type: 3}
+--- !u!114 &551785242160513844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8a90e9f587469a8b4d6f8ebf0bc9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kerocoSpawnRate: 25
+  prefab: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -10314,6 +10311,10 @@ PrefabInstance:
       propertyPath: ShapeModule.angle
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3132982332269698238, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6028178640289223025, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_Name
       value: M31
@@ -10324,31 +10325,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.148
+      value: 0.10316173
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.54200006
+      value: -0.511
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0021505952
+      value: 0.17256258
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70710355
+      value: -0.6857275
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710355
+      value: 0.6857275
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0021505952
+      value: 0.17256258
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -180.349
+      value: -151.75
       objectReference: {fileID: 0}
     - target: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -10361,10 +10362,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2666024277789557517, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 7309362169573307296}
   m_SourcePrefab: {fileID: 100100000, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
 --- !u!4 &3744290183342553151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
   m_PrefabInstance: {fileID: 7716302445737178100}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &5223779419379908205 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2552212252883602841, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
+  m_PrefabInstance: {fileID: 7716302445737178100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5758501683870216441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2666024277789557517, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
+  m_PrefabInstance: {fileID: 7716302445737178100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7309362169573307296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5758501683870216441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331b718862c4e23aeec5f140441e62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+  pelletsPerShot: 12
+  damagePerPellet: 7
+  shootingDelay: 1
+  range: 100
+  faceLight: {fileID: 5223779419379908205}
