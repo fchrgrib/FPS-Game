@@ -182,8 +182,6 @@ MonoBehaviour:
   idleTimeRange: {x: 0, y: 0}
   playerTransform: {fileID: 0}
   playerManager: {fileID: 0}
-  distanceToPlayer: 0
-  timer: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10419,7 +10417,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400064, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 876356841349431115}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 359035699209345497}
   m_SourcePrefab: {fileID: 100100000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
 --- !u!4 &3596046994541930084 stripped
 Transform:
@@ -10431,3 +10432,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400064, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
   m_PrefabInstance: {fileID: 3596046994542329006}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3596046994542426692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+  m_PrefabInstance: {fileID: 3596046994542329006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &359035699209345497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596046994542426692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa7eb83f794ce2a8c7becdf2ead350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

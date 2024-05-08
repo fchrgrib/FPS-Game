@@ -48,7 +48,12 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if (isPaused) return;
+        if (isPaused) return;
+
+        if (enemyManager.IsDead())
+        {
+            ResetPath();
+        }
         
         if (enemyManager.health > 0 && playerManager.PlayerHp > 0)
         {

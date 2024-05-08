@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -11,10 +12,13 @@ public class EnemyManager : MonoBehaviour
     private new ParticleSystem particleSystem;
     private CapsuleCollider capsuleCollider;
     private EnemyMovement enemyMovement;
+
+    private bool dieEvent;
+    [NonSerialized] public bool Dead;
     
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
@@ -57,10 +61,15 @@ public class EnemyManager : MonoBehaviour
     {
         if (!IsDead()) return;
         
-        transform.Translate(-Vector3.up * (2.5f * Time.deltaTime));
-        if (transform.position.y < -10f)
+        if (!dieEvent) Die();
+
+        if (Dead)
         {
-            Destroy(gameObject);
+            transform.Translate(-Vector3.up * Time.deltaTime);
+            if (transform.position.y < -5f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     
@@ -71,6 +80,8 @@ public class EnemyManager : MonoBehaviour
         SetKinematics(true);
         audioSource.clip = deathAudio;
         audioSource.Play();
+
+        dieEvent = true;
     }
 
     public bool IsDead() => health <= 0;
