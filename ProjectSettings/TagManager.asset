@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Weapon
   - GeneralStatistics
+  - Enemy Pets
   layers:
   - Default
   - TransparentFX

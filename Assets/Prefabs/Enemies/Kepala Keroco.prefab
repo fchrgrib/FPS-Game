@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 10
+  attackDamageMultiplier: 1
 --- !u!114 &7730744825461657233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10290,8 +10291,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 400064, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3744290183342553151}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6844098959602776893}
   m_SourcePrefab: {fileID: 100100000, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+--- !u!1 &6079697718637285017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
+  m_PrefabInstance: {fileID: 6079697718637316211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6844098959602776893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079697718637285017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa7eb83f794ce2a8c7becdf2ead350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6079697718637712051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400064, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
@@ -10411,6 +10432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
   attackDamage: 10
+  attackDamageMultiplier: 1
   pelletsPerShot: 12
   damagePerPellet: 7
   shootingDelay: 1

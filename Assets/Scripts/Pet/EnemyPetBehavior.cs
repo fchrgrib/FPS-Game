@@ -36,8 +36,7 @@ public class EnemyPetBehavior : MonoBehaviour
 
     public void MeDead()
     {
-        _animator.SetBool("Die", _navMeshAgent.velocity.magnitude != 0);
-
+        _animator.SetBool("Die", true);
     }
     
 }

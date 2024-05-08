@@ -14,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     private EnemyMovement enemyMovement;
 
     private bool dieEvent;
+    private bool firstPetDeath;
+    private bool secondPetDeath;
     [NonSerialized] public bool Dead;
     
     void Awake()
@@ -60,6 +62,18 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
+        switch (health)
+        {
+            case <= 80 when !firstPetDeath:
+                firstPetDeath = true;
+                EventManager.TriggerEvent("PetDeath");
+                break;
+            case <= 40 when !secondPetDeath:
+                secondPetDeath = true;
+                EventManager.TriggerEvent("PetDeath");
+                break;
+        }
+        
         if (!IsDead()) return;
         
         if (!dieEvent) Die();
@@ -69,7 +83,7 @@ public class EnemyManager : MonoBehaviour
             transform.Translate(-Vector3.up * Time.deltaTime);
             if (transform.position.y < -5f)
             {
-                Destroy(gameObject);
+                Destroy(transform.parent ? transform.parent.gameObject : gameObject);
             }
         }
     }
