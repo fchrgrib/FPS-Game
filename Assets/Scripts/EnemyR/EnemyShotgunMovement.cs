@@ -9,11 +9,6 @@ public class EnemyShotgunMovement : EnemyMovement
 
     private int angle;
     
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
     private void LateUpdate()
     {
         distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);

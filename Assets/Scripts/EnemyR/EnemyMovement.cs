@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isPaused;
     private const float WanderDistance = 15f;
 
-    protected virtual void Awake()
+    void Awake()
     {
         var player = GameObject.FindGameObjectWithTag("Player");
         var playerOnly = GameObject.Find("PlayerOnly");
