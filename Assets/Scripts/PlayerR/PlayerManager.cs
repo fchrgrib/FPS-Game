@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour, CheatListener
         // TakeDamage(1f);
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         this.HandleTakingDamage(
             () =>
