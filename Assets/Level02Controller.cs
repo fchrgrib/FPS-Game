@@ -38,7 +38,10 @@ public class Level02Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        finalBox.SetActive(true);
-        finalGate.SetActive(false);
+        if (EnemyLeaderDeathCount >= 3)
+        {
+            finalBox.SetActive(true);
+            finalGate.SetActive(false);   
+        }
     }
 }
