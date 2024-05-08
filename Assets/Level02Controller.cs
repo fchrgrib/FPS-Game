@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //TODO: add game over controller
@@ -16,13 +13,13 @@ public class Level02Controller : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
-        EventManager.StartListening("EnemyLeaderDeath", IncrementEnemyLeaderDeathCount);
+        EventManager.StartListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
     }
 
     private void OnDestroy()
     { 
         EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
-        EventManager.StopListening("EnemyLeaderDeath", IncrementEnemyLeaderDeathCount);
+        EventManager.StopListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
     }
 
     private void IncrementEnemyDeathCount()
@@ -30,7 +27,7 @@ public class Level02Controller : MonoBehaviour
         EnemyDeathCount++;
     }
 
-    private void IncrementEnemyLeaderDeathCount()
+    private void IncrementLeaderOfEnemyDeathCount()
     {
         EnemyLeaderDeathCount++;
     }

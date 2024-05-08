@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -24,7 +21,7 @@ public class Level01Controller : MonoBehaviour
         EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
     }
 
-    void IncrementEnemyDeathCount()
+    private void IncrementEnemyDeathCount()
     {
         EnemyDeathCount++;
     }
