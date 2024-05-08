@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using Microlight.MicroBar;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, CheatListener
 {
 
     public const string ATTACKER_PET = "ATTACKER_PET";
@@ -19,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
+    public float PlayerDamageMultiplier { get; set; } = 1f;
+    public int DamageOrbCount { get; set; } = 0;
     private string currentPet = NO_PET;
     
     public static string CurrentPet { get; set; }
@@ -33,10 +33,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
-    private float playerDamageMultiplier = 1f;
-
-    public float PlayerDamageMultiplier { get; set; }
-    
+    // Start is called before the first frame update
     void Start()
     {
         playerHealthBar.Initialize(MaxHp);
@@ -72,7 +69,21 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        PlayerHp -= 0.1f;
+        // TakeDamage(1f);
     }
-    
+
+    public void TakeDamage(float damage)
+    {
+        this.HandleTakingDamage(
+            () =>
+            {
+                PlayerHp -= damage;
+                // change this if necessary
+                if (PlayerHp <= 0)
+                {
+                    // game over
+                }
+            }
+        );
+    }
 }

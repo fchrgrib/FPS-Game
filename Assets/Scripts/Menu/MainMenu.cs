@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
     }
+    
+    public void StatisticMenu()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
 }

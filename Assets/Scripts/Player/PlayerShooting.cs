@@ -67,18 +67,18 @@ namespace Nightmare
             if (timer >= timeBetweenBullets && Time.timeScale != 0)
             {
                 // If the Fire1 button is being press and it's time to fire...
-                // if (Input.GetButton("Fire2") && grenadeStock > 0)
-                // {
-                //     // ... shoot a grenade.
-                //     ShootGrenade();
-                // }
-                //
-                // // If the Fire1 button is being press and it's time to fire...
-                // else if (Input.GetButton("Fire1"))
-                // {
-                //     // ... shoot the gun.
-                //     Shoot();
-                // }
+                if (Input.GetButton("Fire2") && grenadeStock > 0)
+                {
+                    // ... shoot a grenade.
+                    ShootGrenade();
+                }
+                
+                // If the Fire1 button is being press and it's time to fire...
+                else if (Input.GetButton("Fire1"))
+                {
+                    // ... shoot the gun.
+                    Shoot();
+                }
             }
             
 #else
@@ -177,6 +177,7 @@ namespace Nightmare
             GrenadeManager.grenades = grenadeStock;
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         void ShootGrenade()
         {
             AdjustGrenadeStock(-1);

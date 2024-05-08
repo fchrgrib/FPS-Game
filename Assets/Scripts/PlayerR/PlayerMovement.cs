@@ -1,24 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, CheatListener
 {
-
     private enum PlayerState
     {
         OnGround,
         OnJump
     }
-    
+
     private CharacterController characterController;
     private Vector3 playerVelocity;
     private PlayerState playerState = PlayerState.OnGround;
-    
-    public float speed = 15f;
+
+    public float Speed { get; set; } = 15f;
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
+
 
     private void Start()
     {
@@ -32,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerVelocity.y = gravity * 0.1f;
         }
-        
+
         var dir = Vector3.zero;
         dir.x = input.x;
         dir.z = input.y;
-        var movement = speed * Time.deltaTime * transform.TransformDirection(dir) + playerVelocity;
+        var movement = Speed * Time.deltaTime * transform.TransformDirection(dir) + playerVelocity;
         characterController.Move(movement);
     }
 
@@ -44,9 +41,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerState != PlayerState.OnGround)
         {
-            return;    
+            return;
         }
 
         playerVelocity.y = Mathf.Sqrt(jumpHeight);
+    }
+
+    public void ChangeSpeed()
+    {
+        this.HandleSpeed(this);
     }
 }

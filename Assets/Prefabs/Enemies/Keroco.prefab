@@ -14,11 +14,12 @@ GameObject:
   - component: {fileID: 13600000}
   - component: {fileID: 13500000}
   - component: {fileID: 19500000}
-  - component: {fileID: 11400004}
-  - component: {fileID: 11400002}
-  - component: {fileID: 11400000}
+  - component: {fileID: 543206312995894145}
+  - component: {fileID: 1660703670155264589}
+  - component: {fileID: 4165931723891843796}
   - component: {fileID: 8200000}
   - component: {fileID: 11400006}
+  - component: {fileID: 7478186246785255743}
   m_Layer: 9
   m_Name: Keroco
   m_TagString: Enemy
@@ -158,7 +159,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 29
   m_ObstacleAvoidanceType: 1
---- !u!114 &11400004
+--- !u!114 &543206312995894145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,12 +168,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc28e8f7dbbe7494a8d67b6f5f3636bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b36a037cdd45b6a4895788d1b42693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.65
-  attackDamage: 15
---- !u!114 &11400002
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+--- !u!114 &1660703670155264589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,14 +182,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa10cc87aff30c04dbe0aa648f5b6adc, type: 3}
+  m_Script: {fileID: 11500000, guid: 33b9cc61c4d445b1b1845a7b20786322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  sinkSpeed: 2.5
-  scoreValue: 11
-  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
---- !u!114 &11400000
+  health: 100
+  deathAudio: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+--- !u!114 &4165931723891843796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,15 +196,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ea9a6ed18654d14db02bf0076cfe488, type: 3}
+  m_Script: {fileID: 11500000, guid: fecd79da45b941a3927b11f9df06d4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionRange: 10
-  hearingRange: 16
-  wanderDistance: 28
-  idleTimeRange: {x: 1, y: 4}
-  psychicLevels: 0.4
-  timer: 0
+  visionRadius: 10
+  idleTimeRange: {x: 0, y: 0}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
@@ -314,6 +309,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f58c1d9ce56e1749830b8aebe8ba3bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7478186246785255743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c0e93416024b6d8805007ef3461af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orbPrefabs:
+  - {fileID: 3071435129641118245, guid: 8a051e348491fbe478c5767614aaded2, type: 3}
+  - {fileID: 5928907673800009345, guid: 40c989ca6c1e3004182def672726aa36, type: 3}
+  - {fileID: 2351117438306767086, guid: 9fcb582a71b002f4fa2f8a165c7df7e9, type: 3}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

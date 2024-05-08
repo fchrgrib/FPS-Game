@@ -13,7 +13,7 @@ namespace Nightmare
         Animator anim;
         AudioSource enemyAudio;
         ParticleSystem hitParticles;
-        CapsuleCollider capsuleCollider;
+        BoxCollider capsuleCollider;
         EnemyMovement enemyMovement;
 
         void Awake ()
@@ -21,7 +21,7 @@ namespace Nightmare
             anim = GetComponent <Animator> ();
             enemyAudio = GetComponent <AudioSource> ();
             hitParticles = GetComponentInChildren <ParticleSystem> ();
-            capsuleCollider = GetComponent <CapsuleCollider> ();
+            capsuleCollider = GetComponent <BoxCollider> ();
             enemyMovement = this.GetComponent<EnemyMovement>();
         }
 
@@ -70,6 +70,8 @@ namespace Nightmare
                     enemyMovement.GoToPlayer();
                 }
             }
+
+            Debug.Log("Current health: " + currentHealth);
                 
             hitParticles.transform.position = hitPoint;
             hitParticles.Play();
