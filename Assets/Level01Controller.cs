@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//TODO: add game over controller
 public class Level01Controller : MonoBehaviour
 {
     public GameObject finalGate;
@@ -14,6 +17,11 @@ public class Level01Controller : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("EnemyDeath", incrementEnemyDeathCount);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening("EnemyDeath", incrementEnemyDeathCount);
     }
 
     void incrementEnemyDeathCount()
