@@ -11,13 +11,13 @@ public class EnemyMovement : MonoBehaviour
     
     private UnityAction<bool> pauseListener;
     private float currentVision;
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private PlayerManager playerManager;
-    private EnemyManager enemyManager;
-    private NavMeshAgent navMeshAgent;
-    private Animator animator;
+    protected Transform playerTransform;
+    protected PlayerManager playerManager;
+    protected EnemyManager enemyManager;
+    protected NavMeshAgent navMeshAgent;
+    protected Animator animator;
     
-    [SerializeField] private float timer;
+    private float timer;
     private bool isPaused;
     private const float WanderDistance = 15f;
 
@@ -78,7 +78,7 @@ public class EnemyMovement : MonoBehaviour
             navMeshAgent.isStopped = isPaused;
     }
 
-    private void LookForPlayer()
+    protected virtual void LookForPlayer()
     {
         if (Vector3.Distance(transform.position, playerTransform.position) <= visionRadius)
         {
@@ -97,7 +97,7 @@ public class EnemyMovement : MonoBehaviour
         SetDestination(playerTransform.position);
     }
     
-    private void SetDestination(Vector3 destination)
+    protected void SetDestination(Vector3 destination)
     {
         timer = -1f;
         GoToDestination(destination);
@@ -111,7 +111,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void Idle()
+    protected void Idle()
     {
         if (timer <= 0f)
         {

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -11,27 +8,27 @@ public class Level01Controller : MonoBehaviour
 
     public GameObject finalBox;
 
-    public int enemyDeathCount { get; private set; }
+    public int EnemyDeathCount { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        EventManager.StartListening("EnemyDeath", incrementEnemyDeathCount);
+        EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
     }
 
     private void OnDestroy()
     {
-        EventManager.StopListening("EnemyDeath", incrementEnemyDeathCount);
+        EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
     }
 
-    void incrementEnemyDeathCount()
+    private void IncrementEnemyDeathCount()
     {
-        enemyDeathCount++;
+        EnemyDeathCount++;
     }
     
     void Update()
     {
-        if (enemyDeathCount>=10)
+        if (EnemyDeathCount>=10)
         {
             finalGate.SetActive(false);
             finalBox.SetActive(true);
