@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
 
     public PlayerInput PlayerInput;
     public GameObject pet;
+    public int tes;
     private PlayerInput.OnGroundActions onGroundActions;
 
     private PlayerMovement playerMovement;
