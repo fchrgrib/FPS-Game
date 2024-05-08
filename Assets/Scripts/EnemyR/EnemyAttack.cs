@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerManager = player.GetComponent<PlayerManager>();
         enemyManager = GetComponent<EnemyManager>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         
         pauseListener = Pause;
         EventManager.StartListening("Pause", Pause);
@@ -72,7 +72,12 @@ public class EnemyAttack : MonoBehaviour
     
         if (playerManager.PlayerHp > 0)
         {
-            playerManager.TakeDamage(attackDamage);
+            anim.SetTrigger("Attack");
         }
+    }
+
+    public void DealDamage()
+    {
+        playerManager.TakeDamage(attackDamage);
     }
 }
