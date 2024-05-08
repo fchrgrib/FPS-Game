@@ -2,46 +2,45 @@ using UnityEngine;
 
 public abstract class OrbBehaviour : MonoBehaviour
 {
-    public float countdownDuration = 5f;
-    public float detectionRadius = 5f;
     [SerializeField] private LayerMask playerLayerMask;
-
-    private bool _used;
+    private readonly float countdownDuration = 5f;
+    private float destroyTime;
+    private readonly float detectionRadius = 5f;
 
     public void Start()
     {
-        Invoke(nameof(RemoveOrb), countdownDuration);
-    }
-
-    public void RemoveOrb()
-    {
-        if (_used)
-        {
-            return;
-        }
-
-        Destroy(gameObject);
+        destroyTime = Time.time + countdownDuration;
     }
 
     private void Update()
     {
+        // If 5 seconds have elapsed since the orb was instantiated...
+        if (Time.time >= destroyTime)
+        {
+            // ...destroy the orb
+            DestroyOrb();
+        }
+
         // If the player is not colliding with the orb...
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayerMask);
+        var hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayerMask);
         if (hitColliders.Length != 1)
         {
-            // Return the method
+            // ...return the method
             return;
         }
 
         // If the player is colliding:
         // 1. Execute the orb perk
-        // 2. Mark it as used
-        // 3. Remove it
-        PlayerManager playerManager = hitColliders[0].GetComponentInParent<PlayerManager>();
-        PlayerMovement playerMovement = hitColliders[0].GetComponentInParent<PlayerMovement>();
+        // 2. Remove the orb
+        var playerManager = hitColliders[0].GetComponentInParent<PlayerManager>();
+        var playerMovement = hitColliders[0].GetComponentInParent<PlayerMovement>();
         ExecuteOrbPerk(playerManager, playerMovement);
-        _used = true;
-        RemoveOrb();
+        DestroyOrb();
+    }
+
+    private void DestroyOrb()
+    {
+        Destroy(gameObject);
     }
 
     protected abstract void ExecuteOrbPerk(PlayerManager playerManager, PlayerMovement playerMovement);

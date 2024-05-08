@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class SpeedOrbBehaviour : OrbBehaviour
 {
-    private Coroutine _speedModifierCoroutine;
     private const float OriginalSpeed = 15f;
+    private Coroutine _speedModifierCoroutine;
 
     protected override void ExecuteOrbPerk(PlayerManager playerManager, PlayerMovement playerMovement)
     {
+        // Stop the coroutine if it's already running
         if (_speedModifierCoroutine != null)
         {
-            // Stop the coroutine if it's already running
             StopCoroutine(_speedModifierCoroutine);
         }
 
