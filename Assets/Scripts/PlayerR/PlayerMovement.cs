@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour, CheatListener
 
     
     public float Speed = 10f;
-    public float gravity = -6.5f;
-    public float jumpHeight = 3f;
+    public float gravity = -3.5f;
+    public float jumpHeight = 1f;
     
     private CharacterController characterController;
     private Vector3 playerVelocity;

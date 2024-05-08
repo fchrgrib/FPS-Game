@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerWithPet
       objectReference: {fileID: 0}
+    - target: {fileID: 6565317173283710517, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: gravity
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565317173283710517, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: jumpHeight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1482,7 +1490,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 42832
+    surfaceParameter: 26110
     meshQueryIndex: 7
     subMeshQueryIndex: 0
     geometryHashValue: 4165365315290575378
@@ -1597,7 +1605,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 41364
+    surfaceParameter: 26274
     meshQueryIndex: 4
     subMeshQueryIndex: 0
     geometryHashValue: 5445453769078636458
@@ -2163,7 +2171,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 42556
+    surfaceParameter: 25792
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: -7033051608658899598
@@ -2278,7 +2286,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 41818
+    surfaceParameter: 26312
     meshQueryIndex: 6
     subMeshQueryIndex: 0
     geometryHashValue: -1279317177937089585
@@ -3280,7 +3288,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 42650
+    surfaceParameter: 25908
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 188722100452267143
@@ -3366,7 +3374,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 42650
+    surfaceParameter: 25908
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 188722100452267143
