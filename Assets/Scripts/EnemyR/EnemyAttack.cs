@@ -8,18 +8,18 @@ public class EnemyAttack : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public float attackDamage = 10f;
         
-    private UnityAction<bool> pauseListener;
-    private Animator anim;
+    protected UnityAction<bool> pauseListener;
+    protected Animator anim;
     private GameObject player;
-    private PlayerManager playerManager;
-    private EnemyManager enemyManager;
+    protected PlayerManager playerManager;
+    protected EnemyManager enemyManager;
     
-    private bool playerInRange;
+    protected bool PlayerInRange;
     private bool isPaused;
-    private float timer;
-    private bool isAttacking;
+    protected float Timer;
+    protected bool IsAttacking;
 
-    void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerManager = player.GetComponent<PlayerManager>();
@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            playerInRange = true;
+            PlayerInRange = true;
         }
     }
     
@@ -47,7 +47,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            playerInRange = false;
+            PlayerInRange = false;
         }
     }
 
@@ -55,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (isPaused) return;
         
-        timer += Time.deltaTime;
+        Timer += Time.deltaTime;
 
         Attack();
     }
@@ -65,19 +65,21 @@ public class EnemyAttack : MonoBehaviour
         isPaused = state;
     }
 
-    private void Attack()
+    protected virtual void Attack()
     {
-        if (!(timer >= timeBetweenAttacks) || !playerInRange || !(enemyManager.health > 0) || isAttacking) return;
-        timer = 0f;
+        if (!(Timer >= timeBetweenAttacks) || !PlayerInRange || !(enemyManager.health > 0) || IsAttacking) return;
+        Timer = 0f;
     
         if (playerManager.PlayerHp > 0)
         {
             anim.SetTrigger("Attack");
+            IsAttacking = true;
         }
     }
 
     public void DealDamage()
     {
         playerManager.TakeDamage(attackDamage);
+        IsAttacking = false;
     }
 }
