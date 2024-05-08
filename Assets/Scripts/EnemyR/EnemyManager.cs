@@ -77,6 +77,7 @@ public class EnemyManager : MonoBehaviour
     private void Die()
     {
         EventManager.TriggerEvent("Sound", transform.position);
+        EventManager.TriggerEvent("EnemyDeath");
         animator.SetTrigger("Dead");
         SetKinematics(true);
         audioSource.clip = deathAudio;
