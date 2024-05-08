@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 1017656392328616108}
   - component: {fileID: 8838793768488575046}
   - component: {fileID: 4174447969984053508}
+  - component: {fileID: 1017110261110083501}
   m_Layer: 7
   m_Name: Pet
   m_TagString: Untagged
@@ -101,7 +102,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
@@ -145,6 +146,33 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &1017110261110083501
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735500062188917040}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8269411316769564187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174,8 +202,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6735500062188917040}
     - target: {fileID: 3748836277134840750, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748836277134840750, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748836277134840750, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3748836277134840750, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
       propertyPath: m_LocalPosition.x
