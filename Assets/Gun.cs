@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Gun : MonoBehaviour
 {
 
-    public float demage = 10f;
+    public float damage = 10f;
     public float range = 100f;
     public float timeBetweenShoot = 0.15f;
     public Camera cam;
@@ -68,7 +68,6 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit hit;
         timer = 0f;
 
         particleSystem.Stop();
@@ -81,20 +80,16 @@ public class Gun : MonoBehaviour
 
         ray.origin = transform.position;
         ray.direction = transform.forward;
+        
 
-
-
-
-
-
-        if (Physics.Raycast(ray, out hit, range, shootableMask))
+        if (Physics.Raycast(ray, out var hit, range, shootableMask))
         {
             /*Debug.Log(hit.transform.name);*/
 
-            BoxHealth enemyHealth = hit.collider.GetComponent<BoxHealth>();
+            EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(10);
+                enemyHealth.TakeDamage(10, hit.point);
             }
 
             lineRenderer.SetPosition(1, hit.point);
