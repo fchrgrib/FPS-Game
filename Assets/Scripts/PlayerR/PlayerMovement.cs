@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder;
 
 public class PlayerMovement : MonoBehaviour, CheatListener
 {
@@ -8,33 +9,45 @@ public class PlayerMovement : MonoBehaviour, CheatListener
         OnJump
     }
 
+    
+    public float Speed = 10f;
+    public float gravity = -6.5f;
+    public float jumpHeight = 3f;
+    
     private CharacterController characterController;
     private Vector3 playerVelocity;
     private PlayerState playerState = PlayerState.OnGround;
-
-    public float Speed { get; set; } = 15f;
-    public float gravity = -9.8f;
-    public float jumpHeight = 3f;
-
-
+    private float allowableSpeed = 0;
+    
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
     }
 
-    public void MovePlayer(Vector2 input)
+    public void MovePlayer(Vector2 input, Animator animator)
     {
+        if (input == Vector2.zero)
+        {
+            allowableSpeed = 0;
+        }
+        
         playerVelocity.y += gravity * Time.deltaTime;
-        if (playerVelocity.y <= 0f)
+        if (characterController.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = gravity * 0.1f;
         }
-
-        var dir = Vector3.zero;
-        dir.x = input.x;
-        dir.z = input.y;
-        var movement = Speed * Time.deltaTime * transform.TransformDirection(dir) + playerVelocity;
+        
+        var speedIncrement = Speed > allowableSpeed ? Mathf.Lerp(allowableSpeed, Speed, 0.05f) : 0;
+        allowableSpeed += speedIncrement;
+        Vector3 dir = new Vector3(input.x, 0, input.y), 
+            movement = (allowableSpeed * Time.deltaTime) * transform.TransformDirection(dir) + playerVelocity;
         characterController.Move(movement);
+        animator.SetBool("IsWalking", movement.x != 0 || movement.z != 0);
+        
+        if (characterController.isGrounded)
+        {
+            playerState = PlayerState.OnGround;
+        }
     }
 
     public void JumpPlayer()
@@ -43,7 +56,8 @@ public class PlayerMovement : MonoBehaviour, CheatListener
         {
             return;
         }
-
+        
+        playerState = PlayerState.OnJump;
         playerVelocity.y = Mathf.Sqrt(jumpHeight);
     }
 

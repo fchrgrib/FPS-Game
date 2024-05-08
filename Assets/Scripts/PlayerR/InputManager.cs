@@ -1,46 +1,43 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
 
     public PlayerInput PlayerInput;
-    public GameObject pet;
-    public int tes;
-    private PlayerInput.OnGroundActions onGroundActions;
+    private PlayerInput.OnGroundActions _onGroundActions;
 
-    private PlayerMovement playerMovement;
-    private PlayerDirection playerDirection;
+    private PlayerMovement _playerMovement;
+    private PlayerDirection _playerDirection;
+    private Animator _animator;
     
     void Awake()
     {
         PlayerInput = new PlayerInput();
-        onGroundActions = PlayerInput.OnGround;
-        playerMovement = GetComponent<PlayerMovement>();
-        playerDirection = GetComponent<PlayerDirection>();
-        onGroundActions.Jump.performed += ctx => playerMovement.JumpPlayer();
+        _onGroundActions = PlayerInput.OnGround;
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerDirection = GetComponent<PlayerDirection>();
+        _onGroundActions.Jump.performed += ctx => _playerMovement.JumpPlayer();
+
+        _animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        playerMovement.MovePlayer(onGroundActions.Move.ReadValue<Vector2>());
+        _playerMovement.MovePlayer(_onGroundActions.Move.ReadValue<Vector2>(), _animator);
     }
 
     private void LateUpdate()
     {
-        playerDirection.MoveDirection(onGroundActions.MoveDirection.ReadValue<Vector2>());
+        _playerDirection.MoveDirection(_onGroundActions.MoveDirection.ReadValue<Vector2>());
     }
 
     private void OnDisable()
     {
-        onGroundActions.Disable();
+        _onGroundActions.Disable();
     }
 
     private void OnEnable()
     {
-        onGroundActions.Enable();
+        _onGroundActions.Enable();
     }
 }

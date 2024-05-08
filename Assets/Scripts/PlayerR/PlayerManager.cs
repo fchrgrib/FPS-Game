@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour, CheatListener
     // Start is called before the first frame update
     void Start()
     {
-        playerHealthBar.Initialize(MaxHp);
+            playerHealthBar.Initialize(MaxHp);
         
         if (string.IsNullOrEmpty(SceneParams.PlayerPet))
         {
@@ -65,6 +65,7 @@ public class PlayerManager : MonoBehaviour, CheatListener
         }
 
         CurrentPet = currentPet;
+        Debug.Log(CurrentPet);
     }
 
     void Update()
