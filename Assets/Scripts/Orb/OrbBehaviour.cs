@@ -3,26 +3,26 @@ using UnityEngine;
 public abstract class OrbBehaviour : MonoBehaviour
 {
     [SerializeField] private LayerMask playerLayerMask;
-    private readonly float countdownDuration = 5f;
-    private float destroyTime;
-    private readonly float detectionRadius = 5f;
+    private float _destroyTime;
+    private const float SpawnDuration = 5f;
+    private const float DetectionRadius = 1f;
 
     public void Start()
     {
-        destroyTime = Time.time + countdownDuration;
+        _destroyTime = Time.time + SpawnDuration;
     }
 
     private void Update()
     {
         // If 5 seconds have elapsed since the orb was instantiated...
-        if (Time.time >= destroyTime)
+        if (Time.time >= _destroyTime)
         {
             // ...destroy the orb
             DestroyOrb();
         }
 
         // If the player is not colliding with the orb...
-        var hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, playerLayerMask);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, DetectionRadius, playerLayerMask);
         if (hitColliders.Length != 1)
         {
             // ...return the method
