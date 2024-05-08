@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO: add game over controller
-public class Level03Controller : MonoBehaviour
+public class Level04Controller : MonoBehaviour
 {
     public int EnemyDeathCount { get; private set; }
     public int EnemyLeaderDeathCount { get; private set; }
     public int EnemyAdmiralDeathCount { get; private set; }
-
-    public GameObject finalBox;
-    public GameObject finalGate;
+    public int EnemyKingDeathCount { get; private set; }
+    
     // Start is called before the first frame update
     void Start()
     {
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
         EventManager.StartListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
         EventManager.StartListening("AdmiralOfEnemyDeath", IncrementAdmiralOfEnemyDeathCount);
+        EventManager.StartListening("KingOfEnemyDeath", IncrementKingOfEnemyDeathCount);
     }
     
     private void OnDestroy()
@@ -24,6 +23,7 @@ public class Level03Controller : MonoBehaviour
         EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
         EventManager.StopListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
         EventManager.StopListening("AdmiralOfEnemyDeath", IncrementAdmiralOfEnemyDeathCount);
+        EventManager.StopListening("KingOfEnemyDeath", IncrementKingOfEnemyDeathCount);
     }
     
     private void IncrementEnemyDeathCount()
@@ -41,13 +41,17 @@ public class Level03Controller : MonoBehaviour
         EnemyAdmiralDeathCount++;
     }
 
+    private void IncrementKingOfEnemyDeathCount()
+    {
+        EnemyKingDeathCount++;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (EnemyLeaderDeathCount >= 3 && EnemyAdmiralDeathCount >= 1)
+        if (EnemyKingDeathCount>0)
         {
-            finalBox.SetActive(true);
-            finalGate.SetActive(false);  
+            //TODO: Do something if king of enemy death  
         }
     }
 }
