@@ -11,14 +11,18 @@ public class EnemyPetBehavior : MonoBehaviour
     [SerializeField] private LayerMask playerLayerMask;
 
     private NavMeshAgent _navMeshAgent;
+    private Animator _animator;
     
     private void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        _animator.SetBool("Walk", _navMeshAgent.velocity.magnitude != 0);
+        
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, playerDetectionDistance, playerLayerMask);
         if (hitColliders.Length == 1)
         {
@@ -29,4 +33,11 @@ public class EnemyPetBehavior : MonoBehaviour
         
         _navMeshAgent.SetDestination(transform.parent.position);
     }
+
+    public void MeDead()
+    {
+        _animator.SetBool("Die", _navMeshAgent.velocity.magnitude != 0);
+
+    }
+    
 }
