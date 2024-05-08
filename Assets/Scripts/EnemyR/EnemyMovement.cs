@@ -6,7 +6,8 @@ using Random = UnityEngine.Random;
 public class EnemyMovement : MonoBehaviour
 {
     public float visionRadius = 10f;
-    public Vector2 idleTimeRange;
+    public int minIdleTime = 2;
+    public int maxIdleTime = 5;
     
     private UnityAction<bool> pauseListener;
     private float currentVision;
@@ -16,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private Animator animator;
     
-    private float timer;
+    [SerializeField] private float timer;
     private bool isPaused;
     private const float WanderDistance = 15f;
 
@@ -119,7 +120,7 @@ public class EnemyMovement : MonoBehaviour
             NavMesh.SamplePosition(randomPosition, out var hit, WanderDistance, NavMesh.AllAreas);
             GoToDestination(hit.position);
             
-            timer = Random.Range(idleTimeRange.x, idleTimeRange.y);
+            timer = Random.Range(2, 5);
         }
         else
         {
