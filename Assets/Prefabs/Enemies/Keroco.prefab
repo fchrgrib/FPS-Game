@@ -178,9 +178,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionRadius: 10
-  idleTimeRange: {x: 0, y: 0}
+  minIdleTime: 2
+  maxIdleTime: 5
   playerTransform: {fileID: 0}
   playerManager: {fileID: 0}
+  timer: 0
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 0
