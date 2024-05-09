@@ -1,4 +1,5 @@
 using Microlight.MicroBar;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,10 +14,12 @@ public class PlayerManager : MonoBehaviour, CheatListener
     [SerializeField] private GameObject attackerPet;
     [SerializeField] private GameObject healerPet;
     [SerializeField] private MicroBar playerHealthBar;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
+    public static int PlayerMoney { get; set; } = 0;
     public float PlayerDamageMultiplier { get; set; } = 1f;
     public int DamageOrbCount { get; set; } = 0;
     private string currentPet = NO_PET;
@@ -36,7 +39,8 @@ public class PlayerManager : MonoBehaviour, CheatListener
     // Start is called before the first frame update
     void Start()
     {
-            playerHealthBar.Initialize(MaxHp);
+        playerHealthBar.Initialize(MaxHp);
+        moneyText.text = PlayerMoney.ToString();
         
         if (string.IsNullOrEmpty(SceneParams.PlayerPet))
         {
@@ -65,7 +69,6 @@ public class PlayerManager : MonoBehaviour, CheatListener
         }
 
         CurrentPet = currentPet;
-        Debug.Log(CurrentPet);
     }
 
     void Update()

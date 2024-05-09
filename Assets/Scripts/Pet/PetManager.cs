@@ -36,7 +36,7 @@ public class PetManager : MonoBehaviour
         }
 
         animator.SetBool("Walking", navMeshAgent.velocity.magnitude != 0);
-        var destination = petMovement.DoActionAndGetDestination(playerManager, player);
+        var destination = petMovement.DoActionAndGetDestination(playerManager, player, navMeshAgent, animator);
         navMeshAgent.SetDestination(destination);
     }
 }
