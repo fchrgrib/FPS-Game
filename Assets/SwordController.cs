@@ -7,6 +7,8 @@ public class SwordController : MonoBehaviour
 
     public Transform attackPoint;
     public float damage = 30f;
+
+    private float damageDefault;
     private int attackCount;
     Animator anim;
     private LayerMask enemyLayerMask;
@@ -17,9 +19,26 @@ public class SwordController : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyLayerMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
+        damageDefault = 30f;
+        EventManager.StartListening("OneHitDamage",MultiplyDamage);
     }
 
+    private void OnDestroy()
+    {
+        EventManager.StopListening("OneHitDamage",MultiplyDamage);
+    }
 
+    private void MultiplyDamage(bool isActive)
+    {
+        if (isActive)
+        {
+            damage*=1000f;   
+        }
+        else
+        {
+            damage = damageDefault;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

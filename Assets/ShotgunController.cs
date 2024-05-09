@@ -23,6 +23,7 @@ public class ShotgunController : MonoBehaviour
     InputManager inputManager;
     private LayerMask enemyLayerMask;
     private Ray ray;
+    private float damageDefault;
 
     float rand;
 
@@ -35,6 +36,7 @@ public class ShotgunController : MonoBehaviour
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         inputManager = GetComponent<InputManager>();
+        damageDefault = 7f;
         enemyLayerMask = LayerMask.GetMask("Enemy");
         for(int i = 0; i < 10; i++)
         {
@@ -50,8 +52,26 @@ public class ShotgunController : MonoBehaviour
 
             lineRenderer.Add(line);
         }
+        damageDefault = 30f;
+        EventManager.StartListening("OneHitDamage",MultiplyDamage);
     }
 
+    private void OnDestroy()
+    {
+        EventManager.StopListening("OneHitDamage",MultiplyDamage);
+    }
+
+    private void MultiplyDamage(bool isActive)
+    {
+        if (isActive)
+        {
+            damage*=1000f;   
+        }
+        else
+        {
+            damage = damageDefault;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

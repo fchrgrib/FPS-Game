@@ -1,7 +1,9 @@
+using System;
 using Nightmare;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
@@ -13,6 +15,7 @@ public class Gun : MonoBehaviour
     public Camera cam;
 
     float effectsDisplayTime = 0.2f;
+    private float damageDefault;
     float timer;
     int shootableMask;
     Ray ray = new Ray();
@@ -22,6 +25,7 @@ public class Gun : MonoBehaviour
     
     private LineRenderer lineRenderer;
     private InputManager inputManager;
+    private UnityAction<float> multiplyDamageListener;
 
     // Start is called before the first frame update
 
@@ -30,9 +34,28 @@ public class Gun : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponent<ParticleSystem>();
         light = GetComponent<Light>();
+        damageDefault = 10f;
         lineRenderer = GetComponent<LineRenderer>();
         shootableMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
+        EventManager.StartListening("OneHitDamage",MultiplyDamage);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening("OneHitDamage",MultiplyDamage);
+    }
+
+    private void MultiplyDamage(bool isActive)
+    {
+        if (isActive)
+        {
+            damage*=1000f;   
+        }
+        else
+        {
+            damage = damageDefault;
+        }
     }
 
     // Update is called once per frame
@@ -89,7 +112,7 @@ public class Gun : MonoBehaviour
             EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(10, hit.point);
+                enemyHealth.TakeDamage(damage, hit.point);
             }
 
             lineRenderer.SetPosition(1, hit.point);
