@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 4296943208305740691}
-  pet: {fileID: 0}
+  GunCamera: {fileID: 6204238904810361311}
   hSensitivity: 30
   vSensitivity: 30
 --- !u!114 &7713728530822513248
