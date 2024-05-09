@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -32,8 +33,10 @@ public class EnemyShotgunAttack : EnemyAttack
         shootableMask = LayerMask.GetMask("Player");
     }
 
-    private void Update() 
+    protected override void Update()
     {
+        if (IsPaused) return;
+        
         shootingTimer += Time.deltaTime;
         
         if (shootingTimer >= shootingDelay)
@@ -98,9 +101,9 @@ public class EnemyShotgunAttack : EnemyAttack
             {
                 var player = hit.collider.GetComponent<PlayerManager>();
                 
-                if (player != null)
+                if (player)
                 {
-                    player.TakeDamage(damagePerPellet);
+                    player.TakeDamage(damagePerPellet * attackDamageMultiplier);
                 }
 
                 lineRenderer.SetPosition(i, hit.point);
