@@ -4,6 +4,7 @@ public class EnemyShotgunMovement : EnemyMovement
 {
     public float distanceThreshold = 15f;
     public float minDistanceFromPlayer = 5f;
+    public float rotationDamping = 4f;
     private float distanceToPlayer;
 
     private void LateUpdate()
@@ -34,7 +35,9 @@ public class EnemyShotgunMovement : EnemyMovement
     private void MoveAway()
     {
         navMeshAgent.updateRotation = false;
-        transform.LookAt(playerTransform);
+        // transform.LookAt(playerTransform);
+        var rotation = Quaternion.LookRotation(playerTransform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
         
         var point = playerTransform.position + (transform.position - playerTransform.position).normalized * minDistanceFromPlayer;
         SetDestination(point);

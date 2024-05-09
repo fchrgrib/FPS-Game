@@ -16,7 +16,7 @@ public class EnemyShotgunAttack : EnemyAttack
     private List<LineRenderer> pelletLineRenderers;
     private Ray ray;
 
-    private GameObject player;
+    private GameObject playerOnly;
     
     private int shootableMask;
     private float shootingTimer;
@@ -47,7 +47,7 @@ public class EnemyShotgunAttack : EnemyAttack
             pelletLineRenderers.Add(pelletLineRenderer);
         }
         
-        player = GameObject.Find("PlayerOnly");
+        playerOnly = GameObject.Find("PlayerOnly");
         
         shootableMask = LayerMask.GetMask("Player");
     }
@@ -90,7 +90,7 @@ public class EnemyShotgunAttack : EnemyAttack
     
     private bool ShouldShoot()
     {
-        var playerTransform = player.transform;
+        var playerTransform = playerOnly.transform;
         var enemy = transform;
         
         var playerDirection = playerTransform.position - enemy.position;
@@ -123,7 +123,7 @@ public class EnemyShotgunAttack : EnemyAttack
             
             if (Physics.Raycast(ray, out var hit, range, shootableMask))
             {
-                if (hit.collider.gameObject == player)
+                if (hit.collider.gameObject == playerOnly)
                     PlayerManager.TakeDamage(damagePerPellet * attackDamageMultiplier);
                 
                 pelletLineRenderers[i].SetPosition(0, transform.position);
