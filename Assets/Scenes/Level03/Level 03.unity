@@ -169,6 +169,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &35651296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 35651298}
+  - component: {fileID: 35651297}
+  m_Layer: 0
+  m_Name: Jenderal Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &35651297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35651296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb42e24dfc94ba981a6eba183f5667e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnThreshold: 2
+  maxSpawnThreshold: 5
+  maxMobs: 10
+  mobs: {fileID: 1192528451}
+  Difficulty: 2
+--- !u!4 &35651298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35651296}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 21.498922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &61056269
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +428,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108672724}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &113544457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113544459}
+  - component: {fileID: 113544458}
+  m_Layer: 0
+  m_Name: Kepala Keroco Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &113544458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113544457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb42e24dfc94ba981a6eba183f5667e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnThreshold: 2
+  maxSpawnThreshold: 5
+  maxMobs: 3
+  mobs: {fileID: 1470658495}
+  Difficulty: 2
+--- !u!4 &113544459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113544457}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 21.498922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &116308539
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,6 +7111,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+--- !u!1 &1192528451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+  m_PrefabInstance: {fileID: 1192528450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1196504260
 GameObject:
   m_ObjectHideFlags: 0
@@ -9651,6 +9754,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+--- !u!1 &1470658495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+  m_PrefabInstance: {fileID: 1470658494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1475301472
 GameObject:
   m_ObjectHideFlags: 0
@@ -12855,6 +12963,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854885981}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1855026491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1855026493}
+  - component: {fileID: 1855026492}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1855026492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855026491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4742cb93abc9d864b95cf1642ab90771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1855026493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855026491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7295403, y: -13.520775, z: 29.649118}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1865220202
 GameObject:
   m_ObjectHideFlags: 0
@@ -15485,3 +15637,6 @@ SceneRoots:
   - {fileID: 1547011723}
   - {fileID: 1192528450}
   - {fileID: 1470658494}
+  - {fileID: 1855026493}
+  - {fileID: 113544459}
+  - {fileID: 35651298}
