@@ -24,6 +24,7 @@ public class ShotgunController : MonoBehaviour
     private LayerMask enemyLayerMask;
     private Ray ray;
     private float damageDefault;
+    private PlayerManager PlayerManager;
 
     float rand;
 
@@ -36,9 +37,8 @@ public class ShotgunController : MonoBehaviour
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         inputManager = GetComponent<InputManager>();
-        damageDefault = 7f;
         enemyLayerMask = LayerMask.GetMask("Enemy");
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             LineRenderer line = new GameObject().AddComponent<LineRenderer>();
             line.material = line.material;
@@ -48,30 +48,12 @@ public class ShotgunController : MonoBehaviour
             line.startWidth = lineComponent.startWidth;
             line.endWidth = lineComponent.endWidth;
 
-            
+
 
             lineRenderer.Add(line);
         }
-        damageDefault = 30f;
-        EventManager.StartListening("OneHitDamage",MultiplyDamage);
     }
 
-    private void OnDestroy()
-    {
-        EventManager.StopListening("OneHitDamage",MultiplyDamage);
-    }
-
-    private void MultiplyDamage(bool isActive)
-    {
-        if (isActive)
-        {
-            damage*=1000f;   
-        }
-        else
-        {
-            damage = damageDefault;
-        }
-    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -154,7 +136,7 @@ public class ShotgunController : MonoBehaviour
 
                 if (enemyManager != null)
                 {
-                    enemyManager.TakeDamage(damage, hit.point);
+                    enemyManager.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
                 }
                 
                 line.SetPosition(1, hit.point);

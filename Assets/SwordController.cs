@@ -13,6 +13,7 @@ public class SwordController : MonoBehaviour
     Animator anim;
     private LayerMask enemyLayerMask;
     private InputManager inputManager;
+    private PlayerManager PlayerManager;
 
     private void Awake()
     {
@@ -20,25 +21,8 @@ public class SwordController : MonoBehaviour
         enemyLayerMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
         damageDefault = 30f;
-        EventManager.StartListening("OneHitDamage",MultiplyDamage);
     }
 
-    private void OnDestroy()
-    {
-        EventManager.StopListening("OneHitDamage",MultiplyDamage);
-    }
-
-    private void MultiplyDamage(bool isActive)
-    {
-        if (isActive)
-        {
-            damage*=1000f;   
-        }
-        else
-        {
-            damage = damageDefault;
-        }
-    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -71,7 +55,7 @@ public class SwordController : MonoBehaviour
             {
                 continue;
             }
-            enemy.GetComponent<EnemyManager>().TakeDamage(damage, attackPoint.position);
+            enemy.GetComponent<EnemyManager>().TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, attackPoint.position);
         }
     }
 }

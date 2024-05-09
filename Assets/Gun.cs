@@ -26,6 +26,7 @@ public class Gun : MonoBehaviour
     private LineRenderer lineRenderer;
     private InputManager inputManager;
     private UnityAction<float> multiplyDamageListener;
+    private PlayerManager PlayerManager;
 
     // Start is called before the first frame update
 
@@ -38,24 +39,6 @@ public class Gun : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         shootableMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
-        EventManager.StartListening("OneHitDamage",MultiplyDamage);
-    }
-
-    private void OnDestroy()
-    {
-        EventManager.StopListening("OneHitDamage",MultiplyDamage);
-    }
-
-    private void MultiplyDamage(bool isActive)
-    {
-        if (isActive)
-        {
-            damage*=1000f;   
-        }
-        else
-        {
-            damage = damageDefault;
-        }
     }
 
     // Update is called once per frame
@@ -112,7 +95,7 @@ public class Gun : MonoBehaviour
             EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage, hit.point);
+                enemyHealth.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
             }
 
             lineRenderer.SetPosition(1, hit.point);
