@@ -6,14 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class ShopSceneHelper : MonoBehaviour
 {
-
     [SerializeField] private TextMeshProUGUI playerMoney;
-    
+
+    private static readonly Dictionary<int, string> CurrentLevelToNextLevelMap = new Dictionary<int, string>
+    {
+        { 1, "Scenes/Level02/Level 02"},
+        { 2, "Scenes/Level03/Level 03"},
+        { 3, "Scenes/Level04/Level 04"}
+    };
+
     void Start()
     {
         playerMoney.text = PlayerManager.PlayerMoney.ToString();
     }
-    
+
     public void ProceedNextLevelAttacker()
     {
         if (PlayerManager.PlayerMoney < 100)
@@ -21,10 +27,10 @@ public class ShopSceneHelper : MonoBehaviour
             playerMoney.color = Color.red;
             return;
         }
-        
+
         PlayerManager.PlayerMoney -= 100;
         SceneParams.PlayerPet = PlayerManager.ATTACKER_PET;
-        SceneManager.LoadScene("Scenes/Remade/Main");
+        LevelManager.currentLevelManager.NextLevel();
     }
 
     public void ProceedNextLevelHealer()
@@ -34,9 +40,9 @@ public class ShopSceneHelper : MonoBehaviour
             playerMoney.color = Color.red;
             return;
         }
-        
+
         PlayerManager.PlayerMoney -= 100;
         SceneParams.PlayerPet = PlayerManager.HEALER_PET;
-        SceneManager.LoadScene("Scenes/Remade/Main");
+        LevelManager.currentLevelManager.NextLevel();
     }
 }

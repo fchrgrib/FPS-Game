@@ -8,6 +8,6 @@ public class SceneHelper : MonoBehaviour
     public void ProceedNextLevel()
     {
         SceneParams.PlayerPet = PlayerManager.CurrentPet;
-        SceneManager.LoadScene("Scenes/Remade/Main");
+        LevelManager.currentLevelManager.NextLevel();
     }
 }

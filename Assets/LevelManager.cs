@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private int currentLevel;
+
+    public static LevelManager currentLevelManager = null;
+    
+    public int currentLevel;
     private int nextLevel;
     private string nextLevelPath;
     private Scene Scene;
@@ -18,6 +21,7 @@ public class LevelManager : MonoBehaviour
         currentLevel = int.Parse(Scene.name.Split(" ")[1]);
         nextLevel = currentLevel + 1;
         nextLevelPath = $"Scenes/Level0{nextLevel}/Level 0{nextLevel}";
+        currentLevelManager = this;
     }
 
     // Update is called once per frame
@@ -29,10 +33,14 @@ public class LevelManager : MonoBehaviour
         {
             return;
         }
+        NextLevel();
+    }
 
+    public void NextLevel()
+    {
         if (nextLevel>3)
         {
-            //TODO: Do something
+            SceneManager.LoadScene(nextLevelPath);
             return;
         }
         Debug.Log("Masuk"+nextLevelPath);

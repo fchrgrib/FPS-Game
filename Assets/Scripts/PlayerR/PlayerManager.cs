@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour, CheatListener
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
-    public static int PlayerMoney { get; set; } = 0;
+    public static int PlayerMoney { get; set; } = 300;
     public float PlayerDamageMultiplier { get; set; } = 1f;
     public int DamageOrbCount { get; set; } = 0;
     private string currentPet = NO_PET;
