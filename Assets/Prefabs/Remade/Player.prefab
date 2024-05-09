@@ -50,6 +50,7 @@ MonoBehaviour:
   attackerPet: {fileID: 2066896392038628118, guid: 45288819fde2143449a96207b14db0bb, type: 3}
   healerPet: {fileID: 7962199819078159310, guid: f5b41ba4c79702547a89de7544b80656, type: 3}
   playerHealthBar: {fileID: 1180116790224663537}
+  PlayerDamageMultiplier: 1
 --- !u!1 &6735500062188917040
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +342,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 485291430551970356, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1773952223658756717}
     - targetCorrespondingSourceObject: {fileID: 8108030255640556251, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5175415042080551787}
@@ -447,3 +451,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 485291430551970356, guid: 6c587863919ddff47af95bf69fb745e7, type: 3}
   m_PrefabInstance: {fileID: 8269411316769564187}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773952223658756717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8394358117905876015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d763082dc6a367e4a9142bbf20c7ea27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalFloorMask:
+    serializedVersion: 2
+    m_Bits: 16384
