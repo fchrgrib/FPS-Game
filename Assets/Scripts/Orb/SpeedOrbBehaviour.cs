@@ -8,6 +8,16 @@ public class SpeedOrbBehaviour : OrbBehaviour
 
     protected override void ExecuteOrbPerk(PlayerManager playerManager, PlayerMovement playerMovement)
     {
+        if (PlayerCheats.doubleSpeedApplied)
+        {
+            if (_speedModifierCoroutine != null)
+            {
+                StopCoroutine(_speedModifierCoroutine);
+            }
+
+            return;
+        }
+        
         // Stop the coroutine if it's already running
         if (_speedModifierCoroutine != null)
         {
