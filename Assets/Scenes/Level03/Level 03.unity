@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnThreshold: 2
   maxSpawnThreshold: 5
-  maxMobs: 10
+  maxMobs: 1
   mobs: {fileID: 1192528451}
   Difficulty: 2
 --- !u!4 &35651298
