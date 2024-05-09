@@ -32,7 +32,7 @@ public class ShotgunController : MonoBehaviour
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         inputManager = GetComponent<InputManager>();
-        PlayerManager = GetComponent<PlayerManager>();
+        PlayerManager = GetComponentInParent<PlayerManager>();
         enemyLayerMask = LayerMask.GetMask("Enemy");
         for (int i = 0; i < 10; i++)
         {

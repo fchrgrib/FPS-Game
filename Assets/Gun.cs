@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponent<ParticleSystem>();
         light = GetComponent<Light>();
-        PlayerManager = GetComponent<PlayerManager>();
+        PlayerManager = GetComponentInParent<PlayerManager>();
         lineRenderer = GetComponent<LineRenderer>();
         shootableMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
