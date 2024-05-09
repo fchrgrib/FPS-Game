@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class ShotgunController : MonoBehaviour
@@ -23,7 +19,6 @@ public class ShotgunController : MonoBehaviour
     InputManager inputManager;
     private LayerMask enemyLayerMask;
     private Ray ray;
-    private float damageDefault;
     private PlayerManager PlayerManager;
 
     float rand;
@@ -37,6 +32,7 @@ public class ShotgunController : MonoBehaviour
         lineComponent = GetComponent<LineRenderer>();
         particleSystem = GetComponent<ParticleSystem>();
         inputManager = GetComponent<InputManager>();
+        PlayerManager = GetComponent<PlayerManager>();
         enemyLayerMask = LayerMask.GetMask("Enemy");
         for (int i = 0; i < 10; i++)
         {
@@ -47,9 +43,7 @@ public class ShotgunController : MonoBehaviour
 
             line.startWidth = lineComponent.startWidth;
             line.endWidth = lineComponent.endWidth;
-
-
-
+            
             lineRenderer.Add(line);
         }
     }

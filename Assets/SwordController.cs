@@ -20,7 +20,7 @@ public class SwordController : MonoBehaviour
         anim = GetComponent<Animator>();
         enemyLayerMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
-        damageDefault = 30f;
+        PlayerManager = GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame

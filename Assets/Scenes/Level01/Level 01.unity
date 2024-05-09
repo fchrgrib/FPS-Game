@@ -983,7 +983,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 189677f175204d043a86441ddc104b77, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f52470c09528b964aa784bb889c01546, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &482693132 stripped
 Transform:
@@ -1947,10 +1947,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5260623595148368245, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7098942588316440638, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1094538235}
+    - targetCorrespondingSourceObject: {fileID: 164200279073756352, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1851366899}
+    - targetCorrespondingSourceObject: {fileID: 7575318560065897535, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2145752758}
   m_SourcePrefab: {fileID: 100100000, guid: bbe37b25a2946af438186467560df22c, type: 3}
 --- !u!1 &955689267
 GameObject:
@@ -2310,6 +2323,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1094538226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7098942588316440638, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 896831547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1094538235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094538226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ba4e16285c46d47a3f8767a2061d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petHolder: {fileID: 0}
+  attackerPet: {fileID: 0}
+  healerPet: {fileID: 0}
+  playerHealthBar: {fileID: 0}
 --- !u!1 &1108278125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5236359416903694273, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
@@ -3770,6 +3804,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807902055}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1851366894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 164200279073756352, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 896831547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1851366899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851366894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ba4e16285c46d47a3f8767a2061d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petHolder: {fileID: 0}
+  attackerPet: {fileID: 0}
+  healerPet: {fileID: 0}
+  playerHealthBar: {fileID: 0}
 --- !u!1001 &1914803402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4527,6 +4582,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39999998, y: 0.79999995, z: 0.39999998}
   m_Center: {x: 0.00000047683716, y: 0.39999998, z: 0}
+--- !u!1 &2145752752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7575318560065897535, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 896831547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2145752758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145752752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ba4e16285c46d47a3f8767a2061d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petHolder: {fileID: 0}
+  attackerPet: {fileID: 0}
+  healerPet: {fileID: 0}
+  playerHealthBar: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

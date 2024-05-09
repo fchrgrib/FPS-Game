@@ -32,11 +32,6 @@ public class PlayerManager : MonoBehaviour, CheatListener
             playerHealthBar.UpdateHealthBar(value);
         }
     }
-
-    void PlayerOneHitDamage(bool isActive)
-    {
-        EventManager.TriggerEvent("OneHitDamage", isActive);
-    }
     
     // Start is called before the first frame update
     void Start()
