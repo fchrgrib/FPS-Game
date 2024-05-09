@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,27 +7,47 @@ public class EnemyShotgunAttack : EnemyAttack
     public int pelletsPerShot = 12;
     public float damagePerPellet = 7f;
     public float shootingDelay = 1f;
-    public float range = 100f;
+    public float range = 15f;
     public Light faceLight;
     
     private AudioSource shotgunAudio;
     private ParticleSystem shotgunParticles;
     private Light shotgunLight;
-    private LineRenderer lineRenderer;
+    private List<LineRenderer> pelletLineRenderers;
     private Ray ray;
+
+    private GameObject player;
     
     private int shootableMask;
-
     private float shootingTimer;
+    
+    private static readonly Color TrailColor = new(255, 232, 163);
     
     protected override void Awake()
     {
         base.Awake();
         
+        EnemyManager = GetComponentInParent<EnemyManager>();
+        
         shotgunAudio = GetComponent<AudioSource>();
         shotgunParticles = GetComponent<ParticleSystem>();
         shotgunLight = GetComponent<Light>();
-        lineRenderer = GetComponent<LineRenderer>();
+        
+        pelletLineRenderers = new List<LineRenderer>(pelletsPerShot);
+        for (var i = 0; i < pelletsPerShot; i++)
+        {
+            var pelletLineRenderer = new GameObject("Pellet Line Renderer").AddComponent<LineRenderer>();
+            pelletLineRenderer.transform.SetParent(transform);
+            pelletLineRenderer.startWidth = 0.01f;
+            pelletLineRenderer.endWidth = 0.01f;
+            pelletLineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+            pelletLineRenderer.startColor = TrailColor;
+            pelletLineRenderer.endColor = TrailColor;
+            pelletLineRenderer.positionCount = 2;
+            pelletLineRenderers.Add(pelletLineRenderer);
+        }
+        
+        player = GameObject.Find("PlayerOnly");
         
         shootableMask = LayerMask.GetMask("Player");
     }
@@ -39,13 +58,13 @@ public class EnemyShotgunAttack : EnemyAttack
         
         shootingTimer += Time.deltaTime;
         
-        if (shootingTimer >= shootingDelay)
+        if (shootingTimer >= shootingDelay && ShouldShoot())
         {
             Attack();
             shootingTimer = 0f;
         }
         
-        if (shootingTimer >= shootingDelay * 0.01f)
+        if (shootingTimer >= shootingDelay * 0.05f)
         {
             DisableEffects();
         }
@@ -53,14 +72,11 @@ public class EnemyShotgunAttack : EnemyAttack
 
     protected override void Attack()
     {
-        // if (!(enemyManager.health < 0 || IsAttacking)) return;
-        Timer = 0f;
+        if (EnemyManager.health < 0) return;
         print("attack");
     
-        if (playerManager.PlayerHp > 0)
+        if (PlayerManager.PlayerHp > 0)
         {
-            // anim.SetTrigger("Attack");
-            // IsAttacking = true;
             Shoot();
         }
     }
@@ -69,14 +85,22 @@ public class EnemyShotgunAttack : EnemyAttack
     {
         shotgunLight.enabled = false;
         faceLight.enabled = false;
-        lineRenderer.enabled = false;
+        pelletLineRenderers.ForEach(pelletLineRenderer => pelletLineRenderer.enabled = false);
+    }
+    
+    private bool ShouldShoot()
+    {
+        var playerTransform = player.transform;
+        var enemy = transform;
+        
+        var playerDirection = playerTransform.position - enemy.position;
+        var angle = Vector3.Angle(playerDirection, enemy.forward);
+        
+        return angle < 30f && playerDirection.magnitude < range;
     }
 
-    public void Shoot()
+    private void Shoot()
     {
-        print("shoot");
-        shootingTimer = 0f;
-        
         shotgunAudio.Play();
         
         shotgunLight.enabled = true;
@@ -85,7 +109,7 @@ public class EnemyShotgunAttack : EnemyAttack
         shotgunParticles.Stop();
         shotgunParticles.Play();
         
-        lineRenderer.enabled = true;
+        pelletLineRenderers.ForEach(pelletLineRenderer => pelletLineRenderer.enabled = true);
         
         for (var i = 0; i < pelletsPerShot; i++)
         {
@@ -99,18 +123,16 @@ public class EnemyShotgunAttack : EnemyAttack
             
             if (Physics.Raycast(ray, out var hit, range, shootableMask))
             {
-                var player = hit.collider.GetComponent<PlayerManager>();
+                var player = hit.collider.GetComponentInParent<PlayerManager>();
+                player.TakeDamage(damagePerPellet * attackDamageMultiplier);
                 
-                if (player)
-                {
-                    player.TakeDamage(damagePerPellet * attackDamageMultiplier);
-                }
-
-                lineRenderer.SetPosition(i, hit.point);
+                pelletLineRenderers[i].SetPosition(0, transform.position);
+                pelletLineRenderers[i].SetPosition(1, hit.point);
             }
             else
             {
-                lineRenderer.SetPosition(i, ray.origin + ray.direction * range);
+                pelletLineRenderers[i].SetPosition(0, transform.position);
+                pelletLineRenderers[i].SetPosition(1, ray.origin + ray.direction * range);
             }
         }
     }

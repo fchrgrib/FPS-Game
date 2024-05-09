@@ -10398,43 +10398,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2666024277789557517, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 7309362169573307296}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
 --- !u!4 &3744290183342553151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6405161163838524363, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
   m_PrefabInstance: {fileID: 7716302445737178100}
   m_PrefabAsset: {fileID: 0}
---- !u!108 &5223779419379908205 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 2552212252883602841, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
-  m_PrefabInstance: {fileID: 7716302445737178100}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5758501683870216441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2666024277789557517, guid: d12f9f384e84dd04a84f6b45de984ced, type: 3}
-  m_PrefabInstance: {fileID: 7716302445737178100}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7309362169573307296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5758501683870216441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0331b718862c4e23aeec5f140441e62a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 10
-  attackDamageMultiplier: 1
-  pelletsPerShot: 12
-  damagePerPellet: 7
-  shootingDelay: 1
-  range: 100
-  faceLight: {fileID: 5223779419379908205}
