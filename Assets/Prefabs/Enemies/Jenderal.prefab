@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755d1ab8f0094ef9bbea12900a89c442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 5
+  distanceThreshold: 15
   damagePerSecond: 3
 --- !u!114 &5529623152610704061
 MonoBehaviour:

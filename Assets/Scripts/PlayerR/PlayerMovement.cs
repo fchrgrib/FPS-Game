@@ -61,8 +61,8 @@ public class PlayerMovement : MonoBehaviour, CheatListener
         playerVelocity.y = Mathf.Sqrt(jumpHeight);
     }
 
-    public void ChangeSpeed()
+    public void ChangeSpeed(float speed)
     {
-        this.HandleSpeed(this);
+        this.HandleSpeed(this, speed);
     }
 }

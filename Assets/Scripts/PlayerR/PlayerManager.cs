@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour, CheatListener
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
-    public float PlayerDamageMultiplier { get; set; } = 1f;
+    public float PlayerDamageMultiplier = 1f;
     public int DamageOrbCount { get; set; } = 0;
     private string currentPet = NO_PET;
     
@@ -66,11 +66,6 @@ public class PlayerManager : MonoBehaviour, CheatListener
 
         CurrentPet = currentPet;
         Debug.Log(CurrentPet);
-    }
-
-    void Update()
-    {
-        // TakeDamage(1f);
     }
 
     public void TakeDamage(float damage)
