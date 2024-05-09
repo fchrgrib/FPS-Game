@@ -9982,7 +9982,6 @@ GameObject:
   - component: {fileID: 2404025337128399007}
   - component: {fileID: 7848886433085106919}
   - component: {fileID: 1960332598628231744}
-  - component: {fileID: 8680786716840284992}
   m_Layer: 9
   m_Name: Raja
   m_TagString: Enemy
@@ -10279,26 +10278,6 @@ MonoBehaviour:
   maxIdleTime: 5
   distanceThreshold: 15
   minDistanceFromPlayer: 10
---- !u!114 &8680786716840284992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0331b718862c4e23aeec5f140441e62a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 10
-  attackDamageMultiplier: 1
-  pelletsPerShot: 12
-  damagePerPellet: 7
-  shootingDelay: 1
-  range: 100
-  faceLight: {fileID: 0}
 --- !u!1 &184534
 GameObject:
   m_ObjectHideFlags: 0
