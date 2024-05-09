@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class EnemyManager : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private EnemyMovement enemyMovement;
 
+    private Renderer renderer;
+
     private bool dieEvent;
     private bool firstPetDeath;
     private bool secondPetDeath;
@@ -25,6 +28,8 @@ public class EnemyManager : MonoBehaviour
         particleSystem = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         enemyMovement = GetComponent<EnemyMovement>();
+
+        renderer = (from r in GetComponentsInChildren<Renderer>() where r.GetType() == typeof(SkinnedMeshRenderer) select r).First();
     }
 
     void OnEnable()
@@ -34,7 +39,6 @@ public class EnemyManager : MonoBehaviour
     
     public void TakeDamage(float amount, Vector3 hitPoint)
     {
-        Debug.Log($"enemy: {health}");
         if (!IsDead())
         {
             audioSource.Play();
@@ -71,6 +75,15 @@ public class EnemyManager : MonoBehaviour
             case <= 40 when !secondPetDeath:
                 secondPetDeath = true;
                 EventManager.TriggerEvent("PetDeath");
+                break;
+            case <= 40:
+                var mat = renderer.material;
+                
+                var emission = Mathf.PingPong(Time.time, 1f);
+                var baseColor = new Color(2, 0, 0);
+                var finalColor = baseColor * Mathf.LinearToGammaSpace(emission);
+                mat.SetColor("_Color", finalColor);
+                
                 break;
         }
         

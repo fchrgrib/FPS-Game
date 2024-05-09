@@ -21,7 +21,7 @@ public class EnemyShotgunAttack : EnemyAttack
     private int shootableMask;
     private float shootingTimer;
     
-    private static readonly Color TrailColor = new(255, 232, 163);
+    private static readonly Color TrailColor = new(255 / 255f, 232 / 255f, 163 / 255f);
     
     protected override void Awake()
     {
