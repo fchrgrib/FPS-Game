@@ -1,32 +1,31 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Nightmare
+public class RajaBehavior : JenderalBehavior
 {
-    public class RajaBehavior : MonoBehaviour
+    public float speedDecreaseMultiplier = 0.6f;
+    public float damageDecreaseMultiplier = 0.8f;
+    private PlayerMovement playerMovement;
+    
+    private bool applied;
+    
+    protected override void Awake()
     {
-        public float distanceThreshold = 10f;
-        public float damagePerSecond = 3f;
-        private GameObject[] players;
-        
-        void Awake()
-        {
-            players = GameObject.FindGameObjectsWithTag("Player");
+        base.Awake();
+        playerMovement = Player.GetComponent<PlayerMovement>();
+    }
+    
+    protected override void ApplyEffectsToPlayer()
+    {
+        base.ApplyEffectsToPlayer();
+        if (!applied) {
+            playerMovement.ChangeSpeed(playerMovement.Speed * speedDecreaseMultiplier);
+            PlayerManager.PlayerDamageMultiplier *= damageDecreaseMultiplier;
+            applied = true;
         }
-
-        void Update()
-        {
-            if (players == null || players.Length == 0)
-                return;
-            
-            foreach (var player in players)
-            {
-                if (Vector3.Distance(player.transform.position, transform.position) < distanceThreshold)
-                {
-                    // Do something
-                }
-            }
-        }
+    }
+    
+    protected override void DispelEffects()
+    {
+        playerMovement.ChangeSpeed(playerMovement.Speed / speedDecreaseMultiplier);
+        PlayerManager.PlayerDamageMultiplier /= damageDecreaseMultiplier;
+        applied = false;
     }
 }

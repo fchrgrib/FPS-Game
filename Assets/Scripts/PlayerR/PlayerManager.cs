@@ -71,11 +71,6 @@ public class PlayerManager : MonoBehaviour, CheatListener
         CurrentPet = currentPet;
     }
 
-    void Update()
-    {
-        // TakeDamage(1f);
-    }
-
     public void TakeDamage(float damage)
     {
         this.HandleTakingDamage(

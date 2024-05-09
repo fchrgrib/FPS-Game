@@ -51,7 +51,7 @@ public class Level04Controller : MonoBehaviour
     {
         if (EnemyKingDeathCount>0)
         {
-            //TODO: Do something if king of enemy death  
+            //TODO: Do something if king of enemy die  
         }
     }
 }

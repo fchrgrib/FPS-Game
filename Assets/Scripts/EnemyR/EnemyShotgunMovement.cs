@@ -1,14 +1,12 @@
-using System;
 using UnityEngine;
 
 public class EnemyShotgunMovement : EnemyMovement
 {
     public float distanceThreshold = 15f;
-    public float minDistanceFromPlayer = 10f;
+    public float minDistanceFromPlayer = 5f;
+    public float rotationDamping = 4f;
     private float distanceToPlayer;
 
-    private int angle;
-    
     private void LateUpdate()
     {
         distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
@@ -23,7 +21,7 @@ public class EnemyShotgunMovement : EnemyMovement
         }
         else if (distanceToPlayer <= minDistanceFromPlayer)
         {
-            CircleAroundPlayer();
+            MoveAway();
         }
         else
         {
@@ -34,16 +32,14 @@ public class EnemyShotgunMovement : EnemyMovement
         animator.SetBool("IsWalking", navMeshAgent.velocity.magnitude != 0f);
     }
     
-    private void CircleAroundPlayer()
+    private void MoveAway()
     {
         navMeshAgent.updateRotation = false;
-        transform.LookAt(playerTransform);
-
-        // Circle around player
-        angle = (angle + 5) % 360;
-        var sideways = Quaternion.AngleAxis(angle, Vector3.up) * transform.forward;
+        // transform.LookAt(playerTransform);
+        var rotation = Quaternion.LookRotation(playerTransform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
         
-        var destination = playerTransform.position + sideways * 5f;
-        SetDestination(destination);
+        var point = playerTransform.position + (transform.position - playerTransform.position).normalized * minDistanceFromPlayer;
+        SetDestination(point);
     }
 }

@@ -11,7 +11,9 @@ public static class PlayerCheats
     public static bool oneHitKill;
     public static bool doubleSpeed;
 
-    private static bool _doubleSpeedApplied;
+    public static bool doubleSpeedApplied;
+    
+    private static float _originalDamageMultiplier;
 
     #region Toggleable Cheats
 
@@ -25,23 +27,34 @@ public static class PlayerCheats
         normalAction();
     }
 
-    public static bool HandleDealingDamage(this CheatListener listener, Action normalAction)
+    public static void HandleDealingDamage(this CheatListener listener, PlayerManager playerManager)
     {
-        // set playerDamageMultiplier to max value?
-        throw new NotImplementedException();
+        _originalDamageMultiplier = playerManager.PlayerDamageMultiplier;
+        
+        if (oneHitKill)
+        {
+            playerManager.PlayerDamageMultiplier = 1000f;
+        }
+        else
+        {
+            playerManager.PlayerDamageMultiplier = _originalDamageMultiplier;
+        }
     }
 
-    public static void HandleSpeed(this CheatListener listener, PlayerMovement playerMovement)
+    public static void HandleSpeed(this CheatListener listener, PlayerMovement playerMovement, float speed)
     {
         switch (doubleSpeed)
         {
-            case true when !_doubleSpeedApplied:
+            case true when !doubleSpeedApplied:
                 playerMovement.Speed *= 2;
-                _doubleSpeedApplied = true;
+                doubleSpeedApplied = true;
                 break;
-            case false when _doubleSpeedApplied:
+            case false when doubleSpeedApplied:
                 playerMovement.Speed /= 2;
-                _doubleSpeedApplied = false;
+                doubleSpeedApplied = false;
+                break;
+            case false when !doubleSpeedApplied:
+                playerMovement.Speed = speed;
                 break;
         }
     }

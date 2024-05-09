@@ -1,8 +1,4 @@
-using Nightmare;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -22,6 +18,7 @@ public class Gun : MonoBehaviour
     
     private LineRenderer lineRenderer;
     private InputManager inputManager;
+    private PlayerManager PlayerManager;
 
     // Start is called before the first frame update
 
@@ -30,6 +27,7 @@ public class Gun : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         particleSystem = GetComponent<ParticleSystem>();
         light = GetComponent<Light>();
+        PlayerManager = GetComponentInParent<PlayerManager>();
         lineRenderer = GetComponent<LineRenderer>();
         shootableMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
@@ -89,7 +87,7 @@ public class Gun : MonoBehaviour
             EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(10, hit.point);
+                enemyHealth.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
             }
 
             lineRenderer.SetPosition(1, hit.point);

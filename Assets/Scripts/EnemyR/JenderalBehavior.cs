@@ -1,50 +1,61 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Nightmare
+public class JenderalBehavior : MonoBehaviour
 {
-    public class JenderalBehavior : MonoBehaviour
+    public float distanceThreshold = 15f;
+    public float damagePerSecond = 3f;
+    protected GameObject Player;
+    protected PlayerManager PlayerManager;
+
+    protected bool CoroutineStarted;
+    
+    protected virtual void Awake()
     {
-        public float distanceThreshold = 5f;
-        public float damagePerSecond = 3f;
-        private Transform player;
-        private PlayerManager playerManager;
+        Player = GameObject.Find("PlayerOnly");
+        PlayerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+    }
+    
+    void OnDestroy()
+    {
+        StopCoroutine(nameof(ApplyToPlayer));
+    }
 
-        private bool coroutineStarted;
+    void Update()
+    {
+        if (CoroutineStarted) return;
         
-        void Awake()
+        if (WithinDistance())
         {
-            player = GameObject.Find("PlayerOnly").transform;
-            playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+            StartCoroutine(nameof(ApplyToPlayer));
+            CoroutineStarted = true;
         }
+    }
 
-        void Update()
-        {
-            if (coroutineStarted) return;
-            
-            if (WithinDistance())
+    private bool WithinDistance() => Vector3.Distance(Player.transform.position, transform.position) < distanceThreshold;
+
+    protected IEnumerator ApplyToPlayer()
+    {
+        while (true) {
+            yield return new WaitForSeconds(1f);
+            ApplyEffectsToPlayer();
+
+            if (!WithinDistance())
             {
-                StartCoroutine(nameof(DealDamageToPlayer));
-                coroutineStarted = true;
+                DispelEffects();
+                CoroutineStarted = false;
+                break;
             }
         }
+    }
 
-        private bool WithinDistance() => Vector3.Distance(player.transform.position, transform.position) < distanceThreshold;
+    protected virtual void ApplyEffectsToPlayer()
+    {
+        PlayerManager.TakeDamage(damagePerSecond);
+    }
 
-        private IEnumerator DealDamageToPlayer()
-        {
-            while (true) {
-                yield return new WaitForSeconds(1f);
-                playerManager.TakeDamage(damagePerSecond);
-
-                if (!WithinDistance())
-                {
-                    print("stopped");
-                    coroutineStarted = false;
-                    break;
-                }
-            }
-        }
+    protected virtual void DispelEffects()
+    {
+        
     }
 }

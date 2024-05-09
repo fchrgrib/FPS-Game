@@ -7,18 +7,21 @@ public class SwordController : MonoBehaviour
 
     public Transform attackPoint;
     public float damage = 30f;
+
+    private float damageDefault;
     private int attackCount;
     Animator anim;
     private LayerMask enemyLayerMask;
     private InputManager inputManager;
+    private PlayerManager PlayerManager;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         enemyLayerMask = LayerMask.GetMask("Enemy");
         inputManager = GetComponent<InputManager>();
+        PlayerManager = GetComponentInParent<PlayerManager>();
     }
-
 
     // Update is called once per frame
     void FixedUpdate()
@@ -52,7 +55,7 @@ public class SwordController : MonoBehaviour
             {
                 continue;
             }
-            enemy.GetComponent<EnemyManager>().TakeDamage(damage, attackPoint.position);
+            enemy.GetComponent<EnemyManager>().TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, attackPoint.position);
         }
     }
 }
