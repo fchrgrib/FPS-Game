@@ -6,7 +6,7 @@ public class PlayerDirection : MonoBehaviour
 {
 
     public Camera Camera;
-    public GameObject pet;
+    public Camera GunCamera;
     private float vRotation = 0f;
 
     public float hSensitivity = 30f;
@@ -19,7 +19,7 @@ public class PlayerDirection : MonoBehaviour
         vRotation -= (mouseY * Time.deltaTime) * vSensitivity;
         vRotation = Mathf.Clamp(vRotation, -80f, 80f);
         Camera.transform.localRotation = Quaternion.Euler(vRotation, 0, 0);
+        GunCamera.transform.localRotation = Quaternion.Euler(vRotation, 0, 0);
         transform.Rotate(mouseX * Time.deltaTime * hSensitivity * Vector3.up);
-        // pet?.transform.Rotate(mouseX * Time.deltaTime * hSensitivity * Vector3.up);
     }
 }
