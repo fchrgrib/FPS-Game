@@ -4,9 +4,9 @@ using UnityEngine.AI;
 
 public class MobSpawner : MonoBehaviour
 {
-    public static float minSpawnThreshold = 2f;
-    public static float maxSpawnThreshold = 5f;
-    public static int maxMobs = 10;
+    public float minSpawnThreshold = 2f;
+    public float maxSpawnThreshold = 5f;
+    public int maxMobs = 10;
     
     public List<GameObject> mobs;
     
