@@ -96,7 +96,7 @@ public class EnemyShotgunAttack : EnemyAttack
         var playerDirection = playerTransform.position - enemy.position;
         var angle = Vector3.Angle(playerDirection, enemy.forward);
         
-        return angle < 30f && playerDirection.magnitude < range;
+        return angle < 45f && playerDirection.magnitude < range;
     }
 
     private void Shoot()
@@ -123,8 +123,8 @@ public class EnemyShotgunAttack : EnemyAttack
             
             if (Physics.Raycast(ray, out var hit, range, shootableMask))
             {
-                var player = hit.collider.GetComponentInParent<PlayerManager>();
-                player.TakeDamage(damagePerPellet * attackDamageMultiplier);
+                if (hit.collider.gameObject == player)
+                    PlayerManager.TakeDamage(damagePerPellet * attackDamageMultiplier);
                 
                 pelletLineRenderers[i].SetPosition(0, transform.position);
                 pelletLineRenderers[i].SetPosition(1, hit.point);
