@@ -103,8 +103,31 @@ public class EnemyManager : MonoBehaviour
     
     private void Die()
     {
+        string trigger = "";
+
+        if (name == "Keroco" || name == "Keroco(Clone)")
+        {
+            trigger = "EnemyDeath";
+        }
+
+        if (name == "Kepala Keroco" || name == "Kepala Keroco(Clone)")
+        { 
+            trigger = "LeaderOfEnemyDeath";
+            
+        }
+
+        if (name == "Jenderal")
+        {
+            trigger = "AdmiralOfEnemyDeath";
+        }
+
+        if (name == "Raja")
+        {
+            trigger = "KingOfEnemyDeath";
+        }
+        
         EventManager.TriggerEvent("Sound", transform.position);
-        EventManager.TriggerEvent("EnemyDeath");
+        EventManager.TriggerEvent(trigger);
         animator.SetTrigger("Dead");
         SetKinematics(true);
         audioSource.clip = deathAudio;

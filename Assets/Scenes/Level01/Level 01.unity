@@ -379,7 +379,7 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 10
   mobs: {fileID: 1735848183}
-  Difficulty: 0
+  Difficulty: 1
 --- !u!4 &53082948
 Transform:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 53082946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 21.498922}
+  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 19.433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -729,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 5932b2b0c57589d4689cb04325c4af4f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 02cc88715f23ac84cbc8bc9e6a25e05d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &482693132 stripped
 Transform:

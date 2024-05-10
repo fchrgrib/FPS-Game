@@ -200,9 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnThreshold: 2
   maxSpawnThreshold: 5
-  maxMobs: 1
+  maxMobs: 2
   mobs: {fileID: 1192528451}
-  Difficulty: 2
+  Difficulty: 0
 --- !u!4 &35651298
 Transform:
   m_ObjectHideFlags: 0
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnThreshold: 2
   maxSpawnThreshold: 5
-  maxMobs: 3
+  maxMobs: 4
   mobs: {fileID: 1470658495}
-  Difficulty: 2
+  Difficulty: 0
 --- !u!4 &113544459
 Transform:
   m_ObjectHideFlags: 0
@@ -7106,6 +7106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JenderalWithPet
       objectReference: {fileID: 0}
+    - target: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9709,6 +9713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kepala Keroco
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5983794
@@ -11259,6 +11267,7 @@ GameObject:
   - component: {fileID: 1586399668}
   - component: {fileID: 1586399667}
   - component: {fileID: 1586399666}
+  - component: {fileID: 1586399670}
   m_Layer: 0
   m_Name: Wall1 (5)
   m_TagString: Untagged
@@ -11352,6 +11361,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 965096130}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!208 &1586399670
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586399665}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1593219129
 GameObject:
   m_ObjectHideFlags: 0

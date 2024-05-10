@@ -1275,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kepala Keroco
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
       propertyPath: m_LocalPosition.x
       value: -38.26179
@@ -1794,6 +1798,10 @@ PrefabInstance:
     - target: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
       propertyPath: m_Name
       value: JenderalWithPet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

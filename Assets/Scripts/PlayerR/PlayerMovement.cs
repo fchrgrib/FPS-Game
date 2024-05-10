@@ -18,10 +18,15 @@ public class PlayerMovement : MonoBehaviour, CheatListener
     private Vector3 playerVelocity;
     private PlayerState playerState = PlayerState.OnGround;
     private float allowableSpeed = 0;
+
+    private GameObject _generalStatisticsGo;
+    private GeneralStatistics _generalStatistics;
     
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        _generalStatisticsGo = GameObject.FindGameObjectWithTag("GeneralStatistics");
+        _generalStatistics = _generalStatisticsGo?.GetComponent<GeneralStatistics>();
     }
 
     public void MovePlayer(Vector2 input, Animator animator)
@@ -47,6 +52,11 @@ public class PlayerMovement : MonoBehaviour, CheatListener
         if (characterController.isGrounded)
         {
             playerState = PlayerState.OnGround;
+        }
+
+        if (_generalStatistics != null)
+        {
+            _generalStatistics.TravelDistance += dir.magnitude;
         }
     }
 

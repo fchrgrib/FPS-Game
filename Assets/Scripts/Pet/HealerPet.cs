@@ -7,14 +7,14 @@ public class HealerPet : DefaultPetMovement
 {
     
     private float elapsedTime;
-    private const float HealTime = 2f;
+    private const float HealTime = 3f;
 
     public override Vector3 DoActionAndGetDestination(PlayerManager playerManager, GameObject player, 
         NavMeshAgent navMeshAgent, Animator animator)
     {
         if (elapsedTime - HealTime >= 0)
         {
-            playerManager.PlayerHp += 1;
+            playerManager.PlayerHp += 5;
             elapsedTime = 0;
         }
         

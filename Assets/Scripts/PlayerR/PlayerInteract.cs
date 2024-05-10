@@ -29,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
         Ray ray = new Ray(camera.transform.position, camera.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * rayDistance);
         RaycastHit raycastHit;
-        // uiInteractText.text = "";
+        uiInteractText.text = "";
         if (Physics.Raycast(ray, out raycastHit, rayDistance, layerMask))
         {
             var interactable = raycastHit.collider.GetComponent<Interactable>();
