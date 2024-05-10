@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 //TODO: add game over controller
@@ -8,6 +9,7 @@ public class Level02Controller : MonoBehaviour
 
     public GameObject finalBox;
     public GameObject finalGate;
+    public TMP_Text missionText;
     
     // Start is called before the first frame update
     void Start()
