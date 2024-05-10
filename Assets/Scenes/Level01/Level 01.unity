@@ -1947,6 +1947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4682884990705362888, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: m_text
+      value: Mission Text
+      objectReference: {fileID: 0}
     - target: {fileID: 5260623595148368245, guid: bbe37b25a2946af438186467560df22c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1994,7 +1998,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalGate: {fileID: 38348271}
+  maxKerocoDeath: 10
   finalBox: {fileID: 1108278125}
+  text: {fileID: 1597206964}
 --- !u!4 &955689269
 Transform:
   m_ObjectHideFlags: 0
@@ -3225,6 +3231,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466896485}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1597206964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4682884990705362888, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 896831547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631041423
 GameObject:
   m_ObjectHideFlags: 0

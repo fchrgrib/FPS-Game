@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -5,8 +6,10 @@ using UnityEngine;
 public class Level01Controller : MonoBehaviour
 {
     public GameObject finalGate;
+    public int maxKerocoDeath = 10;
 
     public GameObject finalBox;
+    public TMP_Text text;
 
     public int EnemyDeathCount { get; private set; }
 
@@ -14,6 +17,12 @@ public class Level01Controller : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
+        text.SetText(SetTextMission());
+    }
+
+    string SetTextMission()
+    {
+        return $"Your Mission\nKill Keroco     {EnemyDeathCount}/{maxKerocoDeath}";
     }
 
     private void OnDestroy()
@@ -24,6 +33,7 @@ public class Level01Controller : MonoBehaviour
     private void IncrementEnemyDeathCount()
     {
         EnemyDeathCount++;
+        text.SetText(SetTextMission());
     }
     
     void Update()
