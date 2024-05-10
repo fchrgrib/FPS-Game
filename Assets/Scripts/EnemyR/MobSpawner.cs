@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Nightmare.Enum;
 using UnityEngine;
 using UnityEngine.AI;
+
 
 public class MobSpawner : MonoBehaviour
 {
@@ -8,7 +10,8 @@ public class MobSpawner : MonoBehaviour
     public float maxSpawnThreshold = 5f;
     public int maxMobs = 10;
     
-    public List<GameObject> mobs;
+    public GameObject mobs;
+    public Difficulty Difficulty;
     
     private float spawnTimer;
     private float randomSpawnThreshold;
@@ -17,6 +20,49 @@ public class MobSpawner : MonoBehaviour
     void Awake()
     {
         randomSpawnThreshold = Random.Range(minSpawnThreshold, maxSpawnThreshold);
+
+        switch (Difficulty)
+        {
+            case Difficulty.Medium:
+                if (mobs.name == "Keroco")
+                {
+                    maxMobs += 20;
+                }
+
+                if (mobs.name == "Kepala Keroco")
+                {
+                    maxMobs += 6;
+                }
+
+                if (mobs.name == "JenderalWithPet")
+                {
+                    maxMobs += 2;
+                }
+
+                minSpawnThreshold = 1f;
+                maxSpawnThreshold = 3f;
+                break;
+            
+            case Difficulty.Hard:
+                if (mobs.name == "Keroco")
+                {
+                    maxMobs += 40;
+                }
+
+                if (mobs.name == "Kepala Keroco")
+                {
+                    maxMobs += 12;
+                }
+
+                if (mobs.name == "JenderalWithPet")
+                {
+                    maxMobs += 4;
+                }
+
+                minSpawnThreshold = 0.5f;
+                maxSpawnThreshold = 2f;
+                break;
+        }
     }
     
     void FixedUpdate()
@@ -41,8 +87,7 @@ public class MobSpawner : MonoBehaviour
 
     private void SpawnMob()
     {
-        var randomIndex = Random.Range(0, mobs.Count);
         NavMesh.SamplePosition(GeneratedPosition(), out var hit, Mathf.Infinity, NavMesh.AllAreas);
-        Instantiate(mobs[randomIndex], hit.position, Quaternion.identity);
+        Instantiate(mobs, hit.position, Quaternion.identity);
     }
 }

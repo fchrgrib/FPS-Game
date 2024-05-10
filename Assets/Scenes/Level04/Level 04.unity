@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &11984868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 314889631038027542, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_Name
+      value: RajaWithPets
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.45116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.785149
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.11262
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855117371782139265, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d3dc973779227f4dbe86e0a25e39157, type: 3}
 --- !u!1001 &31427535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +663,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4152487034167244, guid: 1df3c9e3c99fce14cb9c1f900f8859cc, type: 3}
   m_PrefabInstance: {fileID: 173618649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &333049956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333049958}
+  - component: {fileID: 333049957}
+  m_Layer: 0
+  m_Name: Kepala Keroco Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &333049957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333049956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb42e24dfc94ba981a6eba183f5667e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnThreshold: 2
+  maxSpawnThreshold: 5
+  maxMobs: 3
+  mobs: {fileID: 651156874}
+  Difficulty: 0
+--- !u!4 &333049958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333049956}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 21.498922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460595281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1263,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 840389672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &651156873
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_Name
+      value: Kepala Keroco
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -38.26179
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.235111
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7127495
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+--- !u!1 &651156874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: a1d3479977bbd2c4d94e8eefec067058, type: 3}
+  m_PrefabInstance: {fileID: 651156873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &676679621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1743,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1df3c9e3c99fce14cb9c1f900f8859cc, type: 3}
+--- !u!1001 &924930025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.109358
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.235111
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.544493
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237482682539095578, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+      propertyPath: m_Name
+      value: JenderalWithPet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
 --- !u!1 &1080156518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,7 +1885,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: a98552fb2e5a0084ebae654d0864af9c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c70cfe20bf8c0974c88429ad838180d4, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1169045001 stripped
 GameObject:
@@ -2300,6 +2525,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499179612}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1504449875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504449877}
+  - component: {fileID: 1504449876}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1504449876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504449875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4742cb93abc9d864b95cf1642ab90771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1504449877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504449875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7295403, y: -13.520775, z: 29.649118}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567410702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f858d3110ba2e5744b0ba391e05440c0, type: 3}
@@ -2885,6 +3154,55 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 584760908}
   m_SourcePrefab: {fileID: 100100000, guid: f858d3110ba2e5744b0ba391e05440c0, type: 3}
+--- !u!1 &1905161122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1905161124}
+  - component: {fileID: 1905161123}
+  m_Layer: 0
+  m_Name: Jenderal Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1905161123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905161122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb42e24dfc94ba981a6eba183f5667e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnThreshold: 2
+  maxSpawnThreshold: 5
+  maxMobs: 1
+  mobs: {fileID: 1905161122}
+  Difficulty: 0
+--- !u!4 &1905161124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905161122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.71296126, y: 1.7623788, z: 21.498922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1947883812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3180,3 +3498,9 @@ SceneRoots:
   - {fileID: 1457063584}
   - {fileID: 1184968186}
   - {fileID: 2112860784}
+  - {fileID: 651156873}
+  - {fileID: 11984868}
+  - {fileID: 924930025}
+  - {fileID: 1504449877}
+  - {fileID: 333049958}
+  - {fileID: 1905161124}

@@ -69,6 +69,13 @@ public class PlayerManager : MonoBehaviour, CheatListener
         }
 
         CurrentPet = currentPet;
+        
+        EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
+    }
+
+    void OnDestroy()
+    {
+        EventManager.StopListening("MotherlodeCheat", UpdateMoneyText);
     }
 
     public void TakeDamage(float damage)
@@ -84,5 +91,10 @@ public class PlayerManager : MonoBehaviour, CheatListener
                 }
             }
         );
+    }
+    
+    private void UpdateMoneyText()
+    {
+        moneyText.text = PlayerMoney.ToString();
     }
 }

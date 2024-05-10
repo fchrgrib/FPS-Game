@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,12 @@ public class PetManager : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         playerManager = GetComponentInParent<PlayerManager>();
+        EventManager.StartListening("KillPetCheat", Kill);
+    }
+
+    void OnDestroy()
+    {
+        EventManager.StopListening("KillPetCheat", Kill);
     }
 
     // Update is called once per frame
@@ -38,5 +45,11 @@ public class PetManager : MonoBehaviour
         animator.SetBool("Walking", navMeshAgent.velocity.magnitude != 0);
         var destination = petMovement.DoActionAndGetDestination(playerManager, player, navMeshAgent, animator);
         navMeshAgent.SetDestination(destination);
+    }
+
+    private void Kill()
+    {
+        PlayerManager.CurrentPet = PlayerManager.NO_PET;
+        Destroy(gameObject);
     }
 }

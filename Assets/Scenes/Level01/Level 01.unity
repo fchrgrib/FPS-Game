@@ -375,8 +375,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb42e24dfc94ba981a6eba183f5667e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobs:
-  - {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
+  minSpawnThreshold: 2
+  maxSpawnThreshold: 5
+  maxMobs: 10
+  mobs: {fileID: 1735848183}
+  Difficulty: 0
 --- !u!4 &53082948
 Transform:
   m_ObjectHideFlags: 0
@@ -3607,6 +3610,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.39999998, y: 0.79999995, z: 0.39999998}
   m_Center: {x: -0.0000009536743, y: 0.39999998, z: 0}
+--- !u!1 &1735848183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
+  m_PrefabInstance: {fileID: 271723661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1761018070
 GameObject:
   m_ObjectHideFlags: 0
