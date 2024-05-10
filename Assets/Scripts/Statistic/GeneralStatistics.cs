@@ -89,6 +89,4 @@ public class GeneralStatistics : MonoBehaviour
         killdeath = totalKillCount / totalDeathCount;
     }
     
-    
-    
 }
