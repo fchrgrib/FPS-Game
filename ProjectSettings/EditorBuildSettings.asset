@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Remade/Main.unity
     guid: 2080e8ab1f6608a40af4e02b7f53dddc
+  - enabled: 1
+    path: Assets/Scenes/Menu/SaveSlotMenu.unity
+    guid: add7dcaa364bdc047a875669b56edc35
   m_configObjects: {}
