@@ -20,7 +20,7 @@ public class Level01Controller : MonoBehaviour
         missionText.SetText(SetTextMission());
     }
 
-    string SetTextMission()
+    private string SetTextMission()
     {
         return $"Your Mission\nKill Keroco     {EnemyDeathCount}/{maxKerocoDeath}";
     }

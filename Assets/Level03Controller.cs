@@ -32,7 +32,7 @@ public class Level03Controller : MonoBehaviour
         EventManager.StopListening("AdmiralOfEnemyDeath", IncrementAdmiralOfEnemyDeathCount);
     }
     
-    string SetTextMission()
+    private string SetTextMission()
     {
         return $"Your Mission\nKill Kepala Keroco   {EnemyLeaderDeathCount}/{maxLeaderOfKerocoDeath}\nKill Jenderal     {EnemyAdmiralDeathCount}/{maxAdmiralOfKerocoDeath}";
     }
