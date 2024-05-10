@@ -88,6 +88,7 @@ public class MobSpawner : MonoBehaviour
     private void SpawnMob()
     {
         NavMesh.SamplePosition(GeneratedPosition(), out var hit, Mathf.Infinity, NavMesh.AllAreas);
-        Instantiate(mobs, hit.position, Quaternion.identity);
+        GameObject obj = Instantiate(mobs, hit.position, Quaternion.identity);
+        obj.SetActive(true);
     }
 }
