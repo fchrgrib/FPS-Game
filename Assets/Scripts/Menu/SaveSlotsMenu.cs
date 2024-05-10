@@ -7,11 +7,12 @@ using UnityEngine.UI;
 
 public class SaveSlotsMenu : Menu
 {
-
     [Header("Menu Buttons")] [SerializeField]
     private Button backButton;
+
     private SaveSlot[] saveSlots;
     public static bool IsLoadingGame;
+    private static int currentLevel;
 
     private void Awake()
     {
@@ -20,6 +21,13 @@ public class SaveSlotsMenu : Menu
 
     public void OnSaveSlotClicked(SaveSlot saveSlot)
     {
+        if (IsLoadingGame)
+        {
+            DataPersistenceManager.instance.ChangeSelectedProfileID(saveSlot.GetProfileID());
+            SceneManager.LoadSceneAsync($"Level 0{DataPersistenceManager.instance.gameData.currentLevel}");
+            return;
+        }
+        
         DisableMenuButtons();
         DataPersistenceManager.instance.ChangeSelectedProfileID(saveSlot.GetProfileID());
 
@@ -29,12 +37,13 @@ public class SaveSlotsMenu : Menu
         }
 
         DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync("Level 01");
     }
 
     public void OnClearClicked(SaveSlot saveSlot)
     {
         DataPersistenceManager.instance.DeleteProfileData(saveSlot.GetProfileID());
+        Start();
     }
 
     public void OnBackClicked()

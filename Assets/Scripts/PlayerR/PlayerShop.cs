@@ -30,6 +30,7 @@ public class PlayerShop : MonoBehaviour
         shopText.text = "Press K to open shop";
         if (inputManager.PlayerInput.OnGround.OpenShop.triggered)
         {
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadScene("Scenes/Remade/ShopScene");
         }
     }

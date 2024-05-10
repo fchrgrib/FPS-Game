@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,30 +6,32 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
+    public string playerName = "default";
+    public string lastUpdate;
     public long lastUpdated;
     public int deathCount;
     public Vector3 playerPosition;
+    public int playerMoney = 300;
+    public float playerHealth = 100;
+    public string playerPet;
+    public int currentLevel;
+    public int currentKillCount;
+    public int currentLeaderKillCount;
+    public int currentAdmiralKillCount;
+    public int currentKingKillCount;
 
     public GameData()
     {
-        this.deathCount = 100000;
+        this.deathCount = 0;
         this.playerPosition = Vector3.zero;
         this.playerPosition.y = 1;
     }
-    public int GetTime()
+    public string GetTime()
     {
-        //return save time
-        
-        // float x = playerPosition.x;
-        // float y = playerPosition.y;
-        // float z = playerPosition.z;
-        //return x+ y + z;
-        
-        return 12333;
+        return lastUpdate;
     }
     public string GetFileName()
     {
-        //return file name
-        return "tesssss";
+        return playerName;
     }
 }

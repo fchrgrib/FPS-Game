@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 //TODO: add game over controller
-public class Level01Controller : MonoBehaviour
+public class Level01Controller : MonoBehaviour, IDataPersistence
 {
     public GameObject finalGate;
 
@@ -33,5 +33,27 @@ public class Level01Controller : MonoBehaviour
             finalGate.SetActive(false);
             finalBox.SetActive(true);
         }    
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.currentLevel > 1)
+        {
+            return;
+        }
+        Debug.Log("Loading Level 1");
+
+        EnemyDeathCount = data.currentKillCount;
+    }
+
+    public void SaveData(GameData data)
+    {
+        if (data.currentLevel > 1)
+        {
+            return;
+        }
+
+        data.currentLevel = 1;
+        data.currentKillCount = EnemyDeathCount;
     }
 }

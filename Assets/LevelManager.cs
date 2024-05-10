@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistence
 {
 
     public static LevelManager currentLevelManager = null;
@@ -38,6 +38,8 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
+        DataPersistenceManager.instance.SaveGame();
+        
         if (nextLevel>3)
         {
             SceneManager.LoadScene(nextLevelPath);
@@ -46,5 +48,15 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Masuk"+nextLevelPath);
 
         SceneManager.LoadScene(nextLevelPath);
+    }
+
+    public void LoadData(GameData data)
+    {
+        
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.currentLevel = currentLevel;
     }
 }

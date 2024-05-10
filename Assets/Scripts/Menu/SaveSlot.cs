@@ -41,7 +41,8 @@ public class SaveSlot : MonoBehaviour
             hasDataContent.SetActive(true);
             clearButton.gameObject.SetActive(true);
          
-            timeText.text = data.GetTime().ToString();
+            Debug.Log("For slot x. Date: " + data.GetTime());
+            timeText.text = data.GetTime();
             fileNameText.text = data.GetFileName();
         }
     }
