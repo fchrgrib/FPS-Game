@@ -379,7 +379,7 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 10
   mobs: {fileID: 1735848183}
-  Difficulty: 1
+  Difficulty: 0
 --- !u!4 &53082948
 Transform:
   m_ObjectHideFlags: 0
