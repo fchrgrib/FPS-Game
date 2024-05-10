@@ -24,9 +24,11 @@ public class SpeedOrbBehaviour : OrbBehaviour
             StopCoroutine(_speedModifierCoroutine);
         }
 
-        playerMovement.Speed *= 1.2f;
-
-        _speedModifierCoroutine = StartCoroutine(RevertSpeedAfterDelay(playerMovement, OriginalSpeed, 15f));
+        if (playerMovement.Speed <= OriginalSpeed)
+        {
+            playerMovement.Speed *= 1.2f;
+            _speedModifierCoroutine = StartCoroutine(RevertSpeedAfterDelay(playerMovement, OriginalSpeed, 15f));
+        }
     }
 
     private IEnumerator RevertSpeedAfterDelay(PlayerMovement playerMovement, float originalSpeed, float delay)
