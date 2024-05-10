@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 public interface CheatListener
 {
@@ -63,29 +65,32 @@ public static class PlayerCheats
 
     #region One Time Cheats
 
-    public static void Motherlode(this CheatListener listener)
+    public static void Motherlode()
+    {
+        PlayerManager.PlayerMoney = int.MaxValue;
+        EventManager.TriggerEvent("MotherlodeCheat");
+    }
+
+    public static void PetImmune()
     {
         throw new NotImplementedException();
     }
 
-    public static void PetImmune(this CheatListener listener)
+    public static void KillPet()
     {
-        throw new NotImplementedException();
+        // Kill own pet or enemy pet?
+        EventManager.TriggerEvent("KillPetCheat");
     }
 
-    public static void KillPet(this CheatListener listener)
+    public static void GetOrb(GameObject orbPrefab)
     {
-        throw new NotImplementedException();
+        var playerTransform = GameObject.Find("PlayerOnly").transform;
+        Object.Instantiate(orbPrefab, playerTransform.position, Quaternion.identity);
     }
 
-    public static void GetOrb(this CheatListener listener)
+    public static void Skip()
     {
-        throw new NotImplementedException();
-    }
-
-    public static void Skip(this CheatListener listener)
-    {
-        throw new NotImplementedException();
+        LevelManager.currentLevelManager.NextLevel();
     }
 
     #endregion
