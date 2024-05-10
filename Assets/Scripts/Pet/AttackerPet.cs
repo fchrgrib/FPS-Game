@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AttackerPet : DefaultPetMovement
 {
     
-    public float detectionRadius = 5f;
+    public float detectionRadius = 25f;
     public LayerMask enemyLayerMask;
 
     private Collider currentCollider;
@@ -14,7 +14,7 @@ public class AttackerPet : DefaultPetMovement
     public override Vector3 DoActionAndGetDestination(PlayerManager playerManager, GameObject player, 
         NavMeshAgent navMeshAgent, Animator animator)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(player.transform.position, detectionRadius,
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius,
             enemyLayerMask);
         
         if (hitColliders.Length == 0)
