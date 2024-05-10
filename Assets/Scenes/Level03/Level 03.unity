@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23ec9d04aa20134db2662b420183887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionText: {fileID: 192957479}
+  maxLeaderOfKerocoDeath: 4
+  maxAdmiralOfKerocoDeath: 1
   finalBox: {fileID: 574536093}
   finalGate: {fileID: 1930109031}
 --- !u!4 &8781039
@@ -200,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnThreshold: 2
   maxSpawnThreshold: 5
-  maxMobs: 2
+  maxMobs: 1
   mobs: {fileID: 1192528451}
   Difficulty: 0
 --- !u!4 &35651298
@@ -718,6 +721,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189903979}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &192957479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4682884990705362888, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 1547011723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202424718 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f3ae2f327b1ccba488153e136bd96969, type: 3}
