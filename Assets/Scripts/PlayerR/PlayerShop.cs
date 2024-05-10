@@ -9,7 +9,7 @@ public class PlayerShop : MonoBehaviour
 {
     public float detectionRadius = 5f;
     [SerializeField] private LayerMask shopLayerMask;
-    [SerializeField] private TextMeshProUGUI uiInteractText;
+    [SerializeField] private TextMeshProUGUI shopText;
 
     private InputManager inputManager;
     
@@ -23,10 +23,11 @@ public class PlayerShop : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRadius, shopLayerMask);
         if (hitColliders.Length != 1)
         {
+            shopText.text = "";
             return;
         }
 
-        uiInteractText.text = "Press K to open shop";
+        shopText.text = "Press K to open shop";
         if (inputManager.PlayerInput.OnGround.OpenShop.triggered)
         {
             SceneManager.LoadScene("Scenes/Remade/ShopScene");
