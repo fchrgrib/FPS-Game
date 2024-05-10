@@ -6753,6 +6753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2528085410861420792, guid: bbe37b25a2946af438186467560df22c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3528797143268262310, guid: bbe37b25a2946af438186467560df22c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -41.54
@@ -7312,6 +7316,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227903657}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1227979353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4682884990705362888, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 1174230084}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231006087
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,7 +7555,7 @@ Transform:
   m_GameObject: {fileID: 1302739993}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.1, y: 0, z: 34.2}
+  m_LocalPosition: {x: 25.1, y: 0, z: 34.82}
   m_LocalScale: {x: 81.82915, y: 107.420654, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9346,8 +9361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b796862fb821d74a9d213f58adf658b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxKerocoDeath: 5
+  maxLeaderOfKerocoDeath: 3
   finalBox: {fileID: 1331716288690049236}
   finalGate: {fileID: 1847105508}
+  missionText: {fileID: 1227979353}
 --- !u!4 &1755696529
 Transform:
   m_ObjectHideFlags: 0
