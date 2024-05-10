@@ -2000,7 +2000,7 @@ MonoBehaviour:
   finalGate: {fileID: 38348271}
   maxKerocoDeath: 10
   finalBox: {fileID: 1108278125}
-  text: {fileID: 1597206964}
+  missionText: {fileID: 1597206964}
 --- !u!4 &955689269
 Transform:
   m_ObjectHideFlags: 0

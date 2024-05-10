@@ -9,7 +9,7 @@ public class Level01Controller : MonoBehaviour
     public int maxKerocoDeath = 10;
 
     public GameObject finalBox;
-    public TMP_Text text;
+    public TMP_Text missionText;
 
     public int EnemyDeathCount { get; private set; }
 
@@ -17,7 +17,7 @@ public class Level01Controller : MonoBehaviour
     void Start()
     {
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
-        text.SetText(SetTextMission());
+        missionText.SetText(SetTextMission());
     }
 
     string SetTextMission()
@@ -33,7 +33,7 @@ public class Level01Controller : MonoBehaviour
     private void IncrementEnemyDeathCount()
     {
         EnemyDeathCount++;
-        text.SetText(SetTextMission());
+        missionText.SetText(SetTextMission());
     }
     
     void Update()
