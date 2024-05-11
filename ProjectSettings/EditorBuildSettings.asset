@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level04/Level 04.unity
     guid: e121695d1f4adbb4589df2c378b17d2c
   - enabled: 1
-    path: Assets/Scenes/Cutscene/BeginningCutScene.unity
+    path: Assets/Scenes/Cutscene/TeleportCutScene.unity
     guid: bb69a9127379b4b468fcd30db2f22b64
   - enabled: 1
     path: Assets/Scenes/Cutscene/EndingCutScene.unity
@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/SaveSlotMenu.unity
     guid: add7dcaa364bdc047a875669b56edc35
+  - enabled: 1
+    path: Assets/Scenes/Cutscene/BeginningCutScene.unity
+    guid: 2d78dae88f3a6c148bbff14941d3df56
   m_configObjects: {}
