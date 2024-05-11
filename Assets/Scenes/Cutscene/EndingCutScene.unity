@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &538080650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 538080652}
+  - component: {fileID: 538080651}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &538080651
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538080650}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 68a61a8fab7cd3c4c87fd528b22ba471, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &538080652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538080650}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 774.72296, y: -680.2134, z: -258.0062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731556028
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +425,7 @@ GameObject:
   - component: {fileID: 1549664337}
   - component: {fileID: 1549664336}
   - component: {fileID: 1549664338}
+  - component: {fileID: 1549664339}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -320,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 29.6, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -598}
+  m_AnchoredPosition: {x: 0, y: -598}
   m_SizeDelta: {x: 866.2, y: 385.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549664336
@@ -343,81 +472,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Puisi berjudul ''Kisah Tanah Legenda'' karya Ayu Zagita.
-
-    
-
-    Manakala
-    kisah terdahulu
-
-    
-
-    Derai-derai merah menutup pertiwi
-
-    
-
-    Pula
-    penuh sesak jeritan pilu
-
-    
-
-    Ulah momok yang menimbun peti
-
-    
-
-    Bara
-    serdadu kian beradu
-
-    
-
-    Menepis ruam pada tungkai yang ruai
-
-    
-
-    Lepas
-    kepung daratan tanpa tandus
-
-    
-
-    Tembang-tembang kemenangan menggema
-
-    
-
-    "Merdeka!"
-
-    
-
-    "Kita
-    Merdeka!"
-
-    
-
-    Tabuh gemuruh sukacita tergambar
-
-    
-
-    Manakala
-    pergumulan landai dan tumbang
-
-    
-
-    Khatam sudah kisah tanah legenda
-
-    
-
-    Lantas
-    dilukis penuh tinta merah
-
-    
-
-    Laksana bulan mengenang malam
-
-    
-
-    Lencana
-    terpatri menembus kalam
-
-'
+  m_text: "Setelah pertempuran yang panjang dan penuh pengorbanan, langit Wakangkang
+    akhirnya menunjukkan tanda-tanda kecerahan. Cahaya matahari menembus awan tebal,
+    menyinari medan perang yang sepi, menyisakan Kongkong yang berdiri tegap, diapit
+    oleh rekan-rekannya dan Elong. Wajah mereka penuh dengan kelelahan namun terselip
+    senyum kemenangan. Dari kejauhan, suara sorak-sorai warga yang telah lama terpendam
+    kini memecah keheningan. \"Ah, begitu banyak malam yang aku lalui dengan mimpi
+    buruk dan ketakutan. Begitu banyak hari yang terasa lebih seperti bertahan hidup
+    daripada hidup itu sendiri. Dan kini, saat aku melihat fajar baru ini, semuanya
+    tampak begitu jelas. Setiap tetes keringat, setiap air mata, setiap tetes darah
+    yang tumpah... semuanya tidak sia-sia.\r Lihatlah mereka, rakyat Wakangkang,
+    yang keluar dari perlindungan mereka, mata mereka berbinar bukan karena teror,
+    tapi karena harapan. Harapan untuk masa depan yang lebih baik, masa depan yang
+    kita perjuangkan bersama. Ini bukan hanya kemenanganku, atau Elong, atau siapa
+    pun lainnya yang berdiri di sini hari ini. Ini adalah kemenangan kita semua,
+    sebagai satu bangsa, satu hati.\r Elong, teman dan saudaraku dalam perjuangan,
+    tanpa engkau, kemenangan ini mungkin hanya mimpi. Kamu telah membuktikan bahwa
+    tidak semua monster diciptakan untuk kehancuran. Beberapa di antara mereka, seperti
+    kamu, diciptakan untuk menjadi pahlawan.\r Dan kini, aku berdiri di sini, bukan
+    sebagai pahlawan yang mengalahkan kegelapan sendirian, tetapi sebagai bagian
+    dari generasi yang tidak akan pernah melupakan apa yang kita lakukan bersama.
+    Untuk Wakangkang, untuk kebebasan, untuk masa depan...\"\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b33c5acbe8e1fc40a16270412cd3b92, type: 2}
   m_sharedMaterial: {fileID: -3506892176640654629, guid: 3b33c5acbe8e1fc40a16270412cd3b92, type: 2}
@@ -507,6 +582,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 75
+--- !u!114 &1549664339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549664334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933012106
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,3 +796,4 @@ SceneRoots:
   - {fileID: 880285356}
   - {fileID: 1933012110}
   - {fileID: 731556031}
+  - {fileID: 538080652}

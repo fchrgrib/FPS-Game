@@ -89,6 +89,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""9df2503e-84d8-473e-8c6c-679047c9e9f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Inspect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a5ec151-af16-41f2-97a8-7c68d46739c9"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_OnGround_OpenShop = m_OnGround.FindAction("OpenShop", throwIfNotFound: true);
         m_OnGround_Attack = m_OnGround.FindAction("Attack", throwIfNotFound: true);
         m_OnGround_Inspect = m_OnGround.FindAction("Inspect", throwIfNotFound: true);
+        m_OnGround_Skip = m_OnGround.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +316,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_OnGround_OpenShop;
     private readonly InputAction m_OnGround_Attack;
     private readonly InputAction m_OnGround_Inspect;
+    private readonly InputAction m_OnGround_Skip;
     public struct OnGroundActions
     {
         private @PlayerInput m_Wrapper;
@@ -306,6 +328,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @OpenShop => m_Wrapper.m_OnGround_OpenShop;
         public InputAction @Attack => m_Wrapper.m_OnGround_Attack;
         public InputAction @Inspect => m_Wrapper.m_OnGround_Inspect;
+        public InputAction @Skip => m_Wrapper.m_OnGround_Skip;
         public InputActionMap Get() { return m_Wrapper.m_OnGround; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +359,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Inspect.started += instance.OnInspect;
             @Inspect.performed += instance.OnInspect;
             @Inspect.canceled += instance.OnInspect;
+            @Skip.started += instance.OnSkip;
+            @Skip.performed += instance.OnSkip;
+            @Skip.canceled += instance.OnSkip;
         }
 
         private void UnregisterCallbacks(IOnGroundActions instance)
@@ -361,6 +387,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Inspect.started -= instance.OnInspect;
             @Inspect.performed -= instance.OnInspect;
             @Inspect.canceled -= instance.OnInspect;
+            @Skip.started -= instance.OnSkip;
+            @Skip.performed -= instance.OnSkip;
+            @Skip.canceled -= instance.OnSkip;
         }
 
         public void RemoveCallbacks(IOnGroundActions instance)
@@ -387,5 +416,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnOpenShop(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnInspect(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

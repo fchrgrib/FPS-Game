@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ShopSceneHelper : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI playerMoney;
+    private SceneHelper SceneHelper;
 
     private static readonly Dictionary<int, string> CurrentLevelToNextLevelMap = new Dictionary<int, string>
     {
@@ -18,6 +19,7 @@ public class ShopSceneHelper : MonoBehaviour
     void Start()
     {
         playerMoney.text = PlayerManager.PlayerMoney.ToString();
+        SceneHelper = gameObject.AddComponent<SceneHelper>();
     }
 
     public void ProceedNextLevelAttacker()
@@ -32,7 +34,7 @@ public class ShopSceneHelper : MonoBehaviour
         Debug.Log("Bought Attacker Pet. Current Money: " + PlayerManager.PlayerMoney);
         SceneParams.PlayerPet = PlayerManager.ATTACKER_PET;
         DataPersistenceManager.instance.SaveStaticGameData();
-        LevelManager.currentLevelManager.NextLevel();
+        SceneHelper.ProceedNextLevel();
     }
 
     public void ProceedNextLevelHealer()
@@ -46,6 +48,6 @@ public class ShopSceneHelper : MonoBehaviour
         PlayerManager.PlayerMoney -= 100;
         SceneParams.PlayerPet = PlayerManager.HEALER_PET;
         DataPersistenceManager.instance.SaveStaticGameData();
-        LevelManager.currentLevelManager.NextLevel();
+        SceneHelper.ProceedNextLevel();
     }
 }

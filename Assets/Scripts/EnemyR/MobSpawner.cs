@@ -67,7 +67,7 @@ public class MobSpawner : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (currentMobs >= maxMobs) return;
+        if (currentMobs > maxMobs) return;
         
         spawnTimer += Time.deltaTime;
         

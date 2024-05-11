@@ -123,6 +123,134 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &522006909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522006911}
+  - component: {fileID: 522006910}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &522006910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522006909}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 07d10e369eb679e48b7126b66edb793a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &522006911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522006909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 774.72296, y: -680.2134, z: -258.0062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731556028
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +425,7 @@ GameObject:
   - component: {fileID: 1549664337}
   - component: {fileID: 1549664336}
   - component: {fileID: 1549664338}
+  - component: {fileID: 1549664339}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -320,7 +449,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 29.6, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: -598}
+  m_AnchoredPosition: {x: 0, y: -598}
   m_SizeDelta: {x: 866.2, y: 385.087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549664336
@@ -343,16 +472,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Demi negri\u2026\r\n\r\nEngkau korbankan waktumu\r\n\r\nDemi bangsa\u2026\r\n\r\nRela
-    kau taruhkan nyawamu\r\n\r\nMaut menghadang di depan\r\n\r\nKau bilang itu hiburan\r\n\r\n
-    \r\n\r\nTampak raut wajahmu\r\n\r\nTak segelintir rasa takut\r\n\r\nSemangat
-    membara di jiwamu\r\n\r\nTaklukkan mereka penghalang negri\r\n\r\n \r\n\r\nHari-harimu
-    di warnai\r\n\r\nPembunuhan dan pembantaian\r\n\r\nDan dihiasi bunga-bunga api\r\n\r\nMengalir
-    sungai darah di sekitarmu\r\n\r\nBahkan tak jarang mata air darah itu\r\n\r\nYang
-    muncul dari tubuhmu\r\n\r\nNamun tak dapat\u2026\r\n\r\nRuntuhkan tebing semangat
-    juangmu\r\n\r\n \r\n\r\nBambu runcing yang setia menemanimu\r\n\r\nKaki telanjang
-    yang tak beralas\r\n\r\nPakaian dengan seribu wangian\r\n\r\nBasah di badan kering
-    pun di badan\r\n\r\nYang kini mengantarkan Indonesia\r\n\r\nKedalam istana kemerdekaan"
+  m_text: 'Di tengah gurun Bekasi yang gersang dan diterpa badai pasir, Langit mendung
+    menutupi medan perang yang telah dipenuhi dengan reruntuhan dan kesedihan. Kongkong
+    terkapar lemah dengan luka parah akibat pertarungan terakhirnya melawan kawanan
+    monster lab. Napasnya tersengal-sengal, matanya menatap langit yang berwarna
+    abu-abu pekat. "Ini... mungkinkah ini akhir perjalananku? Setiap langkah yang
+    kulakukan, setiap monster yang kuhancurkan, dan setiap saat yang kupilih untuk
+    terus maju... semuanya untuk apa? Untuk negara yang sudah begitu berubah ini,
+    untuk rakyat yang tidak lagi mengenal hari tanpa ketakutan.
+
+    Aku ingat kata-kata
+    guru lama di kampus, bahwa seorang pahlawan bukanlah orang yang tak pernah jatuh,
+    tapi adalah mereka yang bangkit setiap kali mereka terjatuh. Aku sudah jatuh...
+    apakah ini saatnya untuk bangkit? Atau kali ini, apakah aku telah jatuh untuk
+    terakhir kalinya?
+
+    Tapi aku tidak boleh berhenti di sini. Meskipun tubuhku
+    menyerah, semangatku masih berkobar. Ini bukan hanya tentang hidup atau mati,
+    ini tentang melawan kegelapan yang mencoba menelan setiap cahaya. Haruskah aku
+    berhenti sekarang, saat semua yang kupercaya berada di ambang kemenangan atau
+    kekalahan total? Dengan sisa tenaganya, Kongkong menatap ke langit yang kian
+    gelap, menghela napas panjang, seakan membebaskan semua penyesalan. Dia menutup
+    matanya perlahan, sebuah senyum tipis menghiasi wajahnya, menghadapi kematian
+    dengan kedamaian yang datang dari mengetahui bahwa dia telah berjuang dengan
+    baik. Angin malam membawa bisikan terakhirnya pergi, menyatu dengan legenda yang
+    akan diceritakan kembali, generasi demi generasi.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b33c5acbe8e1fc40a16270412cd3b92, type: 2}
   m_sharedMaterial: {fileID: -3506892176640654629, guid: 3b33c5acbe8e1fc40a16270412cd3b92, type: 2}
@@ -442,6 +586,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 75
+--- !u!114 &1549664339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549664334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933012106
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,3 +800,4 @@ SceneRoots:
   - {fileID: 880285356}
   - {fileID: 1933012110}
   - {fileID: 731556031}
+  - {fileID: 522006911}

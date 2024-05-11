@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
     private string currentPet = NO_PET;
     
     public static string CurrentPet { get; set; }
-    
+
     public float PlayerHp
     {
         get => playerHp;
@@ -58,21 +58,6 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
     void OnDestroy()
     {
         EventManager.StopListening("MotherlodeCheat", UpdateMoneyText);
-    }
-
-    public void TakeDamage(float damage)
-    {
-        this.HandleTakingDamage(
-            () =>
-            {
-                PlayerHp -= damage;
-                // change this if necessary
-                if (PlayerHp <= 0)
-                {
-                    // game over
-                }
-            }
-        );
     }
     
     private void UpdateMoneyText()
@@ -133,6 +118,25 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
         }
 
         CurrentPet = currentPet;
+        
+        EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        this.HandleTakingDamage(
+            () =>
+            {
+                PlayerHp -= damage;
+                // change this if necessary
+                if (PlayerHp <= 0)
+                {
+                    // game over
+                    //TODO: add animation
+                    SceneManager.LoadScene("Scenes/Cutscene/DeathCutScene");
+                }
+            }
+        );
     }
     
 }

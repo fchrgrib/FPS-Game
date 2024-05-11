@@ -32,6 +32,7 @@ public class PlayerShop : MonoBehaviour
         {
             DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadScene("Scenes/Remade/ShopScene");
+            SceneHelper.CurrentScenePath = "Scenes/Remade/ShopScene";
         }
     }
 

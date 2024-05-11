@@ -1358,6 +1358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68987efdd0694f94c9662eaa2a8408cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionText: {fileID: 1457063585}
+  maxKerocoDeath: 5
+  maxAdmiralOfKerocoDeath: 2
+  maxKingOfKerocoDeath: 1
 --- !u!4 &676679623
 Transform:
   m_ObjectHideFlags: 0
@@ -2428,6 +2432,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe37b25a2946af438186467560df22c, type: 3}
+--- !u!114 &1457063585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4682884990705362888, guid: bbe37b25a2946af438186467560df22c, type: 3}
+  m_PrefabInstance: {fileID: 1457063584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499179612
 GameObject:
   m_ObjectHideFlags: 0
