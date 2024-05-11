@@ -88,6 +88,8 @@ public class PlayerManager : MonoBehaviour, CheatListener
                 if (PlayerHp <= 0)
                 {
                     // game over
+                    //TODO: add animation
+                    SceneManager.LoadScene("Scenes/Cutscene/DeathCutScene");
                 }
             }
         );

@@ -13,14 +13,22 @@ public class LevelManager : MonoBehaviour
     private int nextLevel;
     private string nextLevelPath;
     private Scene Scene;
+    private SceneHelper SceneHelper;
     [SerializeField] private LayerMask finalFloorMask;
 
     private void Awake()
     {
+        SceneHelper = gameObject.AddComponent<SceneHelper>();
         Scene = SceneManager.GetActiveScene();
+        SceneHelper.CurrentScenePath = SceneHelper.GetPathScene(Scene.name);
+        if (Scene.name == "Level 04")
+        {
+            SceneHelper.NextScenePath = SceneHelper.GetPathScene("EndingCutScene");
+            return;
+        }
         currentLevel = int.Parse(Scene.name.Split(" ")[1]);
         nextLevel = currentLevel + 1;
-        nextLevelPath = $"Scenes/Level0{nextLevel}/Level 0{nextLevel}";
+        SceneHelper.NextScenePath = $"Scenes/Level0{nextLevel}/Level 0{nextLevel}";
         currentLevelManager = this;
     }
 
@@ -38,13 +46,6 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        if (nextLevel>3)
-        {
-            SceneManager.LoadScene(nextLevelPath);
-            return;
-        }
-        Debug.Log("Masuk"+nextLevelPath);
-
-        SceneManager.LoadScene(nextLevelPath);
+        SceneHelper.ProceedNextLevel();
     }
 }
