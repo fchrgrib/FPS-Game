@@ -5,9 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneHelper : MonoBehaviour
 {
+    public static string PreviousScenePath;
+    public static string CurrentScenePath;
+    public static string NextScenePath;
+    
     public void ProceedNextLevel()
     {
         SceneParams.PlayerPet = PlayerManager.CurrentPet;
-        LevelManager.currentLevelManager.NextLevel();
+        SceneManager.LoadScene(NextScenePath);
+    }
+
+    public void ProceedPreviousLevel()
+    {
+        SceneParams.PlayerPet = PlayerManager.CurrentPet;
+        SceneManager.LoadScene(PreviousScenePath);
     }
 }
