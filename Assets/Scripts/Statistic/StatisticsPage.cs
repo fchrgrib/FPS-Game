@@ -30,7 +30,7 @@ public class StatisticsPage : MonoBehaviour
         int seconds = Mathf.FloorToInt(generalStatistics.ElapsedTime % 60); // calculate seconds
         time.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
         travelDistance.text = generalStatistics.TravelDistance.ToString();
-        accuracy.text = generalStatistics.Accuracy.ToString();
+        accuracy.text = generalStatistics.GetAccuracy().ToString();
         kdr.text = generalStatistics.KillDeathRatio().ToString();
         death.text = generalStatistics.Death.ToString();
         kill.text = generalStatistics.Kill.ToString();

@@ -125,4 +125,9 @@ public class GeneralStatistics : MonoBehaviour
         return (float) totalKillCount / totalDeathCount;
     }
     
+    public float GetAccuracy()
+    {
+        return (float) totalHitCount / totalBulletCount;
+    }
+    
 }

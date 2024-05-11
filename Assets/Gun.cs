@@ -88,7 +88,7 @@ public class Gun : MonoBehaviour
             EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
-                GeneralStatistics.Instance.Kill += 1;
+                GeneralStatistics.Instance.totalHitCount += 1;
                 enemyHealth.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
             }
 
