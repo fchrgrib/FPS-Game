@@ -102,7 +102,7 @@ Shop
 - Multitype Input
 
 6. M Surya Dharma Khazinatul Azro (10023509)
-7. 
+
 - Diskusi
 
 ## Jam Persiapan dan Pengerjaan
@@ -117,4 +117,4 @@ Shop
 
 5. Zidane Firzatullah (13521163) : 60 Jam
 
-6. M Surya Dharma Khazinatul Azro : 3 Jam
+6. M Surya Dharma Khazinatul Azro (10023509) : 3 Jam
