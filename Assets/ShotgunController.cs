@@ -118,7 +118,7 @@ public class ShotgunController : MonoBehaviour
 
         foreach (var line in lineRenderer)
         {
-            ray.origin = transform.position;
+            ray.origin = cam.transform.position;
             float xVal = Random.Range(-0.5f, 0.5f);
             float yVal = Random.Range(-0.5f, 0.5f);
             float zVal = Random.Range(-0.5f, 0.5f);
