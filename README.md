@@ -88,6 +88,7 @@ Shop
 
 - Mob
 - Cheat
+- Android (incomplete)
 
 5. Zidane Firzatullah (13521163)
 
@@ -113,7 +114,7 @@ Shop
 
 3. Noel Christoffel Simbolon (13521096) : 30 Jam 
 
-4. Ammar Rasyad Chaeroel (13521136) : 30 Jam
+4. Ammar Rasyad Chaeroel (13521136) : 40 Jam
 
 5. Zidane Firzatullah (13521163) : 60 Jam
 
