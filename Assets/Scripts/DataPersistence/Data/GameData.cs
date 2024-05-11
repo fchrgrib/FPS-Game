@@ -13,7 +13,7 @@ public class GameData
     public Vector3 playerPosition;
     public int playerMoney = 300;
     public float playerHealth = 100;
-    public string playerPet;
+    public string playerPet = "NO_PET";
     public int currentLevel;
     public int currentKillCount;
     public int currentLeaderKillCount;

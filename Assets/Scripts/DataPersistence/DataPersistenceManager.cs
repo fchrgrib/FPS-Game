@@ -67,6 +67,9 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.gameData = new GameData();
         gameData.playerName = Option.playerName;
+        SceneParams.PlayerPet = "";
+        PlayerManager.CurrentPet = "";
+        PlayerManager.PlayerMoney = 100;
     }
     
     public void LoadGame()

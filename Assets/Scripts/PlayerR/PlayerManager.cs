@@ -79,6 +79,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
 
     public void SaveData(GameData data)
     {
+        SceneParams.PlayerPet = currentPet;
         data.playerHealth = PlayerHp;
         data.playerMoney = PlayerMoney;
         data.playerPet = currentPet;
