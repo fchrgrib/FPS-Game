@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 1549664337}
   - component: {fileID: 1549664336}
   - component: {fileID: 1549664338}
+  - component: {fileID: 1549664339}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -345,77 +346,76 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Puisi berjudul ''Kisah Tanah Legenda'' karya Ayu Zagita.
 
-    
+
 
     Manakala
     kisah terdahulu
 
-    
+
 
     Derai-derai merah menutup pertiwi
 
-    
 
-    Pula
-    penuh sesak jeritan pilu
 
-    
+    Pula penuh sesak
+    jeritan pilu
+
+
 
     Ulah momok yang menimbun peti
 
-    
 
-    Bara
-    serdadu kian beradu
 
-    
+    Bara serdadu kian beradu
 
-    Menepis ruam pada tungkai yang ruai
 
-    
 
-    Lepas
-    kepung daratan tanpa tandus
+    Menepis
+    ruam pada tungkai yang ruai
 
-    
 
-    Tembang-tembang kemenangan menggema
 
-    
+    Lepas kepung daratan tanpa tandus
+
+
+
+    Tembang-tembang
+    kemenangan menggema
+
+
 
     "Merdeka!"
 
-    
 
-    "Kita
-    Merdeka!"
 
-    
+    "Kita Merdeka!"
 
-    Tabuh gemuruh sukacita tergambar
 
-    
 
-    Manakala
-    pergumulan landai dan tumbang
+    Tabuh gemuruh
+    sukacita tergambar
 
-    
 
-    Khatam sudah kisah tanah legenda
 
-    
+    Manakala pergumulan landai dan tumbang
 
-    Lantas
-    dilukis penuh tinta merah
 
-    
 
-    Laksana bulan mengenang malam
+    Khatam
+    sudah kisah tanah legenda
 
-    
 
-    Lencana
-    terpatri menembus kalam
+
+    Lantas dilukis penuh tinta merah
+
+
+
+    Laksana
+    bulan mengenang malam
+
+
+
+    Lencana terpatri menembus kalam
 
 '
   m_isRightToLeft: 0
@@ -507,6 +507,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 75
+--- !u!114 &1549664339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549664334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d8fbe66968e444f9bd08ff6b9e28ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933012106
 GameObject:
   m_ObjectHideFlags: 0

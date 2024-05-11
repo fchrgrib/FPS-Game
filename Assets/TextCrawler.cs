@@ -34,7 +34,7 @@ public class TextCrawler : MonoBehaviour
     {
         transform.Translate(new Vector3(0, 1, 0) * scrollSpeed * Time.deltaTime);
 
-        if (transform.position.y >= 4832.717)
+        if (transform.position.y >= 4832.717 || InputManager.PlayerInput.OnGround.Skip.triggered)
         {
             SceneHelper.ProceedNextLevel();
         }
