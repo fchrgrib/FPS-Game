@@ -3062,7 +3062,6 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 10
   mobs: {fileID: 1017768065}
-  Difficulty: 0
 --- !u!4 &485020025
 Transform:
   m_ObjectHideFlags: 0
@@ -3846,7 +3845,6 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 4
   mobs: {fileID: 2104174455}
-  Difficulty: 0
 --- !u!4 &636821002
 Transform:
   m_ObjectHideFlags: 0
@@ -9355,6 +9353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755696529}
   - component: {fileID: 1755696528}
+  - component: {fileID: 1755696530}
   m_Layer: 0
   m_Name: Level02Controller
   m_TagString: Untagged
@@ -9394,6 +9393,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1755696530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755696527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860928e346f744e5b7abf0c0a1635ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noDamage: 0
+  oneHitKill: 0
+  doubleSpeed: 0
+  orbPrefab: {fileID: 3071435129641118245, guid: 8a051e348491fbe478c5767614aaded2, type: 3}
 --- !u!1 &1758378838
 GameObject:
   m_ObjectHideFlags: 0
