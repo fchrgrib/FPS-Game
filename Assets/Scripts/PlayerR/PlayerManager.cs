@@ -118,8 +118,6 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
         }
 
         CurrentPet = currentPet;
-        
-        EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
     }
 
     public void TakeDamage(float damage)

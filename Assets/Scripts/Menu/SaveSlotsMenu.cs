@@ -37,7 +37,7 @@ public class SaveSlotsMenu : Menu
         }
 
         DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("Level 01");
+        SceneManager.LoadSceneAsync("BeginningCutScene");
     }
 
     public void OnClearClicked(SaveSlot saveSlot)
