@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Level04Controller : MonoBehaviour
+public class Level04Controller : MonoBehaviour, IDataPersistence
 {
     public int EnemyDeathCount { get; private set; }
     public int EnemyLeaderDeathCount { get; private set; }
@@ -68,5 +68,33 @@ public class Level04Controller : MonoBehaviour
         {
             //TODO: Do something if king of enemy die  
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        if (data.currentLevel > 4)
+        {
+            return;
+        }
+
+        Debug.Log("Loading Level 4");
+        EnemyDeathCount = data.currentKillCount;
+        EnemyLeaderDeathCount = data.currentLeaderKillCount;
+        EnemyAdmiralDeathCount = data.currentAdmiralKillCount;
+        EnemyKingDeathCount = data.currentKingKillCount;
+    }
+
+    public void SaveData(GameData data)
+    {
+        if (data.currentLevel > 4)
+        {
+            return;
+        }
+
+        data.currentLevel = 4;
+        data.currentKillCount = EnemyDeathCount;
+        data.currentLeaderKillCount = EnemyLeaderDeathCount;
+        data.currentAdmiralKillCount = EnemyAdmiralDeathCount;
+        data.currentKingKillCount = EnemyKingDeathCount;
     }
 }
