@@ -696,7 +696,6 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 3
   mobs: {fileID: 651156874}
-  Difficulty: 0
 --- !u!4 &333049958
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,7 +1358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionText: {fileID: 1457063585}
-  maxKerocoDeath: 5
+  maxLeaderKerocoDeath: 2
   maxAdmiralOfKerocoDeath: 2
   maxKingOfKerocoDeath: 1
 --- !u!4 &676679623
@@ -1812,6 +1811,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+--- !u!1 &924930026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6365773743324362194, guid: 4de6deea49ea4f24692ff053a1d4c351, type: 3}
+  m_PrefabInstance: {fileID: 924930025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1080156518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,9 +3212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnThreshold: 2
   maxSpawnThreshold: 5
-  maxMobs: 1
-  mobs: {fileID: 1905161122}
-  Difficulty: 0
+  maxMobs: 4
+  mobs: {fileID: 924930026}
 --- !u!4 &1905161124
 Transform:
   m_ObjectHideFlags: 0
