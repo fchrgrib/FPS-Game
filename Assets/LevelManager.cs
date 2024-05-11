@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : MonoBehaviour, IDataPersistence
 {
 
     public static LevelManager currentLevelManager = null;
@@ -46,6 +46,17 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneHelper.ProceedNextLevel();
+    }
+
+    public void LoadData(GameData data)
+    {
+        
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.currentLevel = currentLevel;
     }
 }

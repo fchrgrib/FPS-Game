@@ -1,9 +1,10 @@
+using System;
 using Microlight.MicroBar;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour, CheatListener
+public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
 {
 
     public const string ATTACKER_PET = "ATTACKER_PET";
@@ -19,7 +20,18 @@ public class PlayerManager : MonoBehaviour, CheatListener
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
-    public static int PlayerMoney { get; set; } = 300;
+    private static int playerMoney = 100;
+    
+    public static int PlayerMoney
+    {
+        get => playerMoney;
+        set
+        {
+            Debug.Log("Player money is set to: " + value);
+            playerMoney = value;
+        }
+    }
+
     public float PlayerDamageMultiplier { get; set; } = 1f;
     public int DamageOrbCount { get; set; } = 0;
     private string currentPet = NO_PET;
@@ -31,16 +43,54 @@ public class PlayerManager : MonoBehaviour, CheatListener
         get => playerHp;
         set
         {
+            Debug.Log("Setting player hp to " + value);
             playerHp = value;
             playerHealthBar.UpdateHealthBar(value);
         }
     }
     
-    // Start is called before the first frame update
     void Start()
     {
-        playerHealthBar.Initialize(MaxHp);
+        Debug.Log("Start called");
+        EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
+    }
+
+    void OnDestroy()
+    {
+        EventManager.StopListening("MotherlodeCheat", UpdateMoneyText);
+    }
+    
+    private void UpdateMoneyText()
+    {
+        Debug.Log("Setting player money to: " + PlayerMoney);
         moneyText.text = PlayerMoney.ToString();
+    }
+
+    public void LoadData(GameData data)
+    {
+        PlayerMoney = data.playerMoney;
+        SceneParams.PlayerPet = data.playerPet;
+        
+        setup();
+        Debug.Log("Player data Loaded! " + PlayerMoney);
+        playerHealthBar.Initialize(MaxHp);
+        PlayerHp = data.playerHealth;
+    }
+
+    public void SaveData(GameData data)
+    {
+        SceneParams.PlayerPet = currentPet;
+        data.playerHealth = PlayerHp;
+        data.playerMoney = PlayerMoney;
+        data.playerPet = currentPet;
+        
+        Debug.Log("Player data saved! " + data.playerMoney );
+    }
+
+    private void setup()
+    {
+        moneyText.text = PlayerMoney.ToString();
+        Debug.Log("Loading money: " + PlayerMoney);
         
         if (string.IsNullOrEmpty(SceneParams.PlayerPet))
         {
@@ -69,13 +119,6 @@ public class PlayerManager : MonoBehaviour, CheatListener
         }
 
         CurrentPet = currentPet;
-        
-        EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
-    }
-
-    void OnDestroy()
-    {
-        EventManager.StopListening("MotherlodeCheat", UpdateMoneyText);
     }
 
     public void TakeDamage(float damage)
@@ -95,8 +138,4 @@ public class PlayerManager : MonoBehaviour, CheatListener
         );
     }
     
-    private void UpdateMoneyText()
-    {
-        moneyText.text = PlayerMoney.ToString();
-    }
 }

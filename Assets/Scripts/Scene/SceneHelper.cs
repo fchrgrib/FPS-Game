@@ -15,6 +15,11 @@ public class SceneHelper : MonoBehaviour
         SceneManager.LoadScene(NextScenePath);
     }
 
+    public void ProceedNextLevelNoChangeToPet()
+    {
+        SceneManager.LoadScene(NextScenePath);
+    }
+
     public void ProceedPreviousLevel()
     {
         SceneParams.PlayerPet = PlayerManager.CurrentPet;

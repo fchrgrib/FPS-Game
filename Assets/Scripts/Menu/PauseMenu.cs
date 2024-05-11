@@ -15,7 +15,6 @@ public class PauseMenu : MonoBehaviour
         {
             if (GameIsPaused)
             {
-                
                 Resume();
             }
             else
@@ -29,14 +28,19 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        
-
     }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+    
+    public void GoMainMenuAndSave()
+    {
+        DataPersistenceManager.instance.SaveGame();
+        Resume();
+        SceneManager.LoadSceneAsync(0);
     }
     
     public void GoMainMenu()

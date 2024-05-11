@@ -22,6 +22,14 @@ public class ShopSceneHelper : MonoBehaviour
         SceneHelper = gameObject.AddComponent<SceneHelper>();
     }
 
+    public void ProceedNextLevelNoChange()
+    {
+        SceneParams.PlayerPet = PlayerManager.CurrentPet;
+        DataPersistenceManager.instance.SaveStaticGameData();
+        DataPersistenceManager.instance.SaveGame();
+        SceneHelper.ProceedNextLevelNoChangeToPet();
+    }
+
     public void ProceedNextLevelAttacker()
     {
         if (PlayerManager.PlayerMoney < 100)
@@ -31,8 +39,11 @@ public class ShopSceneHelper : MonoBehaviour
         }
 
         PlayerManager.PlayerMoney -= 100;
+        Debug.Log("Bought Attacker Pet. Current Money: " + PlayerManager.PlayerMoney);
         SceneParams.PlayerPet = PlayerManager.ATTACKER_PET;
-        SceneHelper.ProceedNextLevel();
+        DataPersistenceManager.instance.SaveStaticGameData();
+        DataPersistenceManager.instance.SaveGame();
+        SceneHelper.ProceedNextLevelNoChangeToPet();
     }
 
     public void ProceedNextLevelHealer()
@@ -45,6 +56,8 @@ public class ShopSceneHelper : MonoBehaviour
 
         PlayerManager.PlayerMoney -= 100;
         SceneParams.PlayerPet = PlayerManager.HEALER_PET;
-        LevelManager.currentLevelManager.NextLevel();
+        DataPersistenceManager.instance.SaveStaticGameData();
+        DataPersistenceManager.instance.SaveGame();
+        SceneHelper.ProceedNextLevelNoChangeToPet();
     }
 }
