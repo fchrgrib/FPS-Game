@@ -20,6 +20,9 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
     {
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
         missionText.SetText(SetTextMission());
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private string SetTextMission()
@@ -30,6 +33,9 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
     private void OnDestroy()
     {
         EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void IncrementEnemyDeathCount()

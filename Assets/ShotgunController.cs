@@ -93,32 +93,9 @@ public class ShotgunController : MonoBehaviour
             lineRenderer[i].SetPosition(0, transform.position);
         }
         
-        // if (Physics.Raycast(cam.transform.position, cam.transform.forward, out var hit, range))
-        // {
-        //     /*Debug.Log(hit.transform.name);*/
-        //     for (int i = 0;i < lineRenderer.Count; i++)
-        //     {
-        //         float xVal = Random.Range(-5f, 5f);
-        //         float yVal = Random.Range(-5f, 5f);
-        //         float zVal = Random.Range(-5f, 5f);
-        //         Vector3 positionShoot = hit.point + new Vector3(xVal, yVal, zVal);
-        //         // hit.collider.Ge
-        //
-        //         lineRenderer[i].SetPosition(1, positionShoot);
-        //         // hit.point = positionShoot;
-        //
-        //         // hit.collider.GetComponent<EnemyManager>().TakeDamage(demage, positionShoot);
-        //     }
-        //
-        //     // TODO: hit damage to object
-        //
-        //
-        // }
-
-
         foreach (var line in lineRenderer)
         {
-            ray.origin = transform.position;
+            ray.origin = cam.transform.position;
             float xVal = Random.Range(-0.5f, 0.5f);
             float yVal = Random.Range(-0.5f, 0.5f);
             float zVal = Random.Range(-0.5f, 0.5f);

@@ -26,6 +26,9 @@ public class Level04Controller : MonoBehaviour, IDataPersistence
         EventManager.StartListening("AdmiralOfEnemyDeath", IncrementAdmiralOfEnemyDeathCount);
         EventManager.StartListening("KingOfEnemyDeath", IncrementKingOfEnemyDeathCount);
         missionText.SetText(SetTextMission());
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     
     private void OnDestroy()
@@ -34,6 +37,9 @@ public class Level04Controller : MonoBehaviour, IDataPersistence
         EventManager.StopListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
         EventManager.StopListening("AdmiralOfEnemyDeath", IncrementAdmiralOfEnemyDeathCount);
         EventManager.StopListening("KingOfEnemyDeath", IncrementKingOfEnemyDeathCount);
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private string SetTextMission()
