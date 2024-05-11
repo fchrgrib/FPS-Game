@@ -22,6 +22,10 @@ public class DataPersistenceManager : MonoBehaviour
     private string selectedProfileId = "";
     public static DataPersistenceManager instance {get ; private set;}
 
+    private GameData _statisticsGameData;
+    private const string statisticsProfileId = "3";
+    private float _elapsedTime = 0;
+
     private void Awake()
     {
         Debug.Log("SAVE LOCATION: " + Application.persistentDataPath);
@@ -40,6 +44,53 @@ public class DataPersistenceManager : MonoBehaviour
         
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         InitializeSelectedProfileId();
+    }
+
+    private void Update()
+    {
+        _elapsedTime += Time.unscaledDeltaTime;
+        // Debug.Log("Elapsed time: " + _elapsedTime);
+        if (_elapsedTime >= 5)
+        {
+            Debug.Log("Saving statistics");
+            _elapsedTime = 0;
+            GeneralStatistics liveGeneralStatistics = GeneralStatistics.Instance;
+            var statsGameData = dataHandler.Load(statisticsProfileId);
+            if (statsGameData == null)
+            {
+                Debug.Log("Babi NGentot");
+                _statisticsGameData = new GameData();
+            }
+            else
+            {
+                Debug.Log("Babi");
+                _statisticsGameData = statsGameData;
+                if (liveGeneralStatistics.ElapsedTime <= _statisticsGameData.Stats.elapsedTime)
+                {
+                    liveGeneralStatistics.ElapsedTime = _statisticsGameData.Stats.elapsedTime;
+                    liveGeneralStatistics.TravelDistance = _statisticsGameData.Stats.travelDistance;
+                    liveGeneralStatistics.Accuracy = _statisticsGameData.Stats.accuracy;
+                    liveGeneralStatistics.UpdateAccuracy(_statisticsGameData.Stats.totalHitCount, 
+                        _statisticsGameData.Stats.totalBulletCount);
+                    liveGeneralStatistics.Kill = _statisticsGameData.Stats.totalKillCount;
+                    liveGeneralStatistics.Death = _statisticsGameData.Stats.totalDeathCount;
+                }
+            }
+            
+            Debug.Log("SAMPE SINI");
+            _statisticsGameData.Stats.elapsedTime = liveGeneralStatistics.ElapsedTime;
+            _statisticsGameData.Stats.travelDistance = liveGeneralStatistics.TravelDistance;
+            _statisticsGameData.Stats.accuracy = liveGeneralStatistics.Accuracy;
+            _statisticsGameData.Stats.totalHitCount = liveGeneralStatistics.TotalHitCount;
+            _statisticsGameData.Stats.totalBulletCount =
+                liveGeneralStatistics.TotalBulletCount;
+            _statisticsGameData.Stats.totalKillCount = liveGeneralStatistics.Kill;
+            _statisticsGameData.Stats.totalDeathCount = liveGeneralStatistics.Death;
+            
+            Debug.Log("_statistics game data elapsed time: " + liveGeneralStatistics.ElapsedTime);
+            
+            dataHandler.Save(_statisticsGameData, statisticsProfileId);
+        }
     }
 
     public void ChangeSelectedProfileID(string newProfileId)

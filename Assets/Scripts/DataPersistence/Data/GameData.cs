@@ -20,6 +20,8 @@ public class GameData
     public Level2 Level2 = new Level2();
     public Level3 Level3 = new Level3();
     public Level4 Level4 = new Level4();
+
+    public Stats Stats = new Stats();
     
     public GameData()
     {

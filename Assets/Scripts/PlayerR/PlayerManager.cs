@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
-    private static int playerMoney = 500;
+    private static int playerMoney = 100;
     
     public static int PlayerMoney
     {
@@ -141,6 +141,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
                 {
                     // game over
                     //TODO: add animation
+                    GeneralStatistics.Instance.Death += 1;
                     SceneManager.LoadScene("Scenes/Cutscene/DeathCutScene");
                     DataPersistenceManager.instance.SaveGame();
                 }

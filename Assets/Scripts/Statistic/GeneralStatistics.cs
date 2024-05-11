@@ -1,18 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class GeneralStatistics : MonoBehaviour
 {
-    private float elapsedTime = 0;
-    private float travelDistance = 0;
-    private float accuracy = 0;
-    private int totalHitCount = 0;
-    private int totalBulletCount = 0;
-    private int totalKillCount = 0;
-    private int totalDeathCount= 0;
-    private float killdeath = 0;
+    public float elapsedTime = 0;
+    public float travelDistance = 0;
+    public float accuracy = 0;
+    public int totalHitCount = 0;
+    public int totalBulletCount = 0;
+    public int totalKillCount = 0;
+    public int totalDeathCount= 0;
+    public float killdeath = 0;
+
+    public static GeneralStatistics Instance;
     
+    private void Start()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this);
+    }
+
+    private void Update()
+    {
+        ElapsedTime += Time.unscaledDeltaTime;
+    }
 
     public float ElapsedTime
     {
@@ -40,14 +60,30 @@ public class GeneralStatistics : MonoBehaviour
             accuracy = value;
         }
     }
+
+    public int TotalHitCount
+    {
+        get => totalHitCount;
+        set
+        {
+            totalHitCount = value;
+        }
+    }
+    
+    public int TotalBulletCount
+    {
+        get => totalBulletCount;
+        set
+        {
+            totalBulletCount = value;
+        }
+    }
     
     public void UpdateAccuracy(int hitCount, int bulletCount)
     {
         totalBulletCount += bulletCount;
         totalHitCount += hitCount;
         accuracy = (totalHitCount / totalBulletCount) * 100;
-
-
     }
 
     public int Death
@@ -84,9 +120,9 @@ public class GeneralStatistics : MonoBehaviour
             killdeath = value;
         } 
     }
-    public void KillDeathRatio(int killCount)
+    public float KillDeathRatio()
     {
-        killdeath = totalKillCount / totalDeathCount;
+        return (float) totalKillCount / totalDeathCount;
     }
     
 }
