@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level04Controller : MonoBehaviour, IDataPersistence
 {
@@ -14,6 +15,8 @@ public class Level04Controller : MonoBehaviour, IDataPersistence
     public int maxLeaderKerocoDeath = 2;
     public int maxAdmiralOfKerocoDeath = 2;
     public int maxKingOfKerocoDeath = 1;
+
+    public bool finished = false;
     
     // Start is called before the first frame update
     void Start()
@@ -64,24 +67,32 @@ public class Level04Controller : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        if (EnemyKingDeathCount>=maxKingOfKerocoDeath && EnemyAdmiralDeathCount>=maxAdmiralOfKerocoDeath && EnemyLeaderDeathCount >= maxLeaderKerocoDeath)
+        if (!finished && EnemyKingDeathCount>=maxKingOfKerocoDeath && EnemyAdmiralDeathCount>=maxAdmiralOfKerocoDeath 
+            && EnemyLeaderDeathCount >= maxLeaderKerocoDeath)
         {
-            //TODO: Do something if king of enemy die  
+            SceneManager.LoadScene("EndingCutScene");  
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            finished = true;
         }
     }
 
     public void LoadData(GameData data)
     {
-        if (data.currentLevel > 4)
+        if (data.currentLevel != 4)
         {
             return;
         }
 
         Debug.Log("Loading Level 4");
-        EnemyDeathCount = data.currentKillCount;
-        EnemyLeaderDeathCount = data.currentLeaderKillCount;
-        EnemyAdmiralDeathCount = data.currentAdmiralKillCount;
-        EnemyKingDeathCount = data.currentKingKillCount;
+        EnemyDeathCount = data.Level4.currentKillCount;
+        EnemyLeaderDeathCount = data.Level4.currentLeaderKillCount;
+        EnemyAdmiralDeathCount = data.Level4.currentAdmiralKillCount;
+        EnemyKingDeathCount = data.Level4.currentKingKillCount;
     }
 
     public void SaveData(GameData data)
@@ -92,9 +103,9 @@ public class Level04Controller : MonoBehaviour, IDataPersistence
         }
 
         data.currentLevel = 4;
-        data.currentKillCount = EnemyDeathCount;
-        data.currentLeaderKillCount = EnemyLeaderDeathCount;
-        data.currentAdmiralKillCount = EnemyAdmiralDeathCount;
-        data.currentKingKillCount = EnemyKingDeathCount;
+        data.Level4.currentKillCount = EnemyDeathCount;
+        data.Level4.currentLeaderKillCount = EnemyLeaderDeathCount;
+        data.Level4.currentAdmiralKillCount = EnemyAdmiralDeathCount;
+        data.Level4.currentKingKillCount = EnemyKingDeathCount;
     }
 }

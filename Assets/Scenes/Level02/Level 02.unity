@@ -9362,8 +9362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxKerocoDeath: 5
-  maxLeaderOfKerocoDeath: 3
-  finalBox: {fileID: 1331716288690049236}
+  maxLeaderOfKerocoDeath: 4
+  finalBox: {fileID: 1198434733}
   finalGate: {fileID: 1847105508}
   missionText: {fileID: 1227979353}
 --- !u!4 &1755696529
@@ -11021,11 +11021,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
---- !u!1 &1331716288690049236 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5236359416903694273, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
-  m_PrefabInstance: {fileID: 1331716288690049235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

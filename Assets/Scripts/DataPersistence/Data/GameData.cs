@@ -14,12 +14,13 @@ public class GameData
     public int playerMoney = 300;
     public float playerHealth = 100;
     public string playerPet = "NO_PET";
-    public int currentLevel;
-    public int currentKillCount;
-    public int currentLeaderKillCount;
-    public int currentAdmiralKillCount;
-    public int currentKingKillCount;
+    public int currentLevel = 1;
 
+    public Level1 Level1 = new Level1();
+    public Level2 Level2 = new Level2();
+    public Level3 Level3 = new Level3();
+    public Level4 Level4 = new Level4();
+    
     public GameData()
     {
         this.deathCount = 0;

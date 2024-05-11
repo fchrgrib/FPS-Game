@@ -16,6 +16,9 @@ public class Level03Controller : MonoBehaviour, IDataPersistence
 
     public GameObject finalBox;
     public GameObject finalGate;
+
+    private bool finished = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -57,10 +60,17 @@ public class Level03Controller : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        if (EnemyLeaderDeathCount >= 4 && EnemyAdmiralDeathCount >= 1)
+        if (!finished && EnemyLeaderDeathCount >= 4 && EnemyAdmiralDeathCount >= 1)
         {
             finalBox.SetActive(true);
             finalGate.SetActive(false);  
+            
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            finished = true;
         }
     }
 
@@ -70,10 +80,11 @@ public class Level03Controller : MonoBehaviour, IDataPersistence
         {
             return;
         }
+        
         Debug.Log("Loading Level 3");
-        EnemyDeathCount = data.currentKillCount;
-        EnemyLeaderDeathCount = data.currentLeaderKillCount;
-        EnemyAdmiralDeathCount = data.currentAdmiralKillCount;
+        EnemyDeathCount = data.Level3.currentKillCount;
+        EnemyLeaderDeathCount = data.Level3.currentLeaderKillCount;
+        EnemyAdmiralDeathCount = data.Level3.currentAdmiralKillCount;
     }
 
     public void SaveData(GameData data)
@@ -84,8 +95,8 @@ public class Level03Controller : MonoBehaviour, IDataPersistence
         }
 
         data.currentLevel = 3;
-        data.currentKillCount = EnemyDeathCount;
-        data.currentLeaderKillCount = EnemyLeaderDeathCount;
-        data.currentAdmiralKillCount = EnemyAdmiralDeathCount;
+        data.Level3.currentKillCount = EnemyDeathCount;
+        data.Level3.currentLeaderKillCount = EnemyLeaderDeathCount;
+        data.Level3.currentAdmiralKillCount = EnemyAdmiralDeathCount;
     }
 }

@@ -113,6 +113,7 @@ public class DataPersistenceManager : MonoBehaviour
     {
         // this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
+        SaveGame();
     }
 
     public void SaveGame()

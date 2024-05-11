@@ -155,7 +155,7 @@ MonoBehaviour:
   missionText: {fileID: 192957479}
   maxLeaderOfKerocoDeath: 4
   maxAdmiralOfKerocoDeath: 1
-  finalBox: {fileID: 574536093}
+  finalBox: {fileID: 733509819}
   finalGate: {fileID: 1930109031}
 --- !u!4 &8781039
 Transform:
@@ -3162,11 +3162,6 @@ PrefabInstance:
 --- !u!4 &574536092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4271472138400522420, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
-  m_PrefabInstance: {fileID: 574536091}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &574536093 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5236359416903694273, guid: ac857bfe6ecfc7b4cb2754bb4718800b, type: 3}
   m_PrefabInstance: {fileID: 574536091}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &585986195

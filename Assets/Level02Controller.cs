@@ -12,6 +12,8 @@ public class Level02Controller : MonoBehaviour, IDataPersistence
     public GameObject finalBox;
     public GameObject finalGate;
     public TMP_Text missionText;
+
+    private bool finished = false;
     
     // Start is called before the first frame update
     void Start()
@@ -47,10 +49,18 @@ public class Level02Controller : MonoBehaviour, IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        if (EnemyLeaderDeathCount >= 4 && EnemyDeathCount>=5)
+        if (!finished && EnemyLeaderDeathCount >= 4 && EnemyDeathCount>=5)
         {
             finalBox.SetActive(true);
             finalGate.SetActive(false);   
+            
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            
+            finished = true;
         }
     }
 
@@ -60,9 +70,10 @@ public class Level02Controller : MonoBehaviour, IDataPersistence
         {
             return;
         }
+        
         Debug.Log("Loading Level 2");
-        EnemyDeathCount = data.currentKillCount;
-        EnemyLeaderDeathCount = data.currentLeaderKillCount;
+        EnemyDeathCount = data.Level2.currentKillCount;
+        EnemyLeaderDeathCount = data.Level2.currentLeaderKillCount;
     }
 
     public void SaveData(GameData data)
@@ -73,7 +84,7 @@ public class Level02Controller : MonoBehaviour, IDataPersistence
         }
 
         data.currentLevel = 2;
-        data.currentKillCount = EnemyDeathCount;
-        data.currentLeaderKillCount = EnemyLeaderDeathCount;
+        data.Level2.currentKillCount = EnemyDeathCount;
+        data.Level2.currentLeaderKillCount = EnemyLeaderDeathCount;
     }
 }

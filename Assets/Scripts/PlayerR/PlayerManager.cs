@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
     private GameObject scenePet;
     private const float MaxHp = 100f;
     private float playerHp = 100f;
-    private static int playerMoney = 100;
+    private static int playerMoney = 500;
     
     public static int PlayerMoney
     {
@@ -53,6 +53,15 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
     {
         Debug.Log("Start called");
         EventManager.StartListening("MotherlodeCheat", UpdateMoneyText);
+    }
+
+    void Update()
+    {
+        if (PlayerHp <= 0)
+        {
+            SceneManager.LoadScene("Scenes/Cutscene/DeathCutScene");
+            DataPersistenceManager.instance.SaveGame();
+        }
     }
 
     void OnDestroy()
@@ -133,6 +142,7 @@ public class PlayerManager : MonoBehaviour, CheatListener, IDataPersistence
                     // game over
                     //TODO: add animation
                     SceneManager.LoadScene("Scenes/Cutscene/DeathCutScene");
+                    DataPersistenceManager.instance.SaveGame();
                 }
             }
         );

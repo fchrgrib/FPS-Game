@@ -11,6 +11,8 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
     public GameObject finalBox;
     public TMP_Text missionText;
 
+    private bool finished = false;
+    
     public int EnemyDeathCount { get; private set; }
 
     // Start is called before the first frame update
@@ -22,7 +24,7 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
 
     private string SetTextMission()
     {
-        return $"Your Mission\nKill Keroco     {EnemyDeathCount}/{maxKerocoDeath}";
+        return $"Your Mission\nKill Keroco {EnemyDeathCount}/{maxKerocoDeath}";
     }
 
     private void OnDestroy()
@@ -38,10 +40,18 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
     
     void Update()
     {
-        if (EnemyDeathCount>=10)
+        if (!finished && EnemyDeathCount>=10)
         {
             finalGate.SetActive(false);
             finalBox.SetActive(true);
+            
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+
+            finished = true;
         }    
     }
 
@@ -53,7 +63,7 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
         }
         Debug.Log("Loading Level 1");
 
-        EnemyDeathCount = data.currentKillCount;
+        EnemyDeathCount = data.Level1.currentKillCount;
     }
 
     public void SaveData(GameData data)
@@ -64,6 +74,6 @@ public class Level01Controller : MonoBehaviour, IDataPersistence
         }
 
         data.currentLevel = 1;
-        data.currentKillCount = EnemyDeathCount;
+        data.Level1.currentKillCount = EnemyDeathCount;
     }
 }
