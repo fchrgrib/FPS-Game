@@ -19,12 +19,18 @@ public class Level02Controller : MonoBehaviour, IDataPersistence
         EventManager.StartListening("EnemyDeath", IncrementEnemyDeathCount);
         EventManager.StartListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
         missionText.SetText(SetTextMission());
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnDestroy()
     { 
         EventManager.StopListening("EnemyDeath", IncrementEnemyDeathCount);
         EventManager.StopListening("LeaderOfEnemyDeath", IncrementLeaderOfEnemyDeathCount);
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private string SetTextMission()
