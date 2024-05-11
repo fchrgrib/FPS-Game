@@ -379,7 +379,6 @@ MonoBehaviour:
   maxSpawnThreshold: 5
   maxMobs: 10
   mobs: {fileID: 1735848183}
-  Difficulty: 0
 --- !u!4 &53082948
 Transform:
   m_ObjectHideFlags: 0
@@ -778,7 +777,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1735848195}
   m_SourcePrefab: {fileID: 100100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
 --- !u!1 &309555341
 GameObject:
@@ -3632,6 +3634,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ea3c2728ef33e3a4d99527a86cda6465, type: 3}
   m_PrefabInstance: {fileID: 271723661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735848195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735848183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755d1ab8f0094ef9bbea12900a89c442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceThreshold: 10
+  damagePerSecond: 1
 --- !u!1 &1761018070
 GameObject:
   m_ObjectHideFlags: 0
