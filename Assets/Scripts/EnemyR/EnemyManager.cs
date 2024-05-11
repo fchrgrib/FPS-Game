@@ -46,6 +46,7 @@ public class EnemyManager : MonoBehaviour
             
             if (IsDead())
             {
+                GeneralStatistics.Instance.Kill += 1;
                 Die();
             }
             else

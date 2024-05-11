@@ -59,6 +59,7 @@ public class ShotgunController : MonoBehaviour
         {
             if (inputManager.PlayerInput.OnGround.Attack.IsPressed())
             {
+                GeneralStatistics.Instance.TotalBulletCount += 1;
                 Shoot();
             }
         }
@@ -107,6 +108,7 @@ public class ShotgunController : MonoBehaviour
 
                 if (enemyManager != null)
                 {
+                    GeneralStatistics.Instance.TotalHitCount += 1;
                     enemyManager.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
                 }
                 

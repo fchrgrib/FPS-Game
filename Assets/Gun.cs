@@ -43,6 +43,7 @@ public class Gun : MonoBehaviour
         {
             if (inputManager.PlayerInput.OnGround.Attack.IsPressed())
             {
+                GeneralStatistics.Instance.TotalBulletCount += 1;
                 Shoot();
             }
         }
@@ -87,6 +88,7 @@ public class Gun : MonoBehaviour
             EnemyManager enemyHealth = hit.collider.GetComponent<EnemyManager>();
             if (enemyHealth != null)
             {
+                GeneralStatistics.Instance.Kill += 1;
                 enemyHealth.TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, hit.point);
             }
 

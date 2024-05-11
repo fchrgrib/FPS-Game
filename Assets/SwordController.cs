@@ -33,6 +33,7 @@ public class SwordController : MonoBehaviour
             
             if (attackCount == 1)
             {
+                GeneralStatistics.Instance.TotalBulletCount += 1;
                 SwingDamage();
             }
         }
@@ -53,6 +54,7 @@ public class SwordController : MonoBehaviour
             dam += 1;
             if (dam>1)
             {
+                GeneralStatistics.Instance.TotalHitCount += 1;
                 continue;
             }
             enemy.GetComponent<EnemyManager>().TakeDamage(damage*PlayerManager.PlayerDamageMultiplier, attackPoint.position);
