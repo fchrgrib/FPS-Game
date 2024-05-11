@@ -11,7 +11,7 @@ public class MobSpawner : MonoBehaviour
     public int maxMobs = 10;
     
     public GameObject mobs;
-    public Difficulty Difficulty;
+    public static Difficulty Difficulty;
     
     private float spawnTimer;
     private float randomSpawnThreshold;
